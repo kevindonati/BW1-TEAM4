@@ -1,6 +1,15 @@
 .no-display {
   display: none;
 }
+body {
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+}
+
+.logo {
+  width: 10em;
+  padding: 4em;
+}
 
 .contenitore-generale {
   max-width: 1300px;
