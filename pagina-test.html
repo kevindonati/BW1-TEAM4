@@ -25,41 +25,50 @@
           <!-- Div Timer -->
           <!-- Per modificarlo con CSS e JS  https://www.youtube.com/watch?v=C74_04bamJA // https://www.javaspring.net/blog/how-to-create-a-circular-countdown-timer-using-html-css-or-javascript/-->
 
-        <svg class="timer-svg" viewBox="0 0 100 100">
-          <circle class="timer-bg" cx="50" cy="50" r="45"></circle>
-          <circle class="progresso-timer" cx="50" cy="50" r="45"></circle>
-        </svg>
-        <p class="numeri-timer">10</p>
-      </div>
-    </header>
-    <main>
-      <!-- Div delle domande del quiz -->
-      <div id="testo-domanda">
-        <h2>Qual è il film più visto nel 2025?</h2>
-      </div>
-      <!-- Form con i button per le risposte-->
-      <form id="form-domande">
-        <div>
-          <button id="risposta-1" type="button">Risposta 1</button>
+          <svg class="timer-svg" viewBox="0 0 100 100">
+            <circle class="timer-bg" cx="50" cy="50" r="45"></circle>
+            <circle class="progresso-timer" cx="50" cy="50" r="45"></circle>
+          </svg>
+          <p class="numeri-timer">10</p>
         </div>
-        <div>
-          <button id="risposta-2" type="button">Risposta 2</button>
+      </header>
+      <main>
+        <!-- Div delle domande del quiz -->
+        <div id="testo-domanda">
+          <h2>Qual è il film più visto nel 2025?</h2>
         </div>
-        <div>
-          <button id="risposta-3" type="button">Risposta 3</button>
+        <!-- Form con i button per le risposte-->
+        <form id="form-domande">
+          <div>
+            <button onclick="estrazioneDomande()" id="risposta-1" type="button">
+              Risposta 1
+            </button>
+          </div>
+          <div>
+            <button onclick="estrazioneDomande()" id="risposta-2" type="button">
+              Risposta 2
+            </button>
+          </div>
+          <div>
+            <button onclick="estrazioneDomande()" id="risposta-3" type="button">
+              Risposta 3
+            </button>
+          </div>
+          <div>
+            <button onclick="estrazioneDomande()" id="risposta-4" type="button">
+              Risposta 4
+            </button>
+          </div>
+        </form>
+        <!-- Div ordine domande -->
+        <div id="numero-domande">
+          <button onclick="estrazioneDomande()">Bottone di prova</button>
+          <!-- Bottone di prova per vedere l'innerText cambiare DA RIMUOVERE-->
+          <p>QUESTION 1/10</p>
         </div>
-        <div>
-          <button id="risposta-4" type="button">Risposta 4</button>
-        </div>
-      </form>
-      <!-- Div ordine domande -->
-      <div id="numero-domande">
-        <button onclick="estrazioneDomande()">Bottone di prova</button>
-        <!-- Bottone di prova per vedere l'innerText cambiare DA RIMUOVERE-->
-        <p>QUESTION 1/10</p>
-      </div>
-    </main>
-    <footer></footer>
-    <script src="./assets/script/script.js"></script>
+      </main>
+      <footer></footer>
+      <script src="./assets/script/script.js"></script>
+    </div>
   </body>
 </html>

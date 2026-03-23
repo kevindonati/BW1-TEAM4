@@ -108,6 +108,8 @@ const domande = {
 // SALVO LE DOMANDE PESCATE IN QUESTO ARRAY, IN MODO CHE NON POSSANO USCIRE NUOVAMENTE
 let domandePescate = []
 
+let punteggio = 0
+
 // CONTEGGIO DOMANDA CORRENTE
 let numeroDomandaCorrente = 1
 
