@@ -2,196 +2,441 @@
 const domande = {
   facile: [
     {
-      domanda: "Chi ha diretto Titanic?",
-      rispostaGiusta: "James Cameron",
+      domanda: "Chi interpreta Jack Dawson nel film Titanic?",
+      rispostaGiusta: "Leonardo DiCaprio",
+      risposteSbagliate: ["Brad Pitt", "Tom Cruise", "Matt Damon"],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda: "Qual è il nome del pupazzo di neve in Frozen?",
+      rispostaGiusta: "Olaf",
+      risposteSbagliate: ["Sven", "Kristoff", "Hans"],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda: "I nani nel classico Disney di Biancaneve sono dieci?",
+      rispostaGiusta: "Falso",
+      risposteSbagliate: "Vero",
+      tipo: "risposta booleana",
+    },
+    {
+      domanda:
+        "Quale supereroe è noto per il motto 'Da un grande potere derivano grandi responsabilità'?",
+      rispostaGiusta: "Spider-Man",
+      risposteSbagliate: ["Batman", "Superman", "Iron Man"],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda:
+        "In quale film i protagonisti seguono la 'strada di mattoni gialli'?",
+      rispostaGiusta: "Il Mago di Oz",
       risposteSbagliate: [
-        "Steven Spielberg",
-        "Christopher Nolan",
-        "Martin Scorsese",
+        "Alice nel Paese delle Meraviglie",
+        "Harry Potter",
+        "Shrek",
       ],
       tipo: "risposta multipla",
     },
     {
-      domanda: "Darth Vader è il padre di Luke Skywalker?",
-      rispostaGiusta: "Vero",
-      risposteSbagliate: "Falso",
-      tipo: "risposta booleana",
-    },
-    {
-      domanda: "In quale film compare il personaggio di Jack Sparrow?",
-      rispostaGiusta: "Pirati dei Caraibi",
-      risposteSbagliate: ["Il Signore degli Anelli", "Harry Potter", "Avatar"],
+      domanda:
+        "Come si chiama il capitano interpretato da Johnny Depp nella saga Pirati dei Caraibi?",
+      rispostaGiusta: "Jack Sparrow",
+      risposteSbagliate: ["Barbossa", "Davy Jones", "Will Turner"],
       tipo: "risposta multipla",
     },
     {
-      domanda: "Avatar è ambientato sul pianeta Pandora?",
+      domanda: "Quale pesce dà il nome a un famoso film Pixar del 2003?",
+      rispostaGiusta: "Nemo",
+      risposteSbagliate: ["Dory", "Marlin", "Bruce"],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda:
+        "Chi è il nemico giurato di Batman che ha le sembianze di un clown?",
+      rispostaGiusta: "Joker",
+      risposteSbagliate: ["Pinguino", "Enigmista", "Due Facce"],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda: "In Harry Potter, Harry viene smistato nella casa Serpeverde?",
+      rispostaGiusta: "Falso",
+      risposteSbagliate: "Vero",
+      tipo: "risposta booleana",
+    },
+    {
+      domanda:
+        "In Matrix, Neo sceglie la pillola rossa per scoprire la verità?",
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
     },
     {
-      domanda: "Chi interpreta Iron Man nel Marvel Cinematic Universe?",
+      domanda: "Chi ha diretto il film E.T. l'extra-terrestre?",
+      rispostaGiusta: "Steven Spielberg",
+      risposteSbagliate: ["George Lucas", "James Cameron", "Ridley Scott"],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda:
+        "Quale attore interpreta Iron Man nel Marvel Cinematic Universe?",
       rispostaGiusta: "Robert Downey Jr.",
       risposteSbagliate: ["Chris Evans", "Chris Hemsworth", "Mark Ruffalo"],
       tipo: "risposta multipla",
     },
     {
-      domanda: "Il Gladiatore ha vinto l’Oscar come miglior film?",
-      rispostaGiusta: "Vero",
-      risposteSbagliate: "Falso",
+      domanda: "Il leone protagonista de Il Re Leone si chiama Mufasa?",
+      rispostaGiusta: "Falso",
+      risposteSbagliate: "Vero",
       tipo: "risposta booleana",
     },
     {
-      domanda: "In quale film troviamo il personaggio di Forrest Gump?",
-      rispostaGiusta: "Forrest Gump",
-      risposteSbagliate: ["Cast Away", "The Truman Show", "Fight Club"],
-      tipo: "risposta multipla",
-    },
-  ],
-  medio: [
-    {
-      domanda: "Quale di questi film è diretto da Christopher Nolan?",
-      rispostaGiusta: "Inception",
-      risposteSbagliate: ["Pulp Fiction", "Titanic", "Jurassic Park"],
+      domanda:
+        "Quale archeologo è famoso per la sua tecnica di combattimento con la frusta?",
+      rispostaGiusta: "Indiana Jones",
+      risposteSbagliate: ["Lara Croft", "Nathan Drake", "Rick O'Connell"],
       tipo: "risposta multipla",
     },
     {
       domanda:
-        "Harry Potter e la Pietra Filosofale è il primo film della saga?",
+        "In Guerre Stellari, Darth Vader rivela a Luke di essere suo padre?",
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
     },
+  ],
+  medio: [
     {
-      domanda: "Jurassic Park parla di dinosauri clonati?",
-      rispostaGiusta: "Vero",
-      risposteSbagliate: "Falso",
-      tipo: "risposta booleana",
-    },
-    {
-      domanda: "In The Avengers, chi è il leader del gruppo?",
-      rispostaGiusta: "Captain America",
-      risposteSbagliate: ["Iron Man", "Thor", "Hulk"],
+      domanda: "Chi ha diretto il film Pulp Fiction?",
+      rispostaGiusta: "Quentin Tarantino",
+      risposteSbagliate: ["Martin Scorsese", "Guy Ritchie", "David Fincher"],
       tipo: "risposta multipla",
     },
     {
-      domanda: "Chi interpreta il protagonista in The Wolf of Wall Street?",
-      rispostaGiusta: "Leonardo DiCaprio",
-      risposteSbagliate: ["Brad Pitt", "Matt Damon", "Tom Cruise"],
+      domanda:
+        "In quale anno è uscito nelle sale il primo film della saga di Star Wars?",
+      rispostaGiusta: "1977",
+      risposteSbagliate: ["1975", "1980", "1983"],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda:
+        "Parasite è stato il primo film non in lingua inglese a vincere l'Oscar come Miglior Film?",
+      rispostaGiusta: "Vero",
+      risposteSbagliate: "Falso",
+      tipo: "risposta booleana",
+    },
+    {
+      domanda:
+        "Chi interpreta il Joker nel film Il Cavaliere Oscuro di Christopher Nolan?",
+      rispostaGiusta: "Heath Ledger",
+      risposteSbagliate: ["Jared Leto", "Joaquin Phoenix", "Jack Nicholson"],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda:
+        "Qual è il nome dell'intelligenza artificiale in 2001: Odissea nello spazio?",
+      rispostaGiusta: "HAL 9000",
+      risposteSbagliate: ["JARVIS", "SKYNET", "DAVID"],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda:
+        "In quale città francese è ambientato il film Pixar Ratatouille?",
+      rispostaGiusta: "Parigi",
+      risposteSbagliate: ["Lione", "Marsiglia", "Nizza"],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda:
+        "Steven Spielberg ha diretto la trilogia de Il Signore degli Anelli?",
+      rispostaGiusta: "Falso",
+      risposteSbagliate: "Vero",
+      tipo: "risposta booleana",
+    },
+    {
+      domanda:
+        "Per quale film Leonardo DiCaprio ha vinto il suo primo Oscar come Migliore Attore?",
+      rispostaGiusta: "Revenant - Redivivo",
+      risposteSbagliate: ["The Wolf of Wall Street", "Inception", "Titanic"],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda: "Come si chiama l'hotel infestato del film Shining?",
+      rispostaGiusta: "Overlook Hotel",
+      risposteSbagliate: ["Bates Motel", "Continental", "Grand Budapest Hotel"],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda:
+        "Quale attrice interpreta Katniss Everdeen nella saga di Hunger Games?",
+      rispostaGiusta: "Jennifer Lawrence",
+      risposteSbagliate: ["Emma Watson", "Shailene Woodley", "Margot Robbie"],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda:
+        "Ennio Morricone ha composto la colonna sonora originale di Interstellar?",
+      rispostaGiusta: "Falso",
+      risposteSbagliate: "Vero",
+      tipo: "risposta booleana",
+    },
+    {
+      domanda: "In Inception, quale oggetto usa Cobb come 'totem'?",
+      rispostaGiusta: "Una trottola",
+      risposteSbagliate: ["Una moneta", "Un dado", "Una chiave"],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda:
+        "La Città Incantata dello Studio Ghibli ha vinto l'Oscar nel 2003?",
+      rispostaGiusta: "Vero",
+      risposteSbagliate: "Falso",
+      tipo: "risposta booleana",
+    },
+    {
+      domanda: "Chi interpreta il protagonista nel film Forrest Gump?",
+      rispostaGiusta: "Tom Hanks",
+      risposteSbagliate: ["Richard Gere", "Harrison Ford", "Kevin Costner"],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda:
+        "Qual è il nome della terra immaginaria in cui è ambientato Avatar?",
+      rispostaGiusta: "Pandora",
+      risposteSbagliate: ["Naboo", "Asgard", "Arrakis"],
       tipo: "risposta multipla",
     },
   ],
   difficile: [
     {
-      domanda: "Chi ha diretto Pulp Fiction?",
-      rispostaGiusta: "Quentin Tarantino",
-      risposteSbagliate: ["Guy Ritchie", "David Fincher", "Ridley Scott"],
+      domanda:
+        "Qual è stato il primo lungometraggio animato a colori della storia (1937)?",
+      rispostaGiusta: "Biancaneve e i sette nani",
+      risposteSbagliate: ["Pinocchio", "Fantasia", "Bambi"],
       tipo: "risposta multipla",
     },
     {
-      domanda: "Fight Club è basato su un romanzo?",
+      domanda:
+        "Chi ha diretto il capolavoro del neorealismo italiano Ladri di biciclette?",
+      rispostaGiusta: "Vittorio De Sica",
+      risposteSbagliate: [
+        "Federico Fellini",
+        "Roberto Rossellini",
+        "Luchino Visconti",
+      ],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda: "Il protagonista di Casablanca si chiama Rick Blaine?",
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
     },
     {
       domanda:
-        "The Truman Show racconta la storia di un uomo che sa di essere osservato da telecamere?",
+        "Quale film detiene il record di 11 Oscar vinti, insieme a Ben-Hur e Titanic?",
+      rispostaGiusta: "Il Signore degli Anelli - Il ritorno del re",
+      risposteSbagliate: [
+        "Via col vento",
+        "West Side Story",
+        "La lista di Schindler",
+      ],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda:
+        "Emmanuel Lubezki ha vinto 5 Oscar consecutivi per la fotografia?",
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
+      tipo: "risposta booleana",
+    },
+    {
+      domanda:
+        "In quale film di Alfred Hitchcock la protagonista viene uccisa a metà pellicola?",
+      rispostaGiusta: "Psycho",
+      risposteSbagliate: [
+        "La donna che visse due volte",
+        "Gli uccelli",
+        "La finestra sul cortile",
+      ],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda:
+        "Brad Pitt rifiutò il ruolo di Neo in Matrix prima di Keanu Reeves?",
+      rispostaGiusta: "Falso",
+      risposteSbagliate: "Vero",
+      tipo: "risposta booleana",
+    },
+    {
+      domanda:
+        "Chi ha scritto la sceneggiatura di Quarto Potere insieme a Orson Welles?",
+      rispostaGiusta: "Herman J. Mankiewicz",
+      risposteSbagliate: ["Billy Wilder", "John Huston", "Howard Hawks"],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda:
+        "Qual è l'ultimo film completato da Stanley Kubrick prima della sua morte?",
+      rispostaGiusta: "Eyes Wide Shut",
+      risposteSbagliate: ["Full Metal Jacket", "Shining", "Arancia Meccanica"],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda: "Come si chiama il protagonista del film Memento?",
+      rispostaGiusta: "Leonard Shelby",
+      risposteSbagliate: ["Teddy Gammell", "John Doe", "Guy Pearce"],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda: "Il primo Festival del Cinema di Venezia si è svolto nel 1950?",
+      rispostaGiusta: "Falso",
+      risposteSbagliate: "Vero",
+      tipo: "risposta booleana",
+    },
+    {
+      domanda:
+        "Chi interpreta il ruolo di 'Il Brutto' (Tuco) ne Il buono, il brutto, il cattivo?",
+      rispostaGiusta: "Eli Wallach",
+      risposteSbagliate: [
+        "Clint Eastwood",
+        "Lee Van Cleef",
+        "Gian Maria Volonté",
+      ],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda: "Qual è il titolo del primo film sonoro della storia (1927)?",
+      rispostaGiusta: "Il cantante di jazz",
+      risposteSbagliate: [
+        "Luci della città",
+        "Metropolis",
+        "Il gabinetto del dottor Caligari",
+      ],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda:
+        "Meryl Streep detiene il record assoluto per il maggior numero di Oscar vinti come attrice?",
+      rispostaGiusta: "Falso",
+      risposteSbagliate: "Vero",
+      tipo: "risposta booleana",
+    },
+    {
+      domanda:
+        "Il film I Sette Samurai di Kurosawa ha ispirato I magnifici sette?",
+      rispostaGiusta: "Vero",
+      risposteSbagliate: "Falso",
       tipo: "risposta booleana",
     },
   ],
 }
 
-// PESCA DOMANDE
 // SALVO LE DOMANDE PESCATE IN QUESTO ARRAY, IN MODO CHE NON POSSANO USCIRE NUOVAMENTE
 let domandePescate = []
-
+// DIFFICOLTà DOMANDE (BISOGNA AGGIUNGERE INPUT CHE FA SELEZIONARE DIFFICOLTà)
+let difficoltà = "facile"
+// PARTENZA DI BASE DEL PUNTEGGIO
 let punteggio = 0
-
 // CONTEGGIO DOMANDA CORRENTE
 let numeroDomandaCorrente = 1
 
-// ESTRAZIONE DOMANDE
+// FUNZIONE ESTRAZIONE DOMANDE
 
 const estrazioneDomande = () => {
-  // PESCO UNA DOMANDA
-  const numeroCasualeFacile = Math.floor(Math.random() * domande.facile.length)
-  const numeroCasualeMedio = Math.floor(Math.random() * domande.medio.length)
-  const numeroCasualeDifficile = Math.floor(
-    Math.random() * domande.difficile.length,
-  )
-
-  // QUI è DOVE VA IL TESTO DELLA DOMANDA
-  const h2 = document.getElementById("testo-domanda")
-  h2.innerText = `${domande.facile[numeroCasualeFacile].domanda}`
-
-  //   QUI ASSEGNO LE RISPOSTE AI BOTTONI
+  // SELEZIONO BOTTONI
   const btn1 = document.getElementById("risposta-1")
   const btn2 = document.getElementById("risposta-2")
   const btn3 = document.getElementById("risposta-3")
   const btn4 = document.getElementById("risposta-4")
 
-  if (domande.facile[numeroCasualeFacile].tipo === "risposta multipla") {
-    btn1.innerText = `${domande.facile[numeroCasualeFacile].risposteSbagliate[1]}`
-    btn2.innerText = `${domande.facile[numeroCasualeFacile].risposteSbagliate[0]}`
-    btn3.classList.remove("no-display")
-    btn4.classList.remove("no-display")
-    btn3.innerText = `${domande.facile[numeroCasualeFacile].rispostaGiusta}`
-    btn4.innerText = `${domande.facile[numeroCasualeFacile].risposteSbagliate[2]}`
-  } else {
-    btn1.innerText = `${domande.facile[numeroCasualeFacile].rispostaGiusta}`
-    btn2.innerText = `${domande.facile[numeroCasualeFacile].risposteSbagliate}`
-    btn3.classList.add("no-display")
-    btn4.classList.add("no-display")
+  // FINE QUIZ
+  if (numeroDomandaCorrente > 10) {
+    // MESSO ALERT MOMENTANEAMENTE, VEDIAMO POI COSA AGGIUNGERCI
+    alert(`Quiz finito! Punteggio: ${punteggio}/10`)
+    return
   }
 
-  //   RISPOSTE E AGGIUNGI PUNTEGGIO
+  // PESCO UNA DOMANDA
+  const numeroCasualeDomande = Math.floor(
+    Math.random() * domande[difficoltà].length,
+  )
+  // CONTROLLO CHE NON SIA GIà USCITA
+  if (domandePescate.includes(numeroCasualeDomande)) {
+    return estrazioneDomande()
+  }
+  domandePescate.push(numeroCasualeDomande)
 
-  const risposta1 = document.getElementById("risposta-1")
-  risposta1.addEventListener("click", function () {
-    if (
-      risposta1.innerText === domande.facile[numeroCasualeFacile].rispostaGiusta
-    ) {
-      punteggio += 1
-      console.log(punteggio)
-    }
-  })
+  // ASSEGNAZIONE DOMANDA ALL'H2 E RISPOSTE AI BOTTONI
+  if (difficoltà === "facile") {
+    // QUI è DOVE VA IL TESTO DELLA DOMANDA
+    const h2 = document.getElementById("testo-domanda")
+    h2.innerText = `${domande.facile[numeroCasualeDomande].domanda}`
 
-  const risposta2 = document.getElementById("risposta-2")
-  risposta2.addEventListener("click", function () {
-    if (
-      risposta2.innerText === domande.facile[numeroCasualeFacile].rispostaGiusta
-    ) {
-      punteggio += 1
-      console.log(punteggio)
+    //   QUI ASSEGNO LE RISPOSTE AI BOTTONI
+    if (domande.facile[numeroCasualeDomande].tipo === "risposta multipla") {
+      btn1.innerText = `${domande.facile[numeroCasualeDomande].risposteSbagliate[1]}`
+      btn2.innerText = `${domande.facile[numeroCasualeDomande].risposteSbagliate[0]}`
+      btn3.classList.remove("no-display")
+      btn4.classList.remove("no-display")
+      btn3.innerText = `${domande.facile[numeroCasualeDomande].rispostaGiusta}`
+      btn4.innerText = `${domande.facile[numeroCasualeDomande].risposteSbagliate[2]}`
+    } else {
+      btn1.innerText = `${domande.facile[numeroCasualeDomande].rispostaGiusta}`
+      btn2.innerText = `${domande.facile[numeroCasualeDomande].risposteSbagliate}`
+      btn3.classList.add("no-display")
+      btn4.classList.add("no-display")
     }
-  })
 
-  const risposta3 = document.getElementById("risposta-3")
-  risposta3.addEventListener("click", function () {
-    if (
-      risposta3.innerText === domande.facile[numeroCasualeFacile].rispostaGiusta
-    ) {
-      punteggio += 1
-      console.log(punteggio)
+    //   CONTROLLO SE RISPOSTA è GIUSTA E IN CASO ASSEGNO I PUNTI
+    const risposta1 = document.getElementById("risposta-1")
+    risposta1.onclick = function () {
+      if (
+        risposta1.innerText ===
+        domande.facile[numeroCasualeDomande].rispostaGiusta
+      ) {
+        punteggio += 1
+        console.log(punteggio)
+      }
     }
-  })
 
-  const risposta4 = document.getElementById("risposta-4")
-  risposta4.addEventListener("click", function () {
-    if (
-      risposta4.innerText === domande.facile[numeroCasualeFacile].rispostaGiusta
-    ) {
-      punteggio += 1
-      console.log(punteggio)
+    const risposta2 = document.getElementById("risposta-2")
+    risposta2.onclick = function () {
+      if (
+        risposta2.innerText ===
+        domande.facile[numeroCasualeDomande].rispostaGiusta
+      ) {
+        punteggio += 1
+        console.log(punteggio)
+      }
     }
-  })
+
+    const risposta3 = document.getElementById("risposta-3")
+    risposta3.onclick = function () {
+      if (
+        risposta3.innerText ===
+        domande.facile[numeroCasualeDomande].rispostaGiusta
+      ) {
+        punteggio += 1
+        console.log(punteggio)
+      }
+    }
+
+    const risposta4 = document.getElementById("risposta-4")
+    risposta4.onclick = function () {
+      if (
+        risposta4.innerText ===
+        domande.facile[numeroCasualeDomande].rispostaGiusta
+      ) {
+        punteggio += 1
+        console.log(punteggio)
+      }
+    }
+  }
 
   // AGGIORNAMENTO NUMERO DOMANDE BASE PAGINA
 
-  questionsNum = document.querySelector("#numero-domande P")
+  constquestionsNum = document.querySelector("#numero-domande P")
   questionsNum.innerText = `QUESTION ${numeroDomandaCorrente}/10`
   numeroDomandaCorrente += 1
 }
