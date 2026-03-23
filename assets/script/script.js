@@ -42,19 +42,14 @@ const inizioContoRovescia = () => {
 // window.addEventListener("load", inizioContoRovescia)
 // inizioContoRovescia() decommentare per vedere il timer partire
 
-<<<<<<< Updated upstream
 const formSubmit = (e) => {
   e.preventDefault();
 };
 
 const form = document.querySelector("form");
 form.addEventListener("submit", formSubmit);
-=======
 // Gestione form
 
 const formValidation = (e) => {
   e.preventDefault();
 };
-const form = document.querySelector("form");
-form.addEventListener("submit", formValidation);
->>>>>>> Stashed changes
