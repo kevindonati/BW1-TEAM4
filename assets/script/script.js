@@ -41,28 +41,6 @@ const inizioContoRovescia = () => {
 // window.addEventListener("load", inizioContoRovescia)
 // inizioContoRovescia() decommentare per vedere il timer partire
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 // AGGIORNAMENTO NUMERO DOMANDE BASE PAGINA
 let numeri = 1
 const updateNumDomande = () => {
@@ -70,3 +48,11 @@ const updateNumDomande = () => {
   questionsNum.innerText = `QUESTION ${numeri}/10`
   numeri += 1
 }
+// Gestione form
+
+const formSubmit = (e) => {
+  e.preventDefault()
+}
+
+const form = document.querySelector("form")
+form.addEventListener("submit", formSubmit)
