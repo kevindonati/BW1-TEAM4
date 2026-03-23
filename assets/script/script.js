@@ -1,3 +1,5 @@
+// ANIMAZIONE DEL TIMER
+
 const tempoTimer = 10 // Durata del timer
 
 let tempoRimanente = tempoTimer
