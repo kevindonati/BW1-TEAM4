@@ -1,0 +1,116 @@
+/* IMPOSTAZIONI GENERALI */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.17em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+h5 {
+  font-size: 0.83em;
+}
+
+h6 {
+  font-size: 0.67em;
+}
+
+q,
+blockquote,
+p {
+  line-height: 1.3em;
+}
+
+q::before {
+  content: "“";
+}
+
+q::after {
+  content: "”";
+}
+
+blockquote {
+  padding: 1em 2em;
+}
+
+blockquote::before {
+  content: "«";
+}
+
+blockquote::after {
+  content: "»";
+}
+
+p,
+ul,
+ol {
+  margin: 1em 0;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+ul,
+ol {
+  margin-left: 3em;
+}
+
+ul {
+  list-style-type: circle;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+li {
+  line-height: 1.2em;
+}
+
+dl {
+  margin: 0;
+}
+
+dd {
+  padding-left: 3em;
+}
+
+td,
+th {
+  padding: 5px 10px;
+}
