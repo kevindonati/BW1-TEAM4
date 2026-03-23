@@ -119,6 +119,8 @@ let numeroDomandaCorrente = 1;
 const checkNumeroDomande = () => {
   if (numeroDomandaCorrente > 11) {
     alert("TEST FINITO");
+    // Reindirizza alla pagina dei risultati
+    window.location.href = "pagina-risultati-risposte.html";
   }
 };
 
