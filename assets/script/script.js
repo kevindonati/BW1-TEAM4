@@ -41,6 +41,28 @@ const inizioContoRovescia = () => {
 // window.addEventListener("load", inizioContoRovescia)
 // inizioContoRovescia() decommentare per vedere il timer partire
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 // AGGIORNAMENTO NUMERO DOMANDE BASE PAGINA
 let numeri = 1
 const updateNumDomande = () => {
