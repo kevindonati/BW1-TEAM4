@@ -1,118 +1,112 @@
 //  POOL DOMANDE
-
-// DOMANDE FACILI
-
-const poolDomandeFacile = [
-  {
-    domanda: "Chi ha diretto Titanic?",
-    rispostaGiusta: "James Cameron",
-    risposteSbagliate: [
-      "Steven Spielberg",
-      "Christopher Nolan",
-      "Martin Scorsese",
-    ],
-    tipo: "risposta multipla",
-  },
-  {
-    domanda: "Darth Vader è il padre di Luke Skywalker?",
-    rispostaGiusta: "Vero",
-    risposteSbagliate: "Falso",
-    tipo: "risposta booleana",
-  },
-  {
-    domanda: "In quale film compare il personaggio di Jack Sparrow?",
-    rispostaGiusta: "Pirati dei Caraibi",
-    risposteSbagliate: ["Il Signore degli Anelli", "Harry Potter", "Avatar"],
-    tipo: "risposta multipla",
-  },
-  {
-    domanda: "Avatar è ambientato sul pianeta Pandora?",
-    rispostaGiusta: "Vero",
-    risposteSbagliate: "Falso",
-    tipo: "risposta booleana",
-  },
-  {
-    domanda: "Chi interpreta Iron Man nel Marvel Cinematic Universe?",
-    rispostaGiusta: "Robert Downey Jr.",
-    risposteSbagliate: ["Chris Evans", "Chris Hemsworth", "Mark Ruffalo"],
-    tipo: "risposta multipla",
-  },
-  {
-    domanda: "Il Gladiatore ha vinto l’Oscar come miglior film?",
-    rispostaGiusta: "Vero",
-    risposteSbagliate: "Falso",
-    tipo: "risposta booleana",
-  },
-  {
-    domanda: "In quale film troviamo il personaggio di Forrest Gump?",
-    rispostaGiusta: "Forrest Gump",
-    risposteSbagliate: [
-      "Steven Spielberg",
-      "Christopher Nolan",
-      "Martin Scorsese",
-    ],
-    tipo: "risposta multipla",
-  },
-]
-
-// DOMANDE MEDIO
-
-const poolDomandeMedio = [
-  {
-    domanda: "Quale di questi film è diretto da Christopher Nolan?",
-    rispostaGiusta: "Inception",
-    risposteSbagliate: ["Pulp Fiction", "Titanic", "Jurassic Park"],
-    tipo: "risposta multipla",
-  },
-  {
-    domanda: "Harry Potter e la Pietra Filosofale è il primo film della saga?",
-    rispostaGiusta: "Vero",
-    risposteSbagliate: "Falso",
-    tipo: "risposta booleana",
-  },
-  {
-    domanda: "Jurassic Park parla di dinosauri clonati?",
-    rispostaGiusta: "Vero",
-    risposteSbagliate: "Falso",
-    tipo: "risposta booleana",
-  },
-  {
-    domanda: "In The Avengers, chi è il leader del gruppo?",
-    rispostaGiusta: "Captain America",
-    risposteSbagliate: ["Iron Man", "Thor", "Hulk"],
-    tipo: "risposta multipla",
-  },
-  {
-    domanda: "Chi interpreta il protagonista in The Wolf of Wall Street?",
-    rispostaGiusta: "Leonardo DiCaprio",
-    risposteSbagliate: ["Brad Pitt", "Matt Damon", "Tom Cruise"],
-    tipo: "risposta multipla",
-  },
-]
-
-// DOMANDE DIFFICILE
-
-const poolDomandeDifficile = [
-  {
-    domanda: "Chi ha diretto Pulp Fiction?",
-    rispostaGiusta: "Quentin Tarantino",
-    risposteSbagliate: ["Guy Ritchie", "David Fincher", "Ridley Scott"],
-    tipo: "risposta multipla",
-  },
-  {
-    domanda: "Fight Club è basato su un romanzo?",
-    rispostaGiusta: "Vero",
-    risposteSbagliate: "Falso",
-    tipo: "risposta booleana",
-  },
-  {
-    domanda:
-      "The Truman Show racconta la storia di un uomo che sa di essere osservato da telecamere?",
-    rispostaGiusta: "Falso",
-    risposteSbagliate: "Vero",
-    tipo: "risposta booleana",
-  },
-]
+const domande = {
+  facile: [
+    {
+      domanda: "Chi ha diretto Titanic?",
+      rispostaGiusta: "James Cameron",
+      risposteSbagliate: [
+        "Steven Spielberg",
+        "Christopher Nolan",
+        "Martin Scorsese",
+      ],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda: "Darth Vader è il padre di Luke Skywalker?",
+      rispostaGiusta: "Vero",
+      risposteSbagliate: "Falso",
+      tipo: "risposta booleana",
+    },
+    {
+      domanda: "In quale film compare il personaggio di Jack Sparrow?",
+      rispostaGiusta: "Pirati dei Caraibi",
+      risposteSbagliate: ["Il Signore degli Anelli", "Harry Potter", "Avatar"],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda: "Avatar è ambientato sul pianeta Pandora?",
+      rispostaGiusta: "Vero",
+      risposteSbagliate: "Falso",
+      tipo: "risposta booleana",
+    },
+    {
+      domanda: "Chi interpreta Iron Man nel Marvel Cinematic Universe?",
+      rispostaGiusta: "Robert Downey Jr.",
+      risposteSbagliate: ["Chris Evans", "Chris Hemsworth", "Mark Ruffalo"],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda: "Il Gladiatore ha vinto l’Oscar come miglior film?",
+      rispostaGiusta: "Vero",
+      risposteSbagliate: "Falso",
+      tipo: "risposta booleana",
+    },
+    {
+      domanda: "In quale film troviamo il personaggio di Forrest Gump?",
+      rispostaGiusta: "Forrest Gump",
+      risposteSbagliate: [
+        "Steven Spielberg",
+        "Christopher Nolan",
+        "Martin Scorsese",
+      ],
+      tipo: "risposta multipla",
+    },
+  ],
+  medio: [
+    {
+      domanda: "Quale di questi film è diretto da Christopher Nolan?",
+      rispostaGiusta: "Inception",
+      risposteSbagliate: ["Pulp Fiction", "Titanic", "Jurassic Park"],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda:
+        "Harry Potter e la Pietra Filosofale è il primo film della saga?",
+      rispostaGiusta: "Vero",
+      risposteSbagliate: "Falso",
+      tipo: "risposta booleana",
+    },
+    {
+      domanda: "Jurassic Park parla di dinosauri clonati?",
+      rispostaGiusta: "Vero",
+      risposteSbagliate: "Falso",
+      tipo: "risposta booleana",
+    },
+    {
+      domanda: "In The Avengers, chi è il leader del gruppo?",
+      rispostaGiusta: "Captain America",
+      risposteSbagliate: ["Iron Man", "Thor", "Hulk"],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda: "Chi interpreta il protagonista in The Wolf of Wall Street?",
+      rispostaGiusta: "Leonardo DiCaprio",
+      risposteSbagliate: ["Brad Pitt", "Matt Damon", "Tom Cruise"],
+      tipo: "risposta multipla",
+    },
+  ],
+  difficile: [
+    {
+      domanda: "Chi ha diretto Pulp Fiction?",
+      rispostaGiusta: "Quentin Tarantino",
+      risposteSbagliate: ["Guy Ritchie", "David Fincher", "Ridley Scott"],
+      tipo: "risposta multipla",
+    },
+    {
+      domanda: "Fight Club è basato su un romanzo?",
+      rispostaGiusta: "Vero",
+      risposteSbagliate: "Falso",
+      tipo: "risposta booleana",
+    },
+    {
+      domanda:
+        "The Truman Show racconta la storia di un uomo che sa di essere osservato da telecamere?",
+      rispostaGiusta: "Falso",
+      risposteSbagliate: "Vero",
+      tipo: "risposta booleana",
+    },
+  ],
+}
 
 // PESCA DOMANDE
 // SALVO LE DOMANDE PESCATE IN QUESTO ARRAY, IN MODO CHE NON POSSANO USCIRE NUOVAMENTE
@@ -125,19 +119,15 @@ let numeroDomandaCorrente = 1
 
 const estrazioneDomande = () => {
   // PESCO UNA DOMANDA
-  const numeroCasualeFacile = Math.floor(
-    Math.random() * poolDomandeFacile.length,
-  )
-  const numeroCasualeMedio = Math.floor(Math.random() * poolDomandeMedio.length)
+  const numeroCasualeFacile = Math.floor(Math.random() * domande.facile.length)
+  const numeroCasualeMedio = Math.floor(Math.random() * domande.medio.length)
   const numeroCasualeDifficile = Math.floor(
-    Math.random() * poolDomandeDifficile.length,
+    Math.random() * domande.difficile.length,
   )
 
   // QUI è DOVE VA IL TESTO DELLA DOMANDA
   const h2 = document.getElementById("testo-domanda")
-  h2.innerText = `${poolDomandeFacile[numeroCasualeFacile].domanda}`
-
-  console.log(poolDomandeFacile[numeroCasualeFacile].risposteSbagliate.length)
+  h2.innerText = `${domande.facile[numeroCasualeFacile].domanda}`
 
   //   QUI ASSEGNO LE RISPOSTE AI BOTTONI
   const btn1 = document.getElementById("risposta-1")
@@ -145,16 +135,16 @@ const estrazioneDomande = () => {
   const btn3 = document.getElementById("risposta-3")
   const btn4 = document.getElementById("risposta-4")
 
-  if (poolDomandeFacile[numeroCasualeFacile].tipo === "risposta multipla") {
-    btn1.innerText = `${poolDomandeFacile[numeroCasualeFacile].risposteSbagliate[1]}`
-    btn2.innerText = `${poolDomandeFacile[numeroCasualeFacile].risposteSbagliate[0]}`
+  if (domande.facile[numeroCasualeFacile].tipo === "risposta multipla") {
+    btn1.innerText = `${domande.facile[numeroCasualeFacile].risposteSbagliate[1]}`
+    btn2.innerText = `${domande.facile[numeroCasualeFacile].risposteSbagliate[0]}`
     btn3.classList.remove("no-display")
     btn4.classList.remove("no-display")
-    btn3.innerText = `${poolDomandeFacile[numeroCasualeFacile].rispostaGiusta}`
-    btn4.innerText = `${poolDomandeFacile[numeroCasualeFacile].risposteSbagliate[2]}`
+    btn3.innerText = `${domande.facile[numeroCasualeFacile].rispostaGiusta}`
+    btn4.innerText = `${domande.facile[numeroCasualeFacile].risposteSbagliate[2]}`
   } else {
-    btn1.innerText = `${poolDomandeFacile[numeroCasualeFacile].rispostaGiusta}`
-    btn2.innerText = `${poolDomandeFacile[numeroCasualeFacile].risposteSbagliate}`
+    btn1.innerText = `${domande.facile[numeroCasualeFacile].rispostaGiusta}`
+    btn2.innerText = `${domande.facile[numeroCasualeFacile].risposteSbagliate}`
     btn3.classList.add("no-display")
     btn4.classList.add("no-display")
   }
