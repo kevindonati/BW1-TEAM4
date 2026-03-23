@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Results</title>
+    <link rel="stylesheet" src="./assets/style/normalize.css" />
+    <link rel="stylesheet" src="./assets/style/reset-style.css" />
+    <link rel="stylesheet" src="./assets/style/style-base.css" />
+    <link rel="stylesheet" src="assets/style/pagina-results.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <!-- TOP BAR - solo il logo -->
+        <div class="logo">
+          <!-- DIV con classe logo per i loghi di tutte le pagine -->
+          <img src="./assets/img/epicode_logo.png" />
+          <!-- img del logo -->
+        </div>
+      </header>
+      <main>
+        <!-- contenuto -->
+        <h2>Results</h2>
+        <!-- titolo -->
+
+        <p>The summary of your answers:</p>
+        <!-- paragrafo subito sotto -->
+        <h3>Correct</h3>
+        <p>66.7%</p>
+        <p>4/6 questions</p>
+        <!-- h3 da mettere a sinistra -->
+        <div class="grafico a torta">
+          <canvas id="grafico a torta"></canvas>
+          <!-- canvas è il tag per il grafico a torta, ma qui servirà JS -->
+          <p>
+            <!-- da mettere al centro del grafico a torta -->
+            Congratulations! You passed the exam. We'll send you the certificate
+            in few minutes. Check your email (including promotions/spam folder)
+          </p>
+        </div>
+
+        <h3>Wrong</h3>
+        <!-- da mettere a destra -->
+        <p>33.3%</p>
+        <p>2/6 questions</p>
+      </main>
+      <footer>
+        <button>RATE US</button>
+      </footer>
+    </div>
+  </body>
+</html>
