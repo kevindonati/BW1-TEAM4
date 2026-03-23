@@ -111,17 +111,12 @@ let domandePescate = []
 // CONTEGGIO DOMANDA CORRENTE
 let numeroDomandaCorrente = 1
 
-// PUNTEGGIO
-let punteggio = 0
-
 // ESTRAZIONE DOMANDE
 
 const estrazioneDomande = () => {
-  // PESCO UNA DOMANDA FACILE
+  // PESCO UNA DOMANDA
   const numeroCasualeFacile = Math.floor(Math.random() * domande.facile.length)
-  // PESCO UNA DOMANDA MEDIA
   const numeroCasualeMedio = Math.floor(Math.random() * domande.medio.length)
-  // PESCO UNA DOMANDA DIFFICILE
   const numeroCasualeDifficile = Math.floor(
     Math.random() * domande.difficile.length,
   )
@@ -193,7 +188,8 @@ const estrazioneDomande = () => {
   })
 
   // AGGIORNAMENTO NUMERO DOMANDE BASE PAGINA
-  const questionsNum = document.querySelector("#numero-domande P")
+
+  questionsNum = document.querySelector("#numero-domande P")
   questionsNum.innerText = `QUESTION ${numeroDomandaCorrente}/10`
   numeroDomandaCorrente += 1
 }
