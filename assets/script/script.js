@@ -40,3 +40,11 @@ const inizioContoRovescia = () => {
 
 // window.addEventListener("load", inizioContoRovescia)
 // inizioContoRovescia() decommentare per vedere il timer partire
+
+// AGGIORNAMENTO NUMERO DOMANDE BASE PAGINA
+let numeri = 1
+const updateNumDomande = () => {
+  questionsNum = document.querySelector("#numero-domande P")
+  questionsNum.innerText = `QUESTION ${numeri}/10`
+  numeri += 1
+}
