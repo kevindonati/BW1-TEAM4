@@ -1,0 +1,38 @@
+.timer-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+}
+/* SVG timer styling */
+.timer-svg {
+  transform: rotate(-90deg); /* Rotate to start progress from top */
+}
+
+/* Background circle */
+.timer-bg {
+  fill: none; /* No fill; only stroke */
+  stroke: #e0e0e0; /* Light gray background */
+  stroke-width: 8; /* Thickness of the circle */
+}
+
+/* Progress circle */
+.timer-progress {
+  fill: none;
+  stroke: #4caf50; /* Green progress color */
+  stroke-width: 8;
+  stroke-linecap: round; /* Rounded ends for the progress stroke */
+  /* Stroke-dasharray: Total length of the stroke (circumference) */
+  stroke-dasharray: 283; /* Circumference = 2πr (r=45 → 2*3.14*45 ≈ 283) */
+  stroke-dashoffset: 0; /* Start with full circle visible */
+  transition: stroke-dashoffset 1s linear; /* Smooth animation */
+}
+
+/* Time display text */
+.timer-text {
+  font-size: 24px;
+  font-weight: bold;
+  fill: #333; /* Text color */
+  text-anchor: middle; /* Center text horizontally */
+  dominant-baseline: middle; /* Center text vertically */
+}
