@@ -17,17 +17,15 @@
         <!-- Perchè a sinistra dell'header c'è un altro div con il cronometro -->
         <img src="./assets/img/epicode_logo.png" alt="Logo Epicode" />
       </div>
-      <div>
-        <!-- Div cronometro -->
-        <!-- Per modificarlo con CSS e JS  https://www.youtube.com/watch?v=C74_04bamJA-->
-        <svg viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="45"></circle>
-          <circle cx="50" cy="50" r="45"></circle>
-        </svg>
+      <div class="timer-container">
+        <!-- Div Timer -->
+        <!-- Per modificarlo con CSS e JS  https://www.youtube.com/watch?v=C74_04bamJA // https://www.javaspring.net/blog/how-to-create-a-circular-countdown-timer-using-html-css-or-javascript/-->
 
-        <small>SECONDS</small>
-        <span>16</span>
-        <small>REMAINING</small>
+        <svg class="timer-svg" viewBox="0 0 100 100">
+          <circle class="timer-bg" cx="50" cy="50" r="45"></circle>
+          <circle class="progresso-timer" cx="50" cy="50" r="45"></circle>
+        </svg>
+        <p class="numeri-timer">10</p>
       </div>
     </header>
     <main>
@@ -56,5 +54,6 @@
       </div>
     </main>
     <footer></footer>
+    <script src="./assets/script/script.js"></script>
   </body>
 </html>

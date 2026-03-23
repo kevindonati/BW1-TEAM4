@@ -2,3 +2,36 @@
   max-width: 1300px;
   margin: 0 auto;
 }
+
+/* Stile Timer  Rilavorabile*/
+
+.timer-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer-bg {
+  fill: none; /* No fill; only stroke */
+  stroke: #e0e0e0; /* Light gray background */
+  stroke-width: 8; /* Thickness of the circle */
+}
+
+.progresso-timer {
+  fill: none;
+  stroke: #4caf50; /* linea Countdown */
+  stroke-width: 8;
+  stroke-linecap: round; /* fine linea arrotondato*/
+  /* Stroke-dasharray: Total length of the stroke (circumference) */
+  stroke-dasharray: 283; /* Circumference = 2πr (r=45 → 2*3.14*45 ≈ 283) */
+  stroke-dashoffset: 0; /* Start with full circle visible */
+  transition: stroke-dashoffset 1s linear; /* animazione */
+}
+
+.numeri-timer {
+  position: absolute;
+}
