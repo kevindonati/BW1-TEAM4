@@ -1,10 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap");
+
 .no-display {
   display: none;
+}
+body {
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.logo {
+  width: 10em;
 }
 
 .contenitore-generale {
   max-width: 1300px;
   margin: 0 auto;
+  padding: 4em;
+}
+
+h1 {
+  font-size: 4em;
+  margin-bottom: 0.5em;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h4 {
+  color: #d20094;
+  font-size: 1.2em;
+}
+
+#welcome-section {
+  max-width: 70%;
+}
+
+.titles-bold {
+  font-weight: 700;
 }
 
 /* Stile Timer  Rilavorabile*/
