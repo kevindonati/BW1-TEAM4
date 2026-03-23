@@ -44,11 +44,7 @@ const domande = {
     {
       domanda: "In quale film troviamo il personaggio di Forrest Gump?",
       rispostaGiusta: "Forrest Gump",
-      risposteSbagliate: [
-        "Steven Spielberg",
-        "Christopher Nolan",
-        "Martin Scorsese",
-      ],
+      risposteSbagliate: ["Cast Away", "The Truman Show", "Fight Club"],
       tipo: "risposta multipla",
     },
   ],
@@ -115,12 +111,17 @@ let domandePescate = []
 // CONTEGGIO DOMANDA CORRENTE
 let numeroDomandaCorrente = 1
 
+// PUNTEGGIO
+let punteggio = 0
+
 // ESTRAZIONE DOMANDE
 
 const estrazioneDomande = () => {
-  // PESCO UNA DOMANDA
+  // PESCO UNA DOMANDA FACILE
   const numeroCasualeFacile = Math.floor(Math.random() * domande.facile.length)
+  // PESCO UNA DOMANDA MEDIA
   const numeroCasualeMedio = Math.floor(Math.random() * domande.medio.length)
+  // PESCO UNA DOMANDA DIFFICILE
   const numeroCasualeDifficile = Math.floor(
     Math.random() * domande.difficile.length,
   )
@@ -148,9 +149,51 @@ const estrazioneDomande = () => {
     btn3.classList.add("no-display")
     btn4.classList.add("no-display")
   }
-  // AGGIORNAMENTO NUMERO DOMANDE BASE PAGINA
 
-  questionsNum = document.querySelector("#numero-domande P")
+  //   RISPOSTE E AGGIUNGI PUNTEGGIO
+
+  const risposta1 = document.getElementById("risposta-1")
+  risposta1.addEventListener("click", function () {
+    if (
+      risposta1.innerText === domande.facile[numeroCasualeFacile].rispostaGiusta
+    ) {
+      punteggio += 1
+      console.log(punteggio)
+    }
+  })
+
+  const risposta2 = document.getElementById("risposta-2")
+  risposta2.addEventListener("click", function () {
+    if (
+      risposta2.innerText === domande.facile[numeroCasualeFacile].rispostaGiusta
+    ) {
+      punteggio += 1
+      console.log(punteggio)
+    }
+  })
+
+  const risposta3 = document.getElementById("risposta-3")
+  risposta3.addEventListener("click", function () {
+    if (
+      risposta3.innerText === domande.facile[numeroCasualeFacile].rispostaGiusta
+    ) {
+      punteggio += 1
+      console.log(punteggio)
+    }
+  })
+
+  const risposta4 = document.getElementById("risposta-4")
+  risposta4.addEventListener("click", function () {
+    if (
+      risposta4.innerText === domande.facile[numeroCasualeFacile].rispostaGiusta
+    ) {
+      punteggio += 1
+      console.log(punteggio)
+    }
+  })
+
+  // AGGIORNAMENTO NUMERO DOMANDE BASE PAGINA
+  const questionsNum = document.querySelector("#numero-domande P")
   questionsNum.innerText = `QUESTION ${numeroDomandaCorrente}/10`
   numeroDomandaCorrente += 1
 }
