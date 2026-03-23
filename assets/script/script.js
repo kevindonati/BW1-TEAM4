@@ -106,95 +106,106 @@ const domande = {
       tipo: "risposta booleana",
     },
   ],
-}
+};
 
 // PESCA DOMANDE
 // SALVO LE DOMANDE PESCATE IN QUESTO ARRAY, IN MODO CHE NON POSSANO USCIRE NUOVAMENTE
-let domandePescate = []
+let domandePescate = [];
 
 // CONTEGGIO DOMANDA CORRENTE
-let numeroDomandaCorrente = 1
+let numeroDomandaCorrente = 1;
+
+// FUNZIONE CHE PERMETTE DI ESEGUIRE SOLO 10 DOMANDE
+const checkNumeroDomande = () => {
+  if (numeroDomandaCorrente > 11) {
+    alert("TEST FINITO");
+    // Reindirizza alla pagina dei risultati
+    window.location.href = "pagina-risultati-risposte.html";
+  }
+};
 
 // ESTRAZIONE DOMANDE
 
 const estrazioneDomande = () => {
   // PESCO UNA DOMANDA
-  const numeroCasualeFacile = Math.floor(Math.random() * domande.facile.length)
-  const numeroCasualeMedio = Math.floor(Math.random() * domande.medio.length)
+  const numeroCasualeFacile = Math.floor(Math.random() * domande.facile.length);
+  const numeroCasualeMedio = Math.floor(Math.random() * domande.medio.length);
   const numeroCasualeDifficile = Math.floor(
     Math.random() * domande.difficile.length,
-  )
+  );
 
   // QUI è DOVE VA IL TESTO DELLA DOMANDA
-  const h2 = document.getElementById("testo-domanda")
-  h2.innerText = `${domande.facile[numeroCasualeFacile].domanda}`
+  const h2 = document.getElementById("testo-domanda");
+  h2.innerText = `${domande.facile[numeroCasualeFacile].domanda}`;
 
   //   QUI ASSEGNO LE RISPOSTE AI BOTTONI
-  const btn1 = document.getElementById("risposta-1")
-  const btn2 = document.getElementById("risposta-2")
-  const btn3 = document.getElementById("risposta-3")
-  const btn4 = document.getElementById("risposta-4")
+  const btn1 = document.getElementById("risposta-1");
+  const btn2 = document.getElementById("risposta-2");
+  const btn3 = document.getElementById("risposta-3");
+  const btn4 = document.getElementById("risposta-4");
 
   if (domande.facile[numeroCasualeFacile].tipo === "risposta multipla") {
-    btn1.innerText = `${domande.facile[numeroCasualeFacile].risposteSbagliate[1]}`
-    btn2.innerText = `${domande.facile[numeroCasualeFacile].risposteSbagliate[0]}`
-    btn3.classList.remove("no-display")
-    btn4.classList.remove("no-display")
-    btn3.innerText = `${domande.facile[numeroCasualeFacile].rispostaGiusta}`
-    btn4.innerText = `${domande.facile[numeroCasualeFacile].risposteSbagliate[2]}`
+    btn1.innerText = `${domande.facile[numeroCasualeFacile].risposteSbagliate[1]}`;
+    btn2.innerText = `${domande.facile[numeroCasualeFacile].risposteSbagliate[0]}`;
+    btn3.classList.remove("no-display");
+    btn4.classList.remove("no-display");
+    btn3.innerText = `${domande.facile[numeroCasualeFacile].rispostaGiusta}`;
+    btn4.innerText = `${domande.facile[numeroCasualeFacile].risposteSbagliate[2]}`;
   } else {
-    btn1.innerText = `${domande.facile[numeroCasualeFacile].rispostaGiusta}`
-    btn2.innerText = `${domande.facile[numeroCasualeFacile].risposteSbagliate}`
-    btn3.classList.add("no-display")
-    btn4.classList.add("no-display")
+    btn1.innerText = `${domande.facile[numeroCasualeFacile].rispostaGiusta}`;
+    btn2.innerText = `${domande.facile[numeroCasualeFacile].risposteSbagliate}`;
+    btn3.classList.add("no-display");
+    btn4.classList.add("no-display");
   }
   // AGGIORNAMENTO NUMERO DOMANDE BASE PAGINA
 
-  questionsNum = document.querySelector("#numero-domande P")
-  questionsNum.innerText = `QUESTION ${numeroDomandaCorrente}/10`
-  numeroDomandaCorrente += 1
-}
+  questionsNum = document.querySelector("#numero-domande P");
+  questionsNum.innerText = `QUESTION ${numeroDomandaCorrente}/10`;
+  numeroDomandaCorrente += 1;
+
+  checkNumeroDomande();
+};
 
 // ANIMAZIONE DEL TIMER
 
-const tempoTimer = 10 // Durata del timer
+const tempoTimer = 10; // Durata del timer
 
-let tempoRimanente = tempoTimer
-let contoAllaRovescia
+let tempoRimanente = tempoTimer;
+let contoAllaRovescia;
 
-const numeriTimer = document.querySelector(".numeri-timer")
-const progressoTimer = document.querySelector(".progresso-timer")
-const lineaCountdown = 283 // numero per fare la diminuire la linea in maniera giusta
+const numeriTimer = document.querySelector(".numeri-timer");
+const progressoTimer = document.querySelector(".progresso-timer");
+const lineaCountdown = 283; // numero per fare la diminuire la linea in maniera giusta
 
 const updateCountdown = () => {
   // costante che cambia il numero e il colore della linea quando viene cambiata
-  numeriTimer.innerText = tempoRimanente
+  numeriTimer.innerText = tempoRimanente;
 
   const updateLinea =
-    lineaCountdown - (tempoRimanente / tempoTimer) * lineaCountdown
-  progressoTimer.style.strokeDashoffset = updateLinea
+    lineaCountdown - (tempoRimanente / tempoTimer) * lineaCountdown;
+  progressoTimer.style.strokeDashoffset = updateLinea;
   // Formula matematica che server per far diminure la linea in modo giusto. NON CHIEDERE mi fido di chi l'ha scritta
-}
+};
 
 const tempoFinito = () => {
-  alert("tempo scaduto!")
+  alert("tempo scaduto!");
   // qui andranno inseriti i comportamenti di quello che succederà una volta che il timer sarà scaduto
-} // alert che avverte che il timer è scaduto
+}; // alert che avverte che il timer è scaduto
 
 const inizioContoRovescia = () => {
-  tempoRimanente = tempoTimer
-  updateCountdown()
+  tempoRimanente = tempoTimer;
+  updateCountdown();
 
   contoAllaRovescia = setInterval(() => {
-    tempoRimanente--
-    updateCountdown()
+    tempoRimanente--;
+    updateCountdown();
 
     if (tempoRimanente <= 0) {
-      clearInterval(contoAllaRovescia)
-      tempoFinito()
+      clearInterval(contoAllaRovescia);
+      tempoFinito();
     }
-  }, 1000) //setInterval è un medtodo che richiama la funzione ogni tot secondi. va per millisecondi, 1000 = 1 secondo
-}
+  }, 1000); //setInterval è un medtodo che richiama la funzione ogni tot secondi. va per millisecondi, 1000 = 1 secondo
+};
 
 // window.addEventListener("load", inizioContoRovescia)
 // inizioContoRovescia() decommentare per vedere il timer partire
@@ -202,8 +213,8 @@ const inizioContoRovescia = () => {
 // Gestione form
 
 const formSubmit = (e) => {
-  e.preventDefault()
-}
+  e.preventDefault();
+};
 
-const form = document.querySelector("form")
-form.addEventListener("submit", formSubmit)
+const form = document.querySelector("form");
+form.addEventListener("submit", formSubmit);
