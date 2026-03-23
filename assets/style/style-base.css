@@ -1,4 +1,11 @@
 .contenitore-generale {
   max-width: 1300px;
   margin: 0 auto;
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+}
+
+.logo {
+  width: 10em;
+  padding: 4em;
 }
