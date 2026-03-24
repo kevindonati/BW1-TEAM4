@@ -19,7 +19,7 @@
         <section id="welcome-section">
           <h1>
             Welcome to <br />
-            <span class="titles-bold">your exam</span>
+            <span class="text-bold">your exam</span>
           </h1>
           <!-- istruzioni -->
           <h4>Instructions</h4>
@@ -29,9 +29,15 @@
           </p>
           <!-- lista -->
           <ul>
-            <li>Each question is timed and can only be answered once.</li>
-            <li>Changing browser tab or opening other windows will invalidate the question.</li>
-            <li>This exam will take approx. 0-5 minutes.</li>
+            <li>
+              Each question is <span class="text-bold">timed</span> and can only be
+              <span class="text-bold">answered once.</span>
+            </li>
+            <li>
+              Changing browser tab or opening other windows will
+              <span class="text-bold">invalidate the question.</span>
+            </li>
+            <li>This exam will take approx. <span class="text-bold">0-5 minutes.</span></li>
           </ul>
         </section>
         <!-- Promessa e bottone -->
@@ -39,7 +45,9 @@
           <form action="./pagina-test.html">
             <input type="checkbox" id="checkbox-promise" required />
             <label for="checkbox-promise"
-              >I promise to answer myself without help from anyone</label
+              ><span class="text-bold"
+                >I promise to answer myself without help from anyone</span
+              ></label
             >
             <button class="btn" type="submit">proceed</button>
           </form>
