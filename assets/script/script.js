@@ -339,7 +339,7 @@ let punteggio = 0
 // CONTEGGIO DOMANDA CORRENTE
 let numeroDomandaCorrente = 1
 // DIFFICOLTà BASE
-let difficoltà = "facile"
+// let difficoltà = "facile"
 
 // FUNZIONE ESTRAZIONE DOMANDE
 
@@ -351,6 +351,10 @@ const estrazioneDomande = () => {
   const btn3 = document.getElementById("risposta-3")
   const btn4 = document.getElementById("risposta-4")
   const btnRisultati = document.querySelector("#numero-domande button")
+  const containerTimer = document.querySelector(".timer-container")
+
+  const formDifficoltà = document.getElementById("form-difficoltà")
+  formDifficoltà.innerHTML = ""
 
   // FINE QUIZ
   if (numeroDomandaCorrente > 10) {
@@ -360,14 +364,29 @@ const estrazioneDomande = () => {
     btn3.classList.add("no-display")
     btn4.classList.add("no-display")
     btnRisultati.classList.remove("no-display")
-
+    containerTimer.innerHTML = ""
     return
+  }
+
+  let isProgressiva
+
+  if (difficoltà === "progressiva") {
+    isProgressiva = true
+    if (punteggio <= 3) {
+      difficoltà = "facile"
+    } else if (punteggio < 7) {
+      difficoltà = "medio"
+    } else {
+      difficoltà = "difficile"
+    }
   }
 
   // PESCO UNA DOMANDA
   const numeroCasualeDomande = Math.floor(
     Math.random() * domande[difficoltà].length,
   )
+  console.log(punteggio)
+  console.log(difficoltà)
   // CONTROLLO CHE NON SIA GIà USCITA
   if (domandePescate.includes(numeroCasualeDomande)) {
     return estrazioneDomande()
@@ -452,6 +471,9 @@ const estrazioneDomande = () => {
   numeroDomandaCorrente += 1
 
   // inizioContoRovescia()
+  if (isProgressiva) {
+    difficoltà = "progressiva"
+  }
 }
 
 // ANIMAZIONE DEL TIMER
