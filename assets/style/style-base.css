@@ -1,12 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap");
 
-.no-display {
-  display: none;
-}
-
-.text-center {
-  text-align: center;
-}
+/* Regole generali */
 body {
   background-image: url(../img/bg.jpg);
   background-size: cover;
@@ -17,19 +11,8 @@ body {
   font-style: normal;
 }
 
-.logo {
-  width: 10em;
-}
-
-.contenitore-generale {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 4em;
-}
-
-h1 {
-  font-size: 4em;
-  margin-bottom: 0.5em;
+header {
+  margin-bottom: 10em;
 }
 
 h1,
@@ -39,6 +22,12 @@ h3 {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  line-height: 0.8em;
+}
+
+h1 {
+  font-size: 4em;
+  margin-bottom: 0.7em;
 }
 
 h2 {
@@ -47,44 +36,147 @@ h2 {
 }
 h4 {
   color: #d20094;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.no-display {
+  display: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.logo {
+  display: inline-block;
+  width: fit-content;
+}
+
+.logo img {
+  width: 10em;
+}
+
+label {
   font-size: 1.2em;
 }
 
-#welcome-section {
-  max-width: 70%;
+.contenitore-generale {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 4em;
 }
 
-.titles-bold {
-  font-weight: 700;
+.btn {
+  text-transform: uppercase;
+  padding: 0.8em 3em;
+  border: none;
+  background-color: #00ffff;
+  color: #00363a;
+  font-weight: 600;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 15px 5px #00ffff80;
+}
+
+/*CSS Welcome Page*/
+
+#welcome-section ul {
+  margin: 3em 1em;
+  list-style-type: disc;
+}
+#welcome-section li {
+  margin-bottom: 0.5em;
+}
+
+#form-welcome {
+  margin-top: 6em;
+}
+
+#form-welcome button {
+  margin-left: 8em;
+  display: inline-block;
+}
+
+/* CSS pagina test*/
+
+#form-difficoltà #scelta {
+  font-size: 1.3em;
+  margin: 0 1em 0 0.2em;
+  border: none;
+  border-radius: 0;
+  background-color: #00ffff;
+  color: #00363a;
+  text-transform: uppercase;
+}
+
+#form-domande button {
+  width: 20%;
+  padding: 0.8em 3em;
+  border: none;
+  box-shadow:
+    0 -1px 0px 2px #ffffff97,
+    0 -1px 0px 2px #ffffffe8;
+  border-radius: 50px;
+  color: #fff;
+  background-color: #ffffff4a;
+  font-weight: 600;
+  font-size: 1em;
+  cursor: pointer;
+  margin-bottom: 1em;
+}
+
+#form-domande button:hover {
+  background: linear-gradient(to bottom, #d20094, #900080);
+}
+
+#scelta option {
+  font-size: 0.9em;
+}
+
+#form-difficoltà .btn {
+  margin: 2em 0;
+  display: block;
 }
 
 /* Stile Timer  Rilavorabile*/
 
 .timer-container {
-  position: relative;
   width: 120px;
   height: 120px;
-  margin: 0 auto;
+  margin: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  float: right;
+  margin: 10px;
 }
 
 .timer-bg {
   fill: none; /* No fill; only stroke */
-  stroke: #e0e0e0; /* Light gray background */
+  stroke: #e0e0e07d; /* Light gray background */
   stroke-width: 8; /* Thickness of the circle */
 }
 
 .progresso-timer {
   fill: none;
-  stroke: #4caf50; /* linea Countdown */
-  stroke-width: 8;
+  stroke: #00ffff; /* linea Countdown */
+  stroke-width: 10;
   stroke-linecap: round; /* fine linea arrotondato*/
   /* Stroke-dasharray: Total length of the stroke (circumference) */
   stroke-dasharray: 283; /* Circumference = 2πr (r=45 → 2*3.14*45 ≈ 283) */
   stroke-dashoffset: 0; /* Start with full circle visible */
   transition: stroke-dashoffset 1s linear; /* animazione */
+}
+.numeri-timer {
+  font-family: "Outfit", sans-serif;
+  font-size: 3em;
 }
 
 .numeri-timer {
@@ -123,19 +215,4 @@ textarea::placeholder {
 
 #stelline {
   margin-bottom: 6em;
-}
-
-.btn {
-  padding: 12px 25px;
-  border: none;
-  background: linear-gradient(90deg, #00e5ff, #00bcd4);
-  color: #00363a;
-  filter: blur(px);
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  box-shadow: 0 5px 15px rgba(0, 229, 255, 0.4);
 }

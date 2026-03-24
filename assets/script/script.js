@@ -533,7 +533,7 @@ form.addEventListener("submit", function (e) {
   punteggio = 0
   numeroDomandaCorrente = 1
   estrazioneDomande()
-  inizioContoRovescia()
+  // inizioContoRovescia()
 })
 
 // Gestione form

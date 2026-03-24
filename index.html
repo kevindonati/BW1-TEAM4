@@ -11,40 +11,45 @@
   <body>
     <div class="contenitore-generale">
       <header>
-        <!-- Logo -->
-        <img class="logo" src="./assets/img/epicode_logo.png" alt="" />
+        <div class="logo">
+          <img src="./assets/img/epicode_logo.png" alt="Logo Epicode" />
+        </div>
       </header>
       <main>
         <!-- titolo -->
         <section id="welcome-section">
           <h1>
             Welcome to <br />
-            <span class="titles-bold">your exam</span>
+            <span class="text-bold">your exam</span>
           </h1>
           <!-- istruzioni -->
           <h4>Instructions</h4>
           <p>
-            We don't expect most engineers to know the answers to all of these
-            questions, so don't worry if you're unsure of a few of them.
+            We don't expect most engineers to know the answers to all of these questions, so don't
+            worry if you're unsure of a few of them.
           </p>
           <!-- lista -->
           <ul>
-            <li>Each question is timed and can only be answered once.</li>
             <li>
-              Changing browser tab or opening other windows will invalidate the
-              question.
+              Each question is <span class="text-bold">timed</span> and can only be
+              <span class="text-bold">answered once.</span>
             </li>
-            <li>This exam will take approx. 0-5 minutes.</li>
+            <li>
+              Changing browser tab or opening other windows will
+              <span class="text-bold">invalidate the question.</span>
+            </li>
+            <li>This exam will take approx. <span class="text-bold">0-5 minutes.</span></li>
           </ul>
         </section>
         <!-- Promessa e bottone -->
         <section>
-          <form action="./pagina-test.html">
-            <input type="checkbox" id="checkbox-promise" required />
-            <label for="checkbox-promise"
-              >I promise to answer myself without help from anyone</label
-            >
-            <button type="submit">proceed</button>
+          <form id="form-welcome" action="./pagina-test.html">
+            <label for="checkbox-promise">
+              <input type="checkbox" id="checkbox-promise" required />
+              <span class="checkmark"></span>
+              <span class="text-bold">I promise to answer myself without help from anyone</span>
+            </label>
+            <button class="btn" type="submit">proceed</button>
           </form>
         </section>
       </main>
