@@ -7,28 +7,6 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   text-align: center;
 }
-header {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 10px;
-}
-
-.logo {
-  height: 50px;
-}
-
-h1 {
-  font-size: 26px;
-  margin-bottom: 12px;
-}
-
-.subtitle {
-  font-size: 14px;
-  color: #cfd8dc;
-  margin-bottom: 20px;
-  line-height: 1.4;
-}
 
 .stars {
   margin-bottom: 20px;
