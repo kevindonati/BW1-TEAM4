@@ -632,6 +632,7 @@ const riempiCorrezioneDomande = (domandePescate) => {
     divRisultati.appendChild(pRisultati)
     console.log(domandePescate[x].domanda)
     p.innerText = domandePescate[x].domanda
+
     if (domandePescate[x].tipo === "risposta multipla") {
       divRisultati.innerHTML = `
       <ol>

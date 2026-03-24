@@ -41,7 +41,9 @@
             <option value="difficile">difficile</option>
             <option value="progressiva">progressiva</option>
           </select>
-          <button class="btn" type="submit">Inizia il quiz</button>
+          <button onclick="inizioContoRovescia()" class="btn" type="submit">
+            Inizia il quiz
+          </button>
         </form>
         <!-- Div delle domande del quiz -->
         <div id="testo-domanda">
@@ -50,21 +52,31 @@
         <!-- Form con i button per le risposte-->
         <form id="form-domande">
           <div>
-            <button class="no-display" id="risposta-1" type="button">Risposta 1</button>
+            <button class="no-display" id="risposta-1" type="button">
+              Risposta 1
+            </button>
           </div>
           <div>
-            <button class="no-display" id="risposta-2" type="button">Risposta 2</button>
+            <button class="no-display" id="risposta-2" type="button">
+              Risposta 2
+            </button>
           </div>
           <div>
-            <button class="no-display" id="risposta-3" type="button">Risposta 3</button>
+            <button class="no-display" id="risposta-3" type="button">
+              Risposta 3
+            </button>
           </div>
           <div>
-            <button class="no-display" id="risposta-4" type="button">Risposta 4</button>
+            <button class="no-display" id="risposta-4" type="button">
+              Risposta 4
+            </button>
           </div>
         </form>
         <!-- Div ordine domande -->
         <div id="numero-domande">
-          <button class="no-display" onclick="mostraRisultati()">Scopri i risultati</button>
+          <button class="no-display" onclick="mostraRisultati()">
+            Scopri i risultati
+          </button>
           <!-- Bottone di prova per vedere l'innerText cambiare DA RIMUOVERE-->
           <p>QUESTION 1/10</p>
         </div>
