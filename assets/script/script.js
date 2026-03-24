@@ -355,7 +355,7 @@ const estrazioneDomande = () => {
 
   const formDifficoltà = document.getElementById("form-difficoltà")
   formDifficoltà.innerHTML = ""
-
+  console.log(domandePescate)
   // FINE QUIZ
   if (numeroDomandaCorrente > 10) {
     h2.innerText = `Controlla i tuoi risultati`
@@ -385,13 +385,11 @@ const estrazioneDomande = () => {
   const numeroCasualeDomande = Math.floor(
     Math.random() * domande[difficoltà].length,
   )
-  console.log(punteggio)
-  console.log(difficoltà)
   // CONTROLLO CHE NON SIA GIà USCITA
   if (domandePescate.includes(numeroCasualeDomande)) {
     return estrazioneDomande()
   }
-  domandePescate.push(numeroCasualeDomande)
+  domandePescate.push(domande[difficoltà][numeroCasualeDomande])
 
   // ASSEGNAZIONE DOMANDA ALL'H2 E RISPOSTE AI BOTTONI
   const domandaInBaseADifficoltà = domande[difficoltà][numeroCasualeDomande]
@@ -591,8 +589,67 @@ const mostraRisultati = function () {
         <div class="button-wrapper">
           <a href="./paginafeedback.html"><button>RATE US</button></a>
         </div>
-      </main>`
+      </main>
+      
+      <section>
+          <h2>Correzione domande</h2>
+        </section>
 
+        <section>
+          <div>
+            <h4>Corrette</h4>
+            <h2>${punteggio}</h2>
+          </div>
+          <div>
+            <h4>Sbagliate</h4>
+            <h2>${10 - punteggio}</h2>
+          </div>
+          <div>
+            <h4>Totali</h4>
+            <h2>${10}</h2>
+          </div>
+        </section>
+
+        <section id="box-domande-correzione">
+        </section>
+      
+      `
+  riempiCorrezioneDomande(domandePescate)
+}
+
+const riempiCorrezioneDomande = (domandePescate) => {
+  for (let x = 0; x < 10; x++) {
+    const section = document.getElementById("box-domande-correzione")
+    const div = document.createElement("div")
+    const p = document.createElement("p")
+    const i = document.createElement("i")
+    const divRisultati = document.createElement("div")
+    const pRisultati = document.createElement("p")
+    section.appendChild(div)
+    div.appendChild(p)
+    div.appendChild(i)
+    div.appendChild(divRisultati)
+    divRisultati.appendChild(pRisultati)
+    console.log(domandePescate[x].domanda)
+    p.innerText = domandePescate[x].domanda
+    if (domandePescate[x].tipo === "risposta multipla") {
+      divRisultati.innerHTML = `
+      <ol>
+        <li>${domandePescate[x].rispostaGiusta} <i class="fas fa-check"></i></li>
+        <li>${domandePescate[x].risposteSbagliate[0]}</li>
+        <li>${domandePescate[x].risposteSbagliate[1]}</li>
+        <li>${domandePescate[x].risposteSbagliate[2]}</li>
+      </ol>
+   `
+    } else {
+      divRisultati.innerHTML = `
+      <ol>
+        <li>${domandePescate[x].rispostaGiusta} <i class="fas fa-check"></i></li>
+        <li>${domandePescate[x].risposteSbagliate}</li>
+      </ol>
+   `
+    }
+  }
   // GRAFICO TORTA
 
   const xValues = ["True", "False"]
