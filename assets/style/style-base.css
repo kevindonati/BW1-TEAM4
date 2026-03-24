@@ -42,7 +42,7 @@ h3 {
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 3em;
   font-weight: 700;
 }
 h4 {
@@ -127,14 +127,14 @@ textarea::placeholder {
 .btn {
   padding: 12px 25px;
   border: none;
-  background: linear-gradient(90deg, #00e5ff, #00bcd4);
   color: #00363a;
   filter: blur(px);
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
+  background-color: #00ffff;
 }
 
 .btn:hover {
-  box-shadow: 0 5px 15px rgba(0, 229, 255, 0.4);
+  box-shadow: 0 0 10px 5px #00ffff;
 }
