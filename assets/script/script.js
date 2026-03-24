@@ -289,26 +289,52 @@ let punteggio = 0
 // CONTEGGIO DOMANDA CORRENTE
 let numeroDomandaCorrente = 1
 // DIFFICOLTà BASE
-let difficoltà = "facile"
+// let difficoltà = "facile"
 
 // FUNZIONE ESTRAZIONE DOMANDE
 
 const estrazioneDomande = () => {
   // SELEZIONO BOTTONI
+  const h2 = document.querySelector("#testo-domanda h2")
   const btn1 = document.getElementById("risposta-1")
   const btn2 = document.getElementById("risposta-2")
   const btn3 = document.getElementById("risposta-3")
   const btn4 = document.getElementById("risposta-4")
+  const btnRisultati = document.querySelector("#numero-domande button")
+  const containerTimer = document.querySelector(".timer-container")
+
+  const formDifficoltà = document.getElementById("form-difficoltà")
+  formDifficoltà.innerHTML = ""
 
   // FINE QUIZ
   if (numeroDomandaCorrente > 10) {
-    // MESSO ALERT MOMENTANEAMENTE, VEDIAMO POI COSA AGGIUNGERCI
-    alert(`Quiz finito! Punteggio: ${punteggio}/10`)
+    h2.innerText = `Controlla i tuoi risultati`
+    btn1.classList.add("no-display")
+    btn2.classList.add("no-display")
+    btn3.classList.add("no-display")
+    btn4.classList.add("no-display")
+    btnRisultati.classList.remove("no-display")
+    containerTimer.innerHTML = ""
     return
+  }
+
+  let isProgressiva
+
+  if (difficoltà === "progressiva") {
+    isProgressiva = true
+    if (punteggio <= 3) {
+      difficoltà = "facile"
+    } else if (punteggio < 7) {
+      difficoltà = "medio"
+    } else {
+      difficoltà = "difficile"
+    }
   }
 
   // PESCO UNA DOMANDA
   const numeroCasualeDomande = Math.floor(Math.random() * domande[difficoltà].length)
+  console.log(punteggio)
+  console.log(difficoltà)
   // CONTROLLO CHE NON SIA GIà USCITA
   if (domandePescate.includes(numeroCasualeDomande)) {
     return estrazioneDomande()
@@ -318,7 +344,6 @@ const estrazioneDomande = () => {
   // ASSEGNAZIONE DOMANDA ALL'H2 E RISPOSTE AI BOTTONI
   const domandaInBaseADifficoltà = domande[difficoltà][numeroCasualeDomande]
   // QUI è DOVE VA IL TESTO DELLA DOMANDA
-  const h2 = document.querySelector("#testo-domanda h2")
   h2.innerText = domandaInBaseADifficoltà.domanda
 
   //   QUI ASSEGNO LE RISPOSTE AI BOTTONI
@@ -394,6 +419,9 @@ const estrazioneDomande = () => {
   numeroDomandaCorrente += 1
 
   // inizioContoRovescia()
+  if (isProgressiva) {
+    difficoltà = "progressiva"
+  }
 }
 
 // ANIMAZIONE DEL TIMER
@@ -417,6 +445,7 @@ const updateCountdown = () => {
 }
 
 const tempoFinito = () => {
+  if (numeroDomandaCorrente > 9) return
   estrazioneDomande()
   inizioContoRovescia()
 
@@ -430,7 +459,6 @@ const inizioContoRovescia = () => {
   contoAllaRovescia = setInterval(() => {
     tempoRimanente--
     updateCountdown()
-    console.log(tempoRimanente)
 
     if (tempoRimanente <= 0) {
       clearInterval(contoAllaRovescia)
@@ -462,3 +490,79 @@ form.addEventListener("submit", function (e) {
 // const formSubmit = (e) => {
 //   e.preventDefault()
 // }
+
+// GRAFICO
+
+// CAMBIA PAGINA IN MOSTRA RISULTATI
+
+const mostraRisultati = function () {
+  const contenitore = document.getElementById("cambia-pagina")
+  contenitore.innerHTML = ""
+  contenitore.innerHTML = `<header>
+        <div>
+          <img class="logo" src="./assets/img/epicode_logo.png" />
+        </div>
+      </header>
+
+      <main class="results-page">
+        <section class="titolo">
+          <h1>Results</h1>
+          <p>The summary of your answers:</p>
+        </section>
+
+        <section class="content">
+          <div class="side side-left">
+            <h2>Correct</h2>
+            <div class="percent">${(punteggio / 10) * 100}%</div>
+            <p>${punteggio}/10 questions</p>
+          </div>
+
+          <div class="grafico">
+            <canvas id="grafico-a-torta" style="width: 100%; max-width: 600px">
+              <div class="chart-inner">
+                <h3>Congratulations!</h3>
+                <p class="highlight">You passed the exam.</p>
+                <p>We'll send you the certificate in few minutes.</p>
+                <p>Check your email (including promotions / spam folder)</p>
+              </div>
+            </canvas>
+          </div>
+
+          <div class="side side-right">
+            <h2>Wrong</h2>
+            <div class="percent">${((10 - punteggio) / 10) * 100}%</div>
+            <p>${10 - punteggio}/10 questions</p>
+          </div>
+        </section>
+
+        <div class="button-wrapper">
+          <a href="./paginafeedback.html"><button>RATE US</button></a>
+        </div>
+      </main>`
+
+  // GRAFICO TORTA
+
+  const xValues = ["True", "False"]
+  const yValues = [punteggio, 10 - punteggio]
+  const barColors = ["#00aba9", "#b91d47"]
+
+  const ctx = document.getElementById("grafico-a-torta")
+
+  new Chart(ctx, {
+    type: "doughnut",
+    data: {
+      labels: xValues,
+      datasets: [
+        {
+          backgroundColor: barColors,
+          data: yValues,
+        },
+      ],
+    },
+    options: {
+      plugins: {
+        legend: { display: false },
+      },
+    },
+  })
+}
