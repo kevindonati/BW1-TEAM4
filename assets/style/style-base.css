@@ -11,6 +11,10 @@ body {
   font-style: normal;
 }
 
+header {
+  margin-bottom: 10em;
+}
+
 h1,
 h2,
 h3 {
@@ -49,6 +53,11 @@ h4 {
 }
 
 .logo {
+  display: inline-block;
+  width: fit-content;
+}
+
+.logo img {
   width: 10em;
 }
 
@@ -91,33 +100,40 @@ h4 {
   text-align: end;
 }
 
+/* CSS pagina test*/
+
 /* Stile Timer  Rilavorabile*/
 
 .timer-container {
-  position: relative;
   width: 120px;
   height: 120px;
-  margin: 0 auto;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  float: right;
+  margin: 10px;
 }
 
 .timer-bg {
   fill: none; /* No fill; only stroke */
-  stroke: #e0e0e0; /* Light gray background */
+  stroke: #e0e0e07d; /* Light gray background */
   stroke-width: 8; /* Thickness of the circle */
 }
 
 .progresso-timer {
   fill: none;
-  stroke: #4caf50; /* linea Countdown */
-  stroke-width: 8;
+  stroke: #00ffff; /* linea Countdown */
+  stroke-width: 10;
   stroke-linecap: round; /* fine linea arrotondato*/
   /* Stroke-dasharray: Total length of the stroke (circumference) */
   stroke-dasharray: 283; /* Circumference = 2πr (r=45 → 2*3.14*45 ≈ 283) */
   stroke-dashoffset: 0; /* Start with full circle visible */
   transition: stroke-dashoffset 1s linear; /* animazione */
+}
+.numeri-timer {
+  font-family: "Outfit", sans-serif;
+  font-size: 3em;
 }
 
 .numeri-timer {
