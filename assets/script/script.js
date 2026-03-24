@@ -631,7 +631,7 @@ const riempiCorrezioneDomande = (domandePescate) => {
     div.appendChild(divRisultati)
     divRisultati.appendChild(pRisultati)
     console.log(domandePescate[x].domanda)
-    p.innerText = domandePescate[x].domanda
+    p.innerText = `Domanda ${x + 1}: ${domandePescate[x].domanda}`
 
     if (domandePescate[x].tipo === "risposta multipla") {
       divRisultati.innerHTML = `
