@@ -131,6 +131,10 @@ label {
   margin-bottom: 1em;
 }
 
+#form-domande button:hover {
+  background: linear-gradient(to bottom, #d20094, #900080);
+}
+
 #scelta option {
   font-size: 0.9em;
 }
