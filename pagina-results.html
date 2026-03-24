@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./assets/style/normalize.css" />
     <link rel="stylesheet" href="./assets/style/style-base.css" />
     <link rel="stylesheet" href="pagina-results.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0"></script>
   </head>
   <body>
     <div class="contenitore-generale">
@@ -31,14 +32,14 @@
           </div>
 
           <div class="grafico">
-            <div class="grafico a torta">
+            <canvas id="grafico-a-torta" style="width: 100%; max-width: 600px">
               <div class="chart-inner">
                 <h3>Congratulations!</h3>
                 <p class="highlight">You passed the exam.</p>
                 <p>We'll send you the certificate in few minutes.</p>
                 <p>Check your email (including promotions / spam folder)</p>
               </div>
-            </div>
+            </canvas>
           </div>
 
           <div class="side side-right">
@@ -53,5 +54,6 @@
         </div>
       </main>
     </div>
+    <script src="./assets/script/grafico.js"></script>
   </body>
 </html>
