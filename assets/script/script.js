@@ -330,185 +330,186 @@ const domande = {
       tipo: "risposta booleana",
     },
   ],
-}
+};
 
 // SALVO LE DOMANDE PESCATE IN QUESTO ARRAY, IN MODO CHE NON POSSANO USCIRE NUOVAMENTE
-let domandePescate = []
+let domandePescate = [];
 // PARTENZA DI BASE DEL PUNTEGGIO
-let punteggio = 0
+let punteggio = 0;
 // CONTEGGIO DOMANDA CORRENTE
-let numeroDomandaCorrente = 1
+let numeroDomandaCorrente = 1;
 // DIFFICOLTà BASE
-let difficoltà = "facile"
+let difficoltà = "facile";
 
 // FUNZIONE ESTRAZIONE DOMANDE
 
 const estrazioneDomande = () => {
   // SELEZIONO BOTTONI
-  const btn1 = document.getElementById("risposta-1")
-  const btn2 = document.getElementById("risposta-2")
-  const btn3 = document.getElementById("risposta-3")
-  const btn4 = document.getElementById("risposta-4")
+  const btn1 = document.getElementById("risposta-1");
+  const btn2 = document.getElementById("risposta-2");
+  const btn3 = document.getElementById("risposta-3");
+  const btn4 = document.getElementById("risposta-4");
 
   // FINE QUIZ
   if (numeroDomandaCorrente > 10) {
     // MESSO ALERT MOMENTANEAMENTE, VEDIAMO POI COSA AGGIUNGERCI
-    alert(`Quiz finito! Punteggio: ${punteggio}/10`)
-    return
+    alert(`Quiz finito! Punteggio: ${punteggio}/10`);
+    window.location.href = "pagina-results.html";
+    return;
   }
 
   // PESCO UNA DOMANDA
   const numeroCasualeDomande = Math.floor(
     Math.random() * domande[difficoltà].length,
-  )
+  );
   // CONTROLLO CHE NON SIA GIà USCITA
   if (domandePescate.includes(numeroCasualeDomande)) {
-    return estrazioneDomande()
+    return estrazioneDomande();
   }
-  domandePescate.push(numeroCasualeDomande)
+  domandePescate.push(numeroCasualeDomande);
 
   // ASSEGNAZIONE DOMANDA ALL'H2 E RISPOSTE AI BOTTONI
-  const domandaInBaseADifficoltà = domande[difficoltà][numeroCasualeDomande]
+  const domandaInBaseADifficoltà = domande[difficoltà][numeroCasualeDomande];
   // QUI è DOVE VA IL TESTO DELLA DOMANDA
-  const h2 = document.querySelector("#testo-domanda h2")
-  h2.innerText = domandaInBaseADifficoltà.domanda
+  const h2 = document.querySelector("#testo-domanda h2");
+  h2.innerText = domandaInBaseADifficoltà.domanda;
 
   //   QUI ASSEGNO LE RISPOSTE AI BOTTONI
   if (domandaInBaseADifficoltà.tipo === "risposta multipla") {
-    btn1.classList.remove("no-display")
-    btn2.classList.remove("no-display")
-    btn3.classList.remove("no-display")
-    btn4.classList.remove("no-display")
+    btn1.classList.remove("no-display");
+    btn2.classList.remove("no-display");
+    btn3.classList.remove("no-display");
+    btn4.classList.remove("no-display");
     // MISCHIO LE RISPOSTE IN ORDINE CASUALE
     const risposteMischiate = [
       domandaInBaseADifficoltà.rispostaGiusta,
       ...domandaInBaseADifficoltà.risposteSbagliate,
-    ].sort(() => Math.random() - 0.5)
+    ].sort(() => Math.random() - 0.5);
 
-    btn1.innerText = risposteMischiate[0]
-    btn2.innerText = risposteMischiate[1]
-    btn3.innerText = risposteMischiate[2]
-    btn4.innerText = risposteMischiate[3]
+    btn1.innerText = risposteMischiate[0];
+    btn2.innerText = risposteMischiate[1];
+    btn3.innerText = risposteMischiate[2];
+    btn4.innerText = risposteMischiate[3];
   } else {
-    btn1.classList.remove("no-display")
-    btn2.classList.remove("no-display")
-    btn1.innerText = domandaInBaseADifficoltà.rispostaGiusta
-    btn2.innerText = domandaInBaseADifficoltà.risposteSbagliate
-    btn3.classList.add("no-display")
-    btn4.classList.add("no-display")
+    btn1.classList.remove("no-display");
+    btn2.classList.remove("no-display");
+    btn1.innerText = domandaInBaseADifficoltà.rispostaGiusta;
+    btn2.innerText = domandaInBaseADifficoltà.risposteSbagliate;
+    btn3.classList.add("no-display");
+    btn4.classList.add("no-display");
   }
 
   //   CONTROLLO SE RISPOSTA è GIUSTA E IN CASO ASSEGNO I PUNTI
-  const risposta1 = document.getElementById("risposta-1")
+  const risposta1 = document.getElementById("risposta-1");
   risposta1.onclick = function () {
     if (risposta1.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-      punteggio += 1
+      punteggio += 1;
     }
-    estrazioneDomande()
-    clearInterval(contoAllaRovescia)
-    inizioContoRovescia()
-  }
+    estrazioneDomande();
+    clearInterval(contoAllaRovescia);
+    inizioContoRovescia();
+  };
 
-  const risposta2 = document.getElementById("risposta-2")
+  const risposta2 = document.getElementById("risposta-2");
   risposta2.onclick = function () {
     if (risposta2.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-      punteggio += 1
+      punteggio += 1;
     }
-    estrazioneDomande()
-    clearInterval(contoAllaRovescia)
-    inizioContoRovescia()
-  }
+    estrazioneDomande();
+    clearInterval(contoAllaRovescia);
+    inizioContoRovescia();
+  };
 
-  const risposta3 = document.getElementById("risposta-3")
+  const risposta3 = document.getElementById("risposta-3");
   risposta3.onclick = function () {
     if (risposta3.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-      punteggio += 1
+      punteggio += 1;
     }
-    estrazioneDomande()
-    clearInterval(contoAllaRovescia)
-    inizioContoRovescia()
-  }
+    estrazioneDomande();
+    clearInterval(contoAllaRovescia);
+    inizioContoRovescia();
+  };
 
-  const risposta4 = document.getElementById("risposta-4")
+  const risposta4 = document.getElementById("risposta-4");
   risposta4.onclick = function () {
     if (risposta4.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-      punteggio += 1
+      punteggio += 1;
     }
-    estrazioneDomande()
-    clearInterval(contoAllaRovescia)
-    inizioContoRovescia()
-  }
+    estrazioneDomande();
+    clearInterval(contoAllaRovescia);
+    inizioContoRovescia();
+  };
 
   // AGGIORNAMENTO NUMERO DOMANDE BASE PAGINA
 
-  const questionsNum = document.querySelector("#numero-domande P")
-  questionsNum.innerText = `QUESTION ${numeroDomandaCorrente}/10`
-  numeroDomandaCorrente += 1
+  const questionsNum = document.querySelector("#numero-domande P");
+  questionsNum.innerText = `QUESTION ${numeroDomandaCorrente}/10`;
+  numeroDomandaCorrente += 1;
 
   // inizioContoRovescia()
-}
+};
 
 // ANIMAZIONE DEL TIMER
 
-const tempoTimer = 10 // Durata del timer
+const tempoTimer = 10; // Durata del timer
 
-let tempoRimanente = tempoTimer
-let contoAllaRovescia
+let tempoRimanente = tempoTimer;
+let contoAllaRovescia;
 
-const numeriTimer = document.querySelector(".numeri-timer")
-const progressoTimer = document.querySelector(".progresso-timer")
-const lineaCountdown = 283 // numero per fare la diminuire la linea in maniera giusta
+const numeriTimer = document.querySelector(".numeri-timer");
+const progressoTimer = document.querySelector(".progresso-timer");
+const lineaCountdown = 283; // numero per fare la diminuire la linea in maniera giusta
 
 const updateCountdown = () => {
   // costante che cambia il numero e il colore della linea quando viene cambiata
-  numeriTimer.innerText = tempoRimanente
+  numeriTimer.innerText = tempoRimanente;
 
   const updateLinea =
-    lineaCountdown - (tempoRimanente / tempoTimer) * lineaCountdown
-  progressoTimer.style.strokeDashoffset = updateLinea
+    lineaCountdown - (tempoRimanente / tempoTimer) * lineaCountdown;
+  progressoTimer.style.strokeDashoffset = updateLinea;
   // Formula matematica che server per far diminure la linea in modo giusto. NON CHIEDERE mi fido di chi l'ha scritta
-}
+};
 
 const tempoFinito = () => {
-  estrazioneDomande()
-  inizioContoRovescia()
+  estrazioneDomande();
+  inizioContoRovescia();
 
   // qui andranno inseriti i comportamenti di quello che succederà una volta che il timer sarà scaduto
-} // alert che avverte che il timer è scaduto
+}; // alert che avverte che il timer è scaduto
 
 const inizioContoRovescia = () => {
-  tempoRimanente = tempoTimer
-  updateCountdown()
+  tempoRimanente = tempoTimer;
+  updateCountdown();
 
   contoAllaRovescia = setInterval(() => {
-    tempoRimanente--
-    updateCountdown()
-    console.log(tempoRimanente)
+    tempoRimanente--;
+    updateCountdown();
+    console.log(tempoRimanente);
 
     if (tempoRimanente <= 0) {
-      clearInterval(contoAllaRovescia)
-      tempoFinito()
+      clearInterval(contoAllaRovescia);
+      tempoFinito();
     }
-  }, 1000) //setInterval è un medtodo che richiama la funzione ogni tot secondi. va per millisecondi, 1000 = 1 secondo
-}
+  }, 1000); //setInterval è un medtodo che richiama la funzione ogni tot secondi. va per millisecondi, 1000 = 1 secondo
+};
 
 // window.addEventListener("load", inizioContoRovescia)
 // inizioContoRovescia() //decommentare per vedere il timer partire
 
 // SELEZIONA DIFFICOLTà E INIZIA IL QUIZ
-const form = document.querySelector("#form-difficoltà")
-const select = document.querySelector("#scelta")
+const form = document.querySelector("#form-difficoltà");
+const select = document.querySelector("#scelta");
 
 form.addEventListener("submit", function (e) {
-  e.preventDefault()
-  difficoltà = select.value
+  e.preventDefault();
+  difficoltà = select.value;
 
-  domandePescate = []
-  punteggio = 0
-  numeroDomandaCorrente = 1
-  estrazioneDomande()
-  inizioContoRovescia()
-})
+  domandePescate = [];
+  punteggio = 0;
+  numeroDomandaCorrente = 1;
+  estrazioneDomande();
+  inizioContoRovescia();
+});
 
 // Gestione form
 
