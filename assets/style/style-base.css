@@ -68,9 +68,6 @@ h4 {
   font-size: 1.2em;
   cursor: pointer;
   transition: 0.3s;
-}
-
-.btn:hover {
   box-shadow: 0 0 15px 5px #00ffff80;
 }
 
@@ -82,6 +79,16 @@ h4 {
 }
 #welcome-section li {
   margin-bottom: 0.5em;
+}
+
+#form-welcome {
+  margin-top: 6em;
+}
+
+#form-welcome button {
+  margin-left: 8em;
+  display: inline-block;
+  text-align: end;
 }
 
 /* Stile Timer  Rilavorabile*/
