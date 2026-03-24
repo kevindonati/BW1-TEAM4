@@ -47,7 +47,7 @@ h2 {
 }
 h4 {
   color: #d20094;
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 #welcome-section {
@@ -127,9 +127,9 @@ textarea::placeholder {
 .btn {
   padding: 12px 25px;
   border: none;
+  border-radius: 8px;
   background: linear-gradient(90deg, #00e5ff, #00bcd4);
   color: #00363a;
-  filter: blur(px);
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
