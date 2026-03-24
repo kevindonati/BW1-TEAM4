@@ -14,7 +14,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
       integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer" />
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <div id="cambia-pagina" class="contenitore-generale">
@@ -42,7 +43,9 @@
             <option value="progressiva">progressiva</option>
           </select>
 
-          <button onclick="inizioContoRovescia()" class="btn" type="submit">Inizia il quiz</button>
+          <button onclick="inizioContoRovescia()" class="btn" type="submit">
+            Inizia il quiz
+          </button>
         </form>
         <!-- Div delle domande del quiz -->
         <div id="testo-domanda">
@@ -51,26 +54,36 @@
         <!-- Form con i button per le risposte-->
         <form id="form-domande">
           <div>
-            <button class="no-display" id="risposta-1" type="button">Risposta 1</button>
+            <button class="no-display" id="risposta-1" type="button">
+              Risposta 1
+            </button>
           </div>
           <div>
-            <button class="no-display" id="risposta-2" type="button">Risposta 2</button>
+            <button class="no-display" id="risposta-2" type="button">
+              Risposta 2
+            </button>
           </div>
           <div>
-            <button class="no-display" id="risposta-3" type="button">Risposta 3</button>
+            <button class="no-display" id="risposta-3" type="button">
+              Risposta 3
+            </button>
           </div>
           <div>
-            <button class="no-display" id="risposta-4" type="button">Risposta 4</button>
+            <button class="no-display" id="risposta-4" type="button">
+              Risposta 4
+            </button>
           </div>
         </form>
         <!-- Div ordine domande -->
         <div id="numero-domande">
-          <button class="no-display" onclick="mostraRisultati()">Scopri i risultati</button>
+          <button class="no-display" onclick="mostraRisultati()">
+            Scopri i risultati
+          </button>
           <!-- Bottone di prova per vedere l'innerText cambiare DA RIMUOVERE-->
           <p>QUESTION 1/10</p>
-          <p>
-            &#42; Difficoltà progressiva: con l'aumentare delle risposte corrette, anche la
-            difficoltà aumenterà.
+          <p id="spiegazione-progressiva">
+            &#42; Difficoltà progressiva: con l'aumentare delle risposte
+            corrette, anche la difficoltà aumenterà.
           </p>
         </div>
       </main>
