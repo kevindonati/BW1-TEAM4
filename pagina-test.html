@@ -15,7 +15,11 @@
           <!-- Logo Epicode in alto a sinistra -->
           <!-- A questo div metterei una classe differente rispetto agli altri div con il logo epicode -->
           <!-- Perchè a sinistra dell'header c'è un altro div con il cronometro -->
-          <img class="logo" src="./assets/img/epicode_logo.png" alt="Logo Epicode" />
+          <img
+            class="logo"
+            src="./assets/img/epicode_logo.png"
+            alt="Logo Epicode"
+          />
         </div>
         <div class="timer-container">
           <!-- Div Timer -->
@@ -29,34 +33,55 @@
         </div>
       </header>
       <main>
+        <!-- SELEZIONA DIFFICOLTà -->
+        <form id="form-difficoltà">
+          <label for="scelta">Scegli un'opzione di difficoltà:</label>
+          <select name="scelta" id="scelta">
+            <option value="facile">facile</option>
+            <option value="medio">medio</option>
+            <option value="difficile">difficile</option>
+          </select>
+          <button type="submit">Inizia il quiz</button>
+        </form>
         <!-- Div delle domande del quiz -->
         <div id="testo-domanda">
-          <h2>Qual è il film più visto nel 2025?</h2>
+          <h2>Seleziona la difficoltà e premi il bottone per iniziare</h2>
         </div>
         <!-- Form con i button per le risposte-->
         <form id="form-domande">
           <div>
-            <button id="risposta-1" type="button">Risposta 1</button>
+            <button class="no-display" id="risposta-1" type="button">
+              Risposta 1
+            </button>
           </div>
           <div>
-            <button id="risposta-2" type="button">Risposta 2</button>
+            <button class="no-display" id="risposta-2" type="button">
+              Risposta 2
+            </button>
           </div>
           <div>
-            <button id="risposta-3" type="button">Risposta 3</button>
+            <button class="no-display" id="risposta-3" type="button">
+              Risposta 3
+            </button>
           </div>
           <div>
-            <button id="risposta-4" type="button">Risposta 4</button>
+            <button class="no-display" id="risposta-4" type="button">
+              Risposta 4
+            </button>
           </div>
         </form>
         <!-- Div ordine domande -->
         <div id="numero-domande">
-          <button onclick="estrazioneDomande()">Prossima domanda</button>
+          <button class="no-display" onclick="estrazioneDomande()">
+            Prossima domanda
+          </button>
           <!-- Bottone di prova per vedere l'innerText cambiare DA RIMUOVERE-->
           <p>QUESTION 1/10</p>
         </div>
       </main>
       <footer></footer>
-      <script src="./assets/script/script.js"></script>
     </div>
+    <script src="./assets/script/script-timer.js"></script>
+    <script src="./assets/script/script.js"></script>
   </body>
 </html>
