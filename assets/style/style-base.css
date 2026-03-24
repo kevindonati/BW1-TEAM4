@@ -3,6 +3,10 @@
 .no-display {
   display: none;
 }
+
+.text-center {
+  text-align: center;
+}
 body {
   background-image: url(../img/bg.jpg);
   background-size: cover;
@@ -37,6 +41,10 @@ h3 {
   font-style: normal;
 }
 
+h2 {
+  font-size: 2em;
+  font-weight: 700;
+}
 h4 {
   color: #d20094;
   font-size: 1.2em;
@@ -81,4 +89,52 @@ h4 {
 
 .numeri-timer {
   position: absolute;
+}
+
+/*CSS pagina feedback */
+
+.feedback-box {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+textarea {
+  width: 100%;
+  background: transparent;
+  color: white;
+  resize: none;
+  font-size: 14px;
+  border-style: none none solid none;
+  border-bottom: 2px solid #d20094;
+}
+
+textarea::placeholder {
+  color: #90a4ae;
+  font-family: "Inter", sans-serif;
+}
+
+.subtitle {
+  font-size: 1.5em;
+  color: #cfd8dc;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+#stelline {
+  margin-bottom: 6em;
+}
+
+.btn {
+  padding: 12px 25px;
+  border: none;
+  background: linear-gradient(90deg, #00e5ff, #00bcd4);
+  color: #00363a;
+  filter: blur(px);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  box-shadow: 0 5px 15px rgba(0, 229, 255, 0.4);
 }
