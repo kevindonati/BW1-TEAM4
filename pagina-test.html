@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="./assets/style/reset-style.css" />
     <link rel="stylesheet" href="./assets/style/normalize.css" />
     <link rel="stylesheet" href="./assets/style/style-base.css" />
+    <link rel="stylesheet" href="pagina-results.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0"></script>
   </head>
   <body>
-    <div class="contenitore-generale">
+    <div id="cambia-pagina" class="contenitore-generale">
       <header>
         <div>
           <!-- Logo Epicode in alto a sinistra -->
@@ -72,8 +74,8 @@
         </form>
         <!-- Div ordine domande -->
         <div id="numero-domande">
-          <button class="no-display" onclick="estrazioneDomande()">
-            Prossima domanda
+          <button class="no-display" onclick="mostraRisultati()">
+            Scopri i risultati
           </button>
           <!-- Bottone di prova per vedere l'innerText cambiare DA RIMUOVERE-->
           <p>QUESTION 1/10</p>
@@ -81,7 +83,6 @@
       </main>
       <footer></footer>
     </div>
-    <script src="./assets/script/script-timer.js"></script>
     <script src="./assets/script/script.js"></script>
   </body>
 </html>
