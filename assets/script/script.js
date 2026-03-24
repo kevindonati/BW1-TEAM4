@@ -403,44 +403,40 @@ const estrazioneDomande = () => {
   risposta1.onclick = function () {
     if (risposta1.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
       punteggio += 1
-      estrazioneDomande()
-    } else {
-      estrazioneDomande()
     }
+    estrazioneDomande()
     clearInterval(contoAllaRovescia)
+    inizioContoRovescia()
   }
 
   const risposta2 = document.getElementById("risposta-2")
   risposta2.onclick = function () {
     if (risposta2.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
       punteggio += 1
-      estrazioneDomande()
-    } else {
-      estrazioneDomande()
     }
+    estrazioneDomande()
     clearInterval(contoAllaRovescia)
+    inizioContoRovescia()
   }
 
   const risposta3 = document.getElementById("risposta-3")
   risposta3.onclick = function () {
     if (risposta3.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
       punteggio += 1
-      estrazioneDomande()
-    } else {
-      estrazioneDomande()
     }
+    estrazioneDomande()
     clearInterval(contoAllaRovescia)
+    inizioContoRovescia()
   }
 
   const risposta4 = document.getElementById("risposta-4")
   risposta4.onclick = function () {
     if (risposta4.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
       punteggio += 1
-      estrazioneDomande()
-    } else {
-      estrazioneDomande()
     }
+    estrazioneDomande()
     clearInterval(contoAllaRovescia)
+    inizioContoRovescia()
   }
 
   // AGGIORNAMENTO NUMERO DOMANDE BASE PAGINA
@@ -449,7 +445,7 @@ const estrazioneDomande = () => {
   questionsNum.innerText = `QUESTION ${numeroDomandaCorrente}/10`
   numeroDomandaCorrente += 1
 
-  inizioContoRovescia()
+  // inizioContoRovescia()
 }
 
 // ANIMAZIONE DEL TIMER
