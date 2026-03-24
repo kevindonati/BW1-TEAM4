@@ -144,7 +144,89 @@ label {
   display: block;
 }
 
-/* Stile Timer  Rilavorabile*/
+/*CSS Torta con scritte all'interno*/
+.results-page header {
+  margin: 0;
+}
+
+.results-page {
+  width: 100%;
+  position: relative;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 3em;
+}
+
+.titolo {
+  text-align: center;
+}
+
+.side,
+.chart-inner {
+  display: inline-block;
+  text-align: center;
+}
+
+.side h2 {
+  font-size: 4rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.side .percent {
+  font-size: 4.2rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.side p {
+  font-size: 1.8rem;
+  color: #e8e8e8;
+}
+
+.chart-inner h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.chart-inner .highlight {
+  color: #19dbe3;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.chart-inner p {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #f2f2f2;
+  margin-bottom: 8px;
+}
+
+canvas {
+  width: 600px;
+  height: 600px;
+}
+
+.grafico {
+  position: relative;
+}
+.chart-inner {
+  position: absolute;
+  box-sizing: border-box;
+  top: 10em;
+  right: 0;
+  padding: 0 8em;
+}
+
+/* Stile Timer*/
 
 .timer-container {
   width: 120px;
@@ -219,71 +301,9 @@ textarea::placeholder {
 
 /*CSS pagina result */
 
-.results-page {
-  width: 100%;
-  max-width: 1100px;
-  padding: 40px 50px;
-  text-align: center;
-  position: relative;
-}
-
-.logo {
-  width: 10em;
-}
-
-.content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 60px;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
-
-.side {
-  width: 220px;
-}
-
-.side h2 {
-  font-size: 4rem;
-  font-weight: 300;
-  margin-bottom: 10px;
-}
-
-.side .percent {
-  font-size: 4.2rem;
-  font-weight: 800;
-  line-height: 1;
-  margin-bottom: 8px;
-}
-
-.side p {
-  font-size: 1.8rem;
-  color: #e8e8e8;
-}
-
-.chart-inner h3 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.chart-inner .highlight {
-  color: #19dbe3;
-  font-size: 1.8rem;
-  font-weight: 800;
-  margin-bottom: 20px;
-}
-
-.chart-inner p {
-  font-size: 1rem;
-  line-height: 1.4;
-  color: #f2f2f2;
-  margin-bottom: 8px;
-}
-
 .button-wrapper {
   margin-top: 50px;
+  text-align: center;
 }
 
 button {
@@ -302,7 +322,7 @@ button:hover {
   color: #2d1254;
 }
 
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
   .header h1 {
     font-size: 3rem;
   }
@@ -338,4 +358,4 @@ button:hover {
   .chart-inner p {
     font-size: 0.8rem;
   }
-}
+} */

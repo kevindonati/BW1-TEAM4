@@ -1,8 +1,8 @@
-const xValues = ["True", "False"];
-const yValues = [55, 44];
-const barColors = ["#b91d47", "#00aba9"];
+const xValues = ["True", "False"]
+const yValues = [55, 44]
+const barColors = ["#b91d47", "#00aba9"]
 
-const ctx = document.getElementById("grafico-a-torta");
+const ctx = document.getElementById("grafico-a-torta")
 
 new Chart(ctx, {
   type: "doughnut",
@@ -12,6 +12,7 @@ new Chart(ctx, {
       {
         backgroundColor: barColors,
         data: yValues,
+        borderWidth: 0,
       },
     ],
   },
@@ -20,4 +21,4 @@ new Chart(ctx, {
       legend: { display: false },
     },
   },
-});
+})
