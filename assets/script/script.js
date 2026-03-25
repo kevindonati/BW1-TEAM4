@@ -607,7 +607,7 @@ const estrazioneDomande = () => {
   // AGGIORNAMENTO NUMERO DOMANDE BASE PAGINA
 
   const questionsNum = document.querySelector("#numero-domande P")
-  questionsNum.innerText = `QUESTION ${numeroDomandaCorrente}/10`
+  questionsNum.innerHTML = `QUESTION ${numeroDomandaCorrente}<span>/10</span>`
   numeroDomandaCorrente += 1
 
   // inizioContoRovescia()
@@ -710,12 +710,12 @@ const mostraRisultati = function () {
           </div>
 
           <div class="grafico">
-          <div class="chart-inner">
-            <h3>Congratulations!</h3>
-            <p class="highlight">You passed the exam.</p>
-            <p>We'll send you the certificate in few minutes.</p>
-            <p>Check your email (including promotions / spam folder)</p>
-          </div>
+            <div class="chart-inner">
+              <h3></h3>
+              <p class="highlight"></p>
+              <p id="secondo-par"></p>
+              <p id="terzo-par"></p>
+            </div>
             <canvas id="grafico-a-torta" style="width: 100%; max-width: 600px">
             </canvas>
           </div>
@@ -756,6 +756,7 @@ const mostraRisultati = function () {
       </div>
       `
   riempiCorrezioneDomande()
+  riempiScritteGrafico()
 }
 
 const riempiCorrezioneDomande = () => {
@@ -792,10 +793,17 @@ const riempiCorrezioneDomande = () => {
    `
     }
   }
+
+  // SCRITTE DENTRO GRAFICO A TORTA
+
   // GRAFICO TORTA
-  const xValues = ["Correct", "Wrong"]
-  const yValues = [punteggio, 10 - punteggio]
-  const barColors = ["#00ffff", "#d20094"]
+  // const xValues = ["Correct", "Wrong"]
+  // const yValues = [punteggio, 10 - punteggio]
+  // const barColors = ["#00ffff", "#d20094"]
+
+  const xValues = ["Wrong", "Correct"]
+  const yValues = [10 - punteggio, punteggio]
+  const barColors = ["#d20094", "#00ffff"]
 
   const ctx = document.getElementById("grafico-a-torta")
 
@@ -818,4 +826,23 @@ const riempiCorrezioneDomande = () => {
       },
     },
   })
+}
+const riempiScritteGrafico = () => {
+  const h3 = document.querySelector(".chart-inner h3")
+  const primoP = document.querySelector(".highlight")
+  const secondoP = document.getElementById("secondo-par")
+  const terzoP = document.getElementById("terzo-par")
+
+  if (punteggio >= 6) {
+    h3.innerText = "Congratulations!"
+    primoP.innerText = "You passed the exam."
+    secondoP.innerText = "We'll send you the certificate in few minutes."
+    terzoP.innerText = "Check your email (including promotions / spam folder)"
+  } else {
+    h3.innerText = "Exam not passed"
+    primoP.classList.replace("highlight", "highlight-bocciato")
+    primoP.innerText = "Unfortunately, you did not reach the required score."
+    secondoP.innerText = "We recommend reviewing the topics."
+    terzoP.innerText = "You can retake the exam anytime."
+  }
 }
