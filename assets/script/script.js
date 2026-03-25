@@ -489,7 +489,11 @@ for (let livello in domande) {
     // Il testo viene trasformato in grassetto
     let primaParte = parole.slice(0, meta).join(" ")
     let secondaParte = parole.slice(meta).join(" ")
-    singolaDomanda.domanda = primaParte + "<br><span class='text-bold'>" + secondaParte + "</span>"
+    singolaDomanda.domanda =
+      primaParte +
+      "<span class='text-bold' style='display:block; margin-top:10px;'>" +
+      secondaParte +
+      "</span>"
   }
 }
 
@@ -560,7 +564,7 @@ const estrazioneDomande = () => {
   // ASSEGNAZIONE DOMANDA ALL'H2 E RISPOSTE AI BOTTONI
   const domandaInBaseADifficoltà = domande[difficoltà][numeroCasualeDomande]
   // QUI è DOVE VA IL TESTO DELLA DOMANDA
-  h2.innerText = domandaInBaseADifficoltà.domanda
+  h2.innerHTML = domandaInBaseADifficoltà.domanda
 
   pNumeroDomande.classList.remove("no-display")
   divForm.classList.remove("no-display")
