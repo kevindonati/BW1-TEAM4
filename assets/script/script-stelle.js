@@ -1,6 +1,7 @@
-const starsN = 10; // Numero di stelle desiderate
+// NUMERO DI STELLE DESIDERATE
+const starsN = 10; 
 
-// Creazione dinamica linea delle stelle
+// LINEA DELLE STELLE GENERATA DINAMICAMENTE
 const svgInjection = () => {
   let divStar = document.getElementById("stelline");
 
@@ -22,11 +23,11 @@ const svgInjection = () => {
 };
 svgInjection();
 
-// Prima stella già con fill scuro
+// PRIMA STELLA CON COLORE SCURO INIZIALE
 const primaStella = document.querySelector("#stelline path");
 primaStella.setAttribute("fill", "#00FFFF");
 
-// cicli per cambiare dinamicamente il fill delle stelle
+// CICLI PER RIEMPIRE DINAMICAMENTE LE STELLE
 const changeStyle = (n) => {
   const img = document.querySelectorAll("#stelline path");
 

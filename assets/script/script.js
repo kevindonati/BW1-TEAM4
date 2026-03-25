@@ -541,7 +541,7 @@ const domande = {
   ],
 }
 
-// Setto la seconda metà di ogni domanda in grassetto
+// SETTO LA SECONDA PARTE DI OGNI DOMANDA IN GRASSETTO
 for (let livello in domande) {
   // Array principale
   let listaDomande = domande[livello]
@@ -551,13 +551,13 @@ for (let livello in domande) {
     let singolaDomanda = listaDomande[i]
     let testoIniziale = singolaDomanda.domanda
 
-    // La domanda viene divisa per ogni parola
+    // LA DOMANDA VIENE DIVISA PAROLA PER PAROLA
     let parole = testoIniziale.split(" ")
     // Metà esatta di ogni domanda
     let meta = Math.ceil(parole.length / 2)
 
-    // Modifica effettiva alla seconda parte della domanda
-    // Il testo viene trasformato in grassetto
+    
+    // IL TESTO DELLA SECONDA PARTE DELLA DOMANDA DIVENTA IN GRASSETTO
     let primaParte = parole.slice(0, meta).join(" ")
     let secondaParte = parole.slice(meta).join(" ")
     singolaDomanda.domanda =
@@ -575,9 +575,8 @@ let indiceDomandePescate = []
 let punteggio = 0
 // CONTEGGIO DOMANDA CORRENTE
 let numeroDomandaCorrente = 1
-// DIFFICOLTà BASE
-// let difficoltà = "facile"
-
+// DIFFICOLTÀ  BASE
+// LET DIFFICOLTÀ = "FACILE"
 // FUNZIONE ESTRAZIONE DOMANDE
 
 const estrazioneDomande = () => {
@@ -626,7 +625,7 @@ const estrazioneDomande = () => {
   const numeroCasualeDomande = Math.floor(
     Math.random() * domande[difficoltà].length,
   )
-  // CONTROLLO CHE NON SIA GIà USCITA
+  // CONTROLLO CHE NON SIA GIÀ USCITA
   if (indiceDomandePescate.includes(numeroCasualeDomande)) {
     return estrazioneDomande()
   }
@@ -636,7 +635,6 @@ const estrazioneDomande = () => {
 
   // ASSEGNAZIONE DOMANDA ALL'H2 E RISPOSTE AI BOTTONI
   const domandaInBaseADifficoltà = domande[difficoltà][numeroCasualeDomande]
-  // QUI è DOVE VA IL TESTO DELLA DOMANDA
   h2.innerHTML = domandaInBaseADifficoltà.domanda
 
   pNumeroDomande.classList.remove("no-display")
@@ -668,7 +666,7 @@ const estrazioneDomande = () => {
     btn4.classList.add("no-display")
   }
 
-  //   CONTROLLO SE RISPOSTA è GIUSTA E IN CASO ASSEGNO I PUNTI
+  //  CONTROLLO SE LA RISPOSTA È GIUSTA E IN CASO ASSEGNO I PUNTI
   const risposta1 = document.getElementById("risposta-1")
   risposta1.onclick = function () {
     if (risposta1.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
@@ -677,12 +675,15 @@ const estrazioneDomande = () => {
     } else {
       btn1.classList.add("risposta-errata")
     }
+    //  DISABILITO TUTTI I BOTTONI PER EVITARE ALTRI CLICK
     btn1.setAttribute("disabled", "")
     btn2.setAttribute("disabled", "")
     btn3.setAttribute("disabled", "")
     btn4.setAttribute("disabled", "")
+    // MOSTRO IL BOTTONE PROSSIMA DOMANDA
     btnNext.classList.remove("no-display")
-
+ 
+    // EVIDENZIO LA RISPOSTA CORRETTA 
     if (btn2.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
       btn2.classList.add("risposta-corretta")
     } else if (btn3.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
@@ -690,9 +691,11 @@ const estrazioneDomande = () => {
     } else if (btn4.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
       btn4.classList.add("risposta-corretta")
     }
+    // FERMO IL TIMER QUANDO L'UTENTE RISPONDE
     clearInterval(contoAllaRovescia)
   }
 
+  //  CONTROLLO SE LA RISPOSTA È GIUSTA E IN CASO ASSEGNO I PUNTI
   const risposta2 = document.getElementById("risposta-2")
   risposta2.onclick = function () {
     if (risposta2.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
@@ -702,12 +705,14 @@ const estrazioneDomande = () => {
     } else {
       btn2.classList.add("risposta-errata")
     }
+    //  DISABILITO TUTTI I BOTTONI PER EVITARE ALTRI CLICK
     btn1.setAttribute("disabled", "")
     btn2.setAttribute("disabled", "")
     btn3.setAttribute("disabled", "")
     btn4.setAttribute("disabled", "")
     btnNext.classList.remove("no-display")
 
+    // EVIDENZIO LA RISPOSTA CORRETTA 
     if (btn1.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
       btn1.classList.add("risposta-corretta")
     } else if (btn3.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
@@ -715,9 +720,11 @@ const estrazioneDomande = () => {
     } else if (btn4.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
       btn4.classList.add("risposta-corretta")
     }
+     // FERMO IL TIMER QUANDO L'UTENTE RISPONDE
     clearInterval(contoAllaRovescia)
   }
 
+  //  CONTROLLO SE LA RISPOSTA È GIUSTA E IN CASO ASSEGNO I PUNTI
   const risposta3 = document.getElementById("risposta-3")
   risposta3.onclick = function () {
     if (risposta3.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
@@ -726,12 +733,14 @@ const estrazioneDomande = () => {
     } else {
       btn3.classList.add("risposta-errata")
     }
+    // DISABILITO TUTTI I BOTTONI PER EVITARE ALTRI CLICK
     btn1.setAttribute("disabled", "")
     btn2.setAttribute("disabled", "")
     btn3.setAttribute("disabled", "")
     btn4.setAttribute("disabled", "")
     btnNext.classList.remove("no-display")
 
+    // EVIDENZIO LA RISPOSTA CORRETTA 
     if (btn1.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
       btn1.classList.add("risposta-corretta")
     } else if (btn2.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
@@ -739,9 +748,10 @@ const estrazioneDomande = () => {
     } else if (btn4.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
       btn4.classList.add("risposta-corretta")
     }
+     // FERMO IL TIMER QUANDO L'UTENTE RISPONDE
     clearInterval(contoAllaRovescia)
   }
-
+    //  CONTROLLO SE LA RISPOSTA È GIUSTA E IN CASO ASSEGNO I PUNTI
   const risposta4 = document.getElementById("risposta-4")
   risposta4.onclick = function () {
     if (risposta4.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
@@ -750,12 +760,14 @@ const estrazioneDomande = () => {
     } else {
       btn4.classList.add("risposta-errata")
     }
+     // DISABILITO TUTTI I BOTTONI PER EVITARE ALTRI CLICK
     btn1.setAttribute("disabled", "")
     btn2.setAttribute("disabled", "")
     btn3.setAttribute("disabled", "")
     btn4.setAttribute("disabled", "")
     btnNext.classList.remove("no-display")
 
+    // EVIDENZIO LA RISPOSTA CORRETTA
     if (btn1.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
       btn1.classList.add("risposta-corretta")
     } else if (btn2.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
@@ -763,6 +775,7 @@ const estrazioneDomande = () => {
     } else if (btn3.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
       btn3.classList.add("risposta-corretta")
     }
+    // FERMO IL TIMER QUANDO L'UTENTE RISPONDE
     clearInterval(contoAllaRovescia)
   }
 
@@ -777,19 +790,24 @@ const estrazioneDomande = () => {
   // }
 
   btnNext.onclick = function () {
+    // RIMUOVE LA CLASSE "risposta-corretta" DA TUTTI I BOTTONI
     btn1.classList.remove("risposta-corretta")
     btn2.classList.remove("risposta-corretta")
     btn3.classList.remove("risposta-corretta")
     btn4.classList.remove("risposta-corretta")
+    // RIMUOVE LA CLASSE "risposta-errata" DA TUTTI I BOTTONI
     btn1.classList.remove("risposta-errata")
     btn2.classList.remove("risposta-errata")
     btn3.classList.remove("risposta-errata")
     btn4.classList.remove("risposta-errata")
+    // NASCONDE IL PULSANTE PROSSIMA DOMANDA
     btnNext.classList.add("no-display")
+    // RIABILITA TUTTI I BOTTONI DELLE RISPOSTE PER LA DOMANDA NUOVA
     btn1.disabled = false
     btn2.disabled = false
     btn3.disabled = false
     btn4.disabled = false
+    // ESTRAZIONE DELLA PROSSIMA DOMANDA , RIAVVIO CONTO ALLA ROVESCIA
     estrazioneDomande()
     inizioContoRovescia()
   }
@@ -808,22 +826,23 @@ const estrazioneDomande = () => {
 
 // ANIMAZIONE DEL TIMER
 
-const tempoTimer = 10 // Durata del timer
+const tempoTimer = 10 // DURATA DEL TIMER
 
 let tempoRimanente = tempoTimer
 let contoAllaRovescia
 
-// Seleziona specificamente lo span del numero
+// SELEZIONA SPECIFICAMENTE LO SPAN DEL NUMERO
 const numeriTimer = document.querySelector("#countdown-numero")
 const progressoTimer = document.querySelector(".progresso-timer")
 const lineaCountdown = 283
 
 const updateCountdown = () => {
-  // Ora aggiorna solo il numero, le scritte rimangono intatte
+  // ORA AGGIUNGO IL NUMERO , LE SCRITTE RIMANGONO INTATTE
   if (numeriTimer) {
     numeriTimer.innerText = tempoRimanente
   }
 
+  // AGGIORNA LA BARRA DEL TIMER IN BASE AL TEMPO RIMASTO
   const updateLinea =
     lineaCountdown - (tempoRimanente / tempoTimer) * lineaCountdown
   progressoTimer.style.strokeDashoffset = updateLinea
@@ -831,28 +850,29 @@ const updateCountdown = () => {
 
 const tempoFinito = () => {
   console.log("cicci")
-  // if (numeroDomandaCorrente > 9) return
+  
+  // PRENDI TUTTI I BOTTONI E LA DOMANDA
   const btn1 = document.getElementById("risposta-1")
   const btn2 = document.getElementById("risposta-2")
   const btn3 = document.getElementById("risposta-3")
   const btn4 = document.getElementById("risposta-4")
   const btnNext = document.getElementById("prossima-domanda")
   const h2 = document.querySelector("#testo-domanda h2")
+
+  //  DISABILITO TUTTI I BOTTONI PER EVITARE ALTRI CLICK
   btn1.setAttribute("disabled", "")
   btn2.setAttribute("disabled", "")
   btn3.setAttribute("disabled", "")
   btn4.setAttribute("disabled", "")
   btnNext.classList.remove("no-display")
-  // h2.innerHTML = `<p class="text-bold crimson-color">TEMPO ESAURITO</p>`
+}
 
-  // qui andranno inseriti i comportamenti di quello che succederà una volta che il timer sarà scaduto
-} // alert che avverte che il timer è scaduto
-
+// INIZIO TIMER
 const inizioContoRovescia = () => {
   tempoRimanente = tempoTimer
   updateCountdown()
 
-  contoAllaRovescia = setInterval(() => {
+  contoAllaRovescia = setInterval(() => { // setInterval ESEGUE UNA FUNZIONE A INTERVALLI REGOLARI (1000 MS = 1 SECONDO)
     tempoRimanente--
     updateCountdown()
 
@@ -860,13 +880,10 @@ const inizioContoRovescia = () => {
       clearInterval(contoAllaRovescia)
       tempoFinito()
     }
-  }, 1000) //setInterval è un medtodo che richiama la funzione ogni tot secondi. va per millisecondi, 1000 = 1 secondo
+  }, 1000) 
 }
 
-// window.addEventListener("load", inizioContoRovescia)
-// inizioContoRovescia() //decommentare per vedere il timer partire
-
-// SELEZIONA DIFFICOLTà E INIZIA IL QUIZ
+// SELEZIONA DIFFICOLTÀ E INIZIA IL QUIZ
 const form = document.querySelector("#form-difficoltà")
 const select = document.querySelector("#scelta")
 
@@ -880,14 +897,6 @@ form.addEventListener("submit", function (e) {
   estrazioneDomande()
   // inizioContoRovescia()
 })
-
-// Gestione form
-
-// const formSubmit = (e) => {
-//   e.preventDefault()
-// }
-
-// GRAFICO
 
 // CAMBIA PAGINA IN MOSTRA RISULTATI
 
@@ -963,20 +972,21 @@ const mostraRisultati = function () {
   riempiScritteGrafico()
 }
 
+// SVUOTA LA SEZIONE PER INSERIRE LE DOMANDE CORRETTE
 const riempiCorrezioneDomande = () => {
   const section = document.getElementById("box-domande-correzione")
   section.innerHTML = ""
 
+  // RIPETE 10 VOLTE LA CREAZIONE E IL POPOLAMENTO DEL DIV CON LE DOMANDE CORRETTE
   for (let x = 0; x < 10; x++) {
     const div = document.createElement("div")
     const p = document.createElement("p")
     const divRisultati = document.createElement("div")
 
-    // Domanda scritta in modo sbagliato
+    // DOMANDA SCRITTA IN MODO SBAGLIATO
     let domandaConTag = domandePescate[x].domanda
 
-    // Sostituzione del tag con uno spazio prima di pulire il testo
-    // "da<span>Johnny" diventa "da Johnny"
+    // PULIZIA DELLA DOMANDA
     let testoSistemato = domandaConTag.replace("<span", " <span")
 
     let pulitore = document.createElement("div")
@@ -985,20 +995,24 @@ const riempiCorrezioneDomande = () => {
 
     p.innerText = `Domanda ${x + 1}: ${testoVeramentePulito}`
 
+    // CREA ELEMENTI HTML E LI AGGIUNGE ALLA SEZIONE
     section.appendChild(div)
     div.appendChild(p)
     div.appendChild(divRisultati)
 
-    // Gestione risposte
+   
     let contenutoRisposte = ""
+    // CONTROLLA IL TIPO DI DOMANDA. SE È A RISPOSTA MULTIPLA , CREA UNA LISTA CON 4 OPZIONI
     if (domandePescate[x].tipo === "risposta multipla") {
       contenutoRisposte = `
         <ol>
-          <li>${domandePescate[x].rispostaGiusta} <i class="fas fa-check"></i></li>
+          <li>${domandePescate[x].rispostaGiusta} <i class="fas fa-check"></i></li> 
           <li>${domandePescate[x].risposteSbagliate[0]}</li>
           <li>${domandePescate[x].risposteSbagliate[1]}</li>
           <li>${domandePescate[x].risposteSbagliate[2]}</li>
         </ol>`
+
+        //  SE NON È MULTIPLA , CREA UNA LISTA CON 2 OPZIONI (GIUSTA/SBAGLIATA)
     } else {
       contenutoRisposte = `
         <ol>
@@ -1006,22 +1020,17 @@ const riempiCorrezioneDomande = () => {
           <li>${domandePescate[x].risposteSbagliate}</li>
         </ol>`
     }
+    // MOSTRA LE RISPOSTE NEL DIV
     divRisultati.innerHTML = contenutoRisposte
   }
 
-  // SCRITTE DENTRO GRAFICO A TORTA
-
-  // GRAFICO TORTA
-  // const xValues = ["Correct", "Wrong"]
-  // const yValues = [punteggio, 10 - punteggio]
-  // const barColors = ["#00ffff", "#d20094"]
-
-  const xValues = ["Wrong", "Correct"]
-  const yValues = [10 - punteggio, punteggio]
-  const barColors = ["#d20094", "#00ffff"]
+  const xValues = ["Wrong", "Correct"] // ETICHETTE DELLE SEZIONI DEL GRAFICO
+  const yValues = [10 - punteggio, punteggio] // RISPOSTE SBAGLIATE O CORRETTE
+  const barColors = ["#d20094", "#00ffff"] // COLORIN DELLE SEZIONI DEL GRAFICO
 
   const ctx = document.getElementById("grafico-a-torta")
 
+  // CREA GRAFICO A CIAMBELLA
   new Chart(ctx, {
     type: "doughnut",
     data: {
@@ -1042,17 +1051,21 @@ const riempiCorrezioneDomande = () => {
     },
   })
 }
+  // RIEMPIMENTO GRAFICO
 const riempiScritteGrafico = () => {
   const h3 = document.querySelector(".chart-inner h3")
   const primoP = document.querySelector(".highlight")
   const secondoP = document.getElementById("secondo-par")
   const terzoP = document.getElementById("terzo-par")
 
+  // CONTROLLA SE HAI SUPERATO L'ESAME
   if (punteggio >= 6) {
+    // SE L'HAI SUPERATO , APPARIRÀ QUESTO:
     h3.innerText = "Congratulations!"
     primoP.innerText = "You passed the exam."
     secondoP.innerText = "We'll send you the certificate in few minutes."
     terzoP.innerText = "Check your email (including promotions / spam folder)"
+    // SE NON L HAI SUPERATO , APPARIRÀ QUESTO:
   } else {
     h3.innerText = "Exam not passed"
     primoP.classList.replace("highlight", "highlight-bocciato")

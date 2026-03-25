@@ -1,3 +1,4 @@
+// CREAZIONE E COLORAZIONE GRAFICO A TORTA
 const xValues = ["True", "False"]
 const yValues = [55, 44]
 const barColors = ["#b91d47", "#00aba9"]
