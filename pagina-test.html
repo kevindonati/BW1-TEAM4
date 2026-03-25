@@ -55,42 +55,44 @@
           <h2>Seleziona la difficoltà e premi il bottone per iniziare</h2>
         </div>
         <!-- Form con i button per le risposte-->
-        <form id="form-domande">
-          <div>
-            <button class="no-display" id="risposta-1" type="button">
-              Risposta 1
-            </button>
-          </div>
-          <div>
-            <button class="no-display" id="risposta-2" type="button">
-              Risposta 2
-            </button>
-          </div>
-          <div>
-            <button class="no-display" id="risposta-3" type="button">
-              Risposta 3
-            </button>
-          </div>
-          <div>
-            <button class="no-display" id="risposta-4" type="button">
-              Risposta 4
-            </button>
-          </div>
-          <div>
-            <button class="no-display" id="prossima-domanda" type="button">
-              Prossima domanda
-            </button>
-          </div>
-        </form>
+        <div id="contenitore-form-bottoni" class="no-display">
+          <form id="form-domande">
+            <div>
+              <button class="no-display" id="risposta-1" type="button">
+                Risposta 1
+              </button>
+            </div>
+            <div>
+              <button class="no-display" id="risposta-2" type="button">
+                Risposta 2
+              </button>
+            </div>
+            <div>
+              <button class="no-display" id="risposta-3" type="button">
+                Risposta 3
+              </button>
+            </div>
+            <div>
+              <button class="no-display" id="risposta-4" type="button">
+                Risposta 4
+              </button>
+            </div>
+            <div>
+              <button class="no-display" id="prossima-domanda" type="button">
+                Prossima domanda
+              </button>
+            </div>
+          </form>
+        </div>
         <!-- Div ordine domande -->
-        <div id="numero-domande">
+        <div id="numero-domande" class="text-center">
           <button class="no-display" onclick="mostraRisultati()">
             Scopri i risultati
           </button>
           <p class="no-display" id="question-count">
             QUESTION 1 <span>/ 10</span>
           </p>
-          <p id="spiegazione-progressiva">
+          <p class="text-center" id="spiegazione-progressiva">
             &#42; Difficoltà progressiva: con l'aumentare delle risposte
             corrette, anche la difficoltà aumenterà.
           </p>

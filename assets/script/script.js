@@ -564,6 +564,7 @@ const estrazioneDomande = () => {
   const btnRisultati = document.querySelector("#numero-domande button")
   const containerTimer = document.querySelector(".timer-container")
   const pNumeroDomande = document.getElementById("question-count")
+  const divForm = document.getElementById("contenitore-form-bottoni")
 
   // RIMUOVO ELEMENTI APPENA PARTE LA PRIMA DOMANDA
   const formDifficoltà = document.getElementById("form-difficoltà")
@@ -574,10 +575,7 @@ const estrazioneDomande = () => {
   // FINE QUIZ
   if (numeroDomandaCorrente > 10) {
     h2.innerText = `Controlla i tuoi risultati`
-    btn1.classList.add("no-display")
-    btn2.classList.add("no-display")
-    btn3.classList.add("no-display")
-    btn4.classList.add("no-display")
+    divForm.classList.add("no-display")
     btnRisultati.classList.remove("no-display")
     pNumeroDomande.classList.add("no-display")
     containerTimer.innerHTML = ""
@@ -613,7 +611,9 @@ const estrazioneDomande = () => {
   const domandaInBaseADifficoltà = domande[difficoltà][numeroCasualeDomande]
   // QUI è DOVE VA IL TESTO DELLA DOMANDA
   h2.innerText = domandaInBaseADifficoltà.domanda
+
   pNumeroDomande.classList.remove("no-display")
+  divForm.classList.remove("no-display")
 
   //   QUI ASSEGNO LE RISPOSTE AI BOTTONI
   if (domandaInBaseADifficoltà.tipo === "risposta multipla") {
