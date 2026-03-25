@@ -541,19 +541,19 @@ const domande = {
   ],
 }
 
-// SETTO LA SECONDA PARTE DI OGNI DOMANDA IN GRASSETTO
+// IMPOSTO LA SECONDA PARTE DI OGNI DOMANDA IN GRASSETTO
 for (let livello in domande) {
-  // Array principale
+  // ARRAY PRINCIPALE
   let listaDomande = domande[livello]
 
   for (let i = 0; i < listaDomande.length; i++) {
-    // Riferimento della domanda crrente
+    // RIFERIMENTO ALLA DOMANDA CORRENTE
     let singolaDomanda = listaDomande[i]
     let testoIniziale = singolaDomanda.domanda
 
     // LA DOMANDA VIENE DIVISA PAROLA PER PAROLA
     let parole = testoIniziale.split(" ")
-    // Metà esatta di ogni domanda
+    // METÀ ESATTA DI OGNI DOMANDA
     let meta = Math.ceil(parole.length / 2)
 
     
@@ -895,7 +895,6 @@ form.addEventListener("submit", function (e) {
   punteggio = 0
   numeroDomandaCorrente = 1
   estrazioneDomande()
-  // inizioContoRovescia()
 })
 
 // CAMBIA PAGINA IN MOSTRA RISULTATI
