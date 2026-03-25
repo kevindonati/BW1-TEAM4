@@ -613,7 +613,7 @@ const estrazioneDomande = () => {
   let isProgressiva
   if (difficoltà === "progressiva") {
     isProgressiva = true
-    if (punteggio <= 3) {
+    if (punteggio < 3) {
       difficoltà = "facile"
     } else if (punteggio < 7) {
       difficoltà = "medio"
