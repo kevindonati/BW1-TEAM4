@@ -160,6 +160,16 @@ button:hover {
   display: block;
 }
 
+#question-count {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+#question-count span {
+  color: #d20094;
+}
+
 /*CSS Torta con scritte all'interno*/
 .results-page header {
   margin: 0;
