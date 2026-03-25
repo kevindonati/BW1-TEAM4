@@ -126,8 +126,17 @@ button:hover {
   text-transform: uppercase;
 }
 
+#form-domande {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 15px;                             
+  max-width: 900px;                      
+  margin: 40px auto;                    
+  justify-items: center;                 
+}
+
 #form-domande button {
-  width: 20%;
+  width: 100%;
   padding: 0.8em 3em;
   border: none;
   box-shadow:
