@@ -128,11 +128,11 @@ button:hover {
 
 #form-domande {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 15px;                             
-  max-width: 900px;                      
-  margin: 40px auto;                    
-  justify-items: center;                 
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  max-width: 900px;
+  margin: 40px auto;
+  justify-items: center;
 }
 
 #form-domande button {
@@ -334,6 +334,18 @@ canvas {
   height: 100%;
 }
 
+#testo-domanda {
+  text-align: center;
+}
+
+.risposta-corretta {
+  background-color: forestgreen !important;
+}
+
+.risposta-errata {
+  background-color: crimson !important;
+}
+
 .feedback-box {
   padding: 10px;
   margin-bottom: 20px;
@@ -410,8 +422,4 @@ label[for="checkbox-promise"] {
 
 #checkbox-promise:checked + .checkmark::before {
   left: 1.5em;
-}
-
-#testo-domanda {
-  text-align: center;
 }
