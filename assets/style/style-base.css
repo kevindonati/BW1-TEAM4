@@ -101,6 +101,11 @@ button,
   font-size: 1.1em;
 }
 
+#prossima-domanda:hover {
+  color: #900080;
+  background-color: #fff;
+}
+
 button:hover {
   background: white;
   color: #00363a;
@@ -172,6 +177,7 @@ button:hover {
 
 .btn-risposte:hover {
   background: linear-gradient(to bottom, #d20094, #900080);
+  color: #fff;
 }
 
 #scelta option {
