@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap");
 
-/* Regole generali */
 body {
   background-image: url(../img/bg.jpg);
   background-size: cover;
@@ -100,8 +99,6 @@ button:hover {
   color: #00363a;
 }
 
-/*CSS Welcome Page*/
-
 #welcome-section ul {
   margin: 3em 1em;
   list-style-type: disc;
@@ -118,8 +115,6 @@ button:hover {
   margin-left: 8em;
   display: inline-block;
 }
-
-/* CSS pagina test inizio e bottoni*/
 
 #form-difficoltà #scelta {
   font-size: 1.3em;
@@ -170,7 +165,6 @@ button:hover {
   color: #d20094;
 }
 
-/*CSS Torta con scritte all'interno*/
 .results-page header {
   margin: 0;
 }
@@ -260,46 +254,69 @@ canvas {
   padding: 0 8em;
 }
 
-/* Stile Timer*/
-
 .timer-container {
-  width: 120px;
-  height: 120px;
-  margin: 0;
+  width: 150px;
+  height: 150px;
+  position: relative;
+  float: right;
+  margin: 20px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  float: right;
-  margin: 10px;
 }
 
 .timer-bg {
-  fill: none; /* No fill; only stroke */
-  stroke: #e0e0e07d; /* Light gray background */
-  stroke-width: 8; /* Thickness of the circle */
+  fill: none;
+  stroke: #e0e0e07d;
+  stroke-width: 8;
 }
 
 .progresso-timer {
   fill: none;
-  stroke: #00ffff; /* linea Countdown */
+  stroke: #00ffff;
   stroke-width: 10;
-  stroke-linecap: round; /* fine linea arrotondato*/
-  /* Stroke-dasharray: Total length of the stroke (circumference) */
-  stroke-dasharray: 283; /* Circumference = 2πr (r=45 → 2*3.14*45 ≈ 283) */
-  stroke-dashoffset: 0; /* Start with full circle visible */
-  transition: stroke-dashoffset 1s linear; /* animazione */
+  stroke-linecap: round;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
 }
+
 .numeri-timer {
   font-family: "Outfit", sans-serif;
   font-size: 3em;
-}
-
-.numeri-timer {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin: 0;
 }
 
-/*CSS pagina feedback */
+#countdown-numero {
+  font-family: "Outfit", sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 1;
+  margin: 2px 0;
+}
+
+.testo-piccolo {
+  font-size: 0.3em;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.timer-svg {
+  width: 100%;
+  height: 100%;
+}
 
 .feedback-box {
   padding: 10px;
@@ -333,7 +350,6 @@ textarea::placeholder {
   margin-bottom: 6em;
 }
 
-/* Label resa relativa per consentire di modificare lo switch */
 label[for="checkbox-promise"] {
   position: relative;
   display: inline-flex;
@@ -342,13 +358,11 @@ label[for="checkbox-promise"] {
   cursor: pointer;
 }
 
-/* L'input originiale viene nascosto ma è sempre cliccabile */
 #checkbox-promise {
   opacity: 0;
   position: absolute;
 }
 
-/* Stile sfondo switch */
 .checkmark {
   position: relative;
   width: 3em;
@@ -360,7 +374,6 @@ label[for="checkbox-promise"] {
   display: inline-block;
 }
 
-/* Stile pallino switch */
 .checkmark::before {
   content: "";
   position: absolute;
@@ -375,12 +388,10 @@ label[for="checkbox-promise"] {
   transition: 0.5s;
 }
 
-/* Quando l'input è checkato, cambia il colore */
 #checkbox-promise:checked + .checkmark {
   background: #00ffff;
 }
 
-/* Quando l'input è checkato, sposta il pallino */
 #checkbox-promise:checked + .checkmark::before {
   left: 1.5em;
 }

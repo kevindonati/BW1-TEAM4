@@ -27,9 +27,14 @@ const domande = {
       tipo: "risposta multipla",
     },
     {
-      domanda: "In quale film i protagonisti seguono la 'strada di mattoni gialli'?",
+      domanda:
+        "In quale film i protagonisti seguono la 'strada di mattoni gialli'?",
       rispostaGiusta: "Il Mago di Oz",
-      risposteSbagliate: ["Alice nel Paese delle Meraviglie", "Harry Potter", "Shrek"],
+      risposteSbagliate: [
+        "Alice nel Paese delle Meraviglie",
+        "Harry Potter",
+        "Shrek",
+      ],
       tipo: "risposta multipla",
     },
     {
@@ -46,7 +51,8 @@ const domande = {
       tipo: "risposta multipla",
     },
     {
-      domanda: "Chi è il nemico giurato di Batman che ha le sembianze di un clown?",
+      domanda:
+        "Chi è il nemico giurato di Batman che ha le sembianze di un clown?",
       rispostaGiusta: "Joker",
       risposteSbagliate: ["Pinguino", "Enigmista", "Due Facce"],
       tipo: "risposta multipla",
@@ -58,7 +64,8 @@ const domande = {
       tipo: "risposta booleana",
     },
     {
-      domanda: "In Matrix, Neo sceglie la pillola rossa per scoprire la verità?",
+      domanda:
+        "In Matrix, Neo sceglie la pillola rossa per scoprire la verità?",
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
@@ -70,7 +77,8 @@ const domande = {
       tipo: "risposta multipla",
     },
     {
-      domanda: "Quale attore interpreta Iron Man nel Marvel Cinematic Universe?",
+      domanda:
+        "Quale attore interpreta Iron Man nel Marvel Cinematic Universe?",
       rispostaGiusta: "Robert Downey Jr.",
       risposteSbagliate: ["Chris Evans", "Chris Hemsworth", "Mark Ruffalo"],
       tipo: "risposta multipla",
@@ -82,13 +90,15 @@ const domande = {
       tipo: "risposta booleana",
     },
     {
-      domanda: "Quale archeologo è famoso per la sua tecnica di combattimento con la frusta?",
+      domanda:
+        "Quale archeologo è famoso per la sua tecnica di combattimento con la frusta?",
       rispostaGiusta: "Indiana Jones",
       risposteSbagliate: ["Lara Croft", "Nathan Drake", "Rick O'Connell"],
       tipo: "risposta multipla",
     },
     {
-      domanda: "In Guerre Stellari, Darth Vader rivela a Luke di essere suo padre?",
+      domanda:
+        "In Guerre Stellari, Darth Vader rivela a Luke di essere suo padre?",
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
@@ -106,7 +116,8 @@ const domande = {
       tipo: "risposta booleana",
     },
     {
-      domanda: "Chi è l'orco verde protagonista dell'omonimo film d'animazione?",
+      domanda:
+        "Chi è l'orco verde protagonista dell'omonimo film d'animazione?",
       rispostaGiusta: "Shrek",
       risposteSbagliate: ["Ciuchino", "Gatto con gli stivali", "Lord Farquaad"],
       tipo: "risposta multipla",
@@ -119,7 +130,8 @@ const domande = {
       tipo: "risposta booleana",
     },
     {
-      domanda: "Qual è la specialità culinaria preferita delle Tartarughe Ninja?",
+      domanda:
+        "Qual è la specialità culinaria preferita delle Tartarughe Ninja?",
       rispostaGiusta: "Pizza",
       risposteSbagliate: ["Sushi", "Hamburger", "Pasta"],
       tipo: "risposta multipla",
@@ -163,7 +175,8 @@ const domande = {
       tipo: "risposta multipla",
     },
     {
-      domanda: "In quale anno è uscito nelle sale il primo film della saga di Star Wars?",
+      domanda:
+        "In quale anno è uscito nelle sale il primo film della saga di Star Wars?",
       rispostaGiusta: "1977",
       risposteSbagliate: ["1975", "1980", "1983"],
       tipo: "risposta multipla",
@@ -176,31 +189,36 @@ const domande = {
       tipo: "risposta booleana",
     },
     {
-      domanda: "Chi interpreta il Joker nel film Il Cavaliere Oscuro di Christopher Nolan?",
+      domanda:
+        "Chi interpreta il Joker nel film Il Cavaliere Oscuro di Christopher Nolan?",
       rispostaGiusta: "Heath Ledger",
       risposteSbagliate: ["Jared Leto", "Joaquin Phoenix", "Jack Nicholson"],
       tipo: "risposta multipla",
     },
     {
-      domanda: "Qual è il nome dell'intelligenza artificiale in 2001: Odissea nello spazio?",
+      domanda:
+        "Qual è il nome dell'intelligenza artificiale in 2001: Odissea nello spazio?",
       rispostaGiusta: "HAL 9000",
       risposteSbagliate: ["JARVIS", "SKYNET", "DAVID"],
       tipo: "risposta multipla",
     },
     {
-      domanda: "In quale città francese è ambientato il film Pixar Ratatouille?",
+      domanda:
+        "In quale città francese è ambientato il film Pixar Ratatouille?",
       rispostaGiusta: "Parigi",
       risposteSbagliate: ["Lione", "Marsiglia", "Nizza"],
       tipo: "risposta multipla",
     },
     {
-      domanda: "Steven Spielberg ha diretto la trilogia de Il Signore degli Anelli?",
+      domanda:
+        "Steven Spielberg ha diretto la trilogia de Il Signore degli Anelli?",
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
     },
     {
-      domanda: "Per quale film Leonardo DiCaprio ha vinto il suo primo Oscar come Migliore Attore?",
+      domanda:
+        "Per quale film Leonardo DiCaprio ha vinto il suo primo Oscar come Migliore Attore?",
       rispostaGiusta: "Revenant - Redivivo",
       risposteSbagliate: ["The Wolf of Wall Street", "Inception", "Titanic"],
       tipo: "risposta multipla",
@@ -212,13 +230,15 @@ const domande = {
       tipo: "risposta multipla",
     },
     {
-      domanda: "Quale attrice interpreta Katniss Everdeen nella saga di Hunger Games?",
+      domanda:
+        "Quale attrice interpreta Katniss Everdeen nella saga di Hunger Games?",
       rispostaGiusta: "Jennifer Lawrence",
       risposteSbagliate: ["Emma Watson", "Shailene Woodley", "Margot Robbie"],
       tipo: "risposta multipla",
     },
     {
-      domanda: "Ennio Morricone ha composto la colonna sonora originale di Interstellar?",
+      domanda:
+        "Ennio Morricone ha composto la colonna sonora originale di Interstellar?",
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
@@ -230,7 +250,8 @@ const domande = {
       tipo: "risposta multipla",
     },
     {
-      domanda: "La Città Incantata dello Studio Ghibli ha vinto l'Oscar nel 2003?",
+      domanda:
+        "La Città Incantata dello Studio Ghibli ha vinto l'Oscar nel 2003?",
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
@@ -242,7 +263,8 @@ const domande = {
       tipo: "risposta multipla",
     },
     {
-      domanda: "Qual è il nome della terra immaginaria in cui è ambientato Avatar?",
+      domanda:
+        "Qual è il nome della terra immaginaria in cui è ambientato Avatar?",
       rispostaGiusta: "Pandora",
       risposteSbagliate: ["Naboo", "Asgard", "Arrakis"],
       tipo: "risposta multipla",
@@ -263,17 +285,23 @@ const domande = {
     {
       domanda: "Chi ha diretto il film 'The Departed'?",
       rispostaGiusta: "Martin Scorsese",
-      risposteSbagliate: ["Francis Ford Coppola", "Ridley Scott", "Brian De Palma"],
+      risposteSbagliate: [
+        "Francis Ford Coppola",
+        "Ridley Scott",
+        "Brian De Palma",
+      ],
       tipo: "risposta multipla",
     },
     {
-      domanda: "Joaquin Phoenix ha vinto l'Oscar per la sua interpretazione di Joker?",
+      domanda:
+        "Joaquin Phoenix ha vinto l'Oscar per la sua interpretazione di Joker?",
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
     },
     {
-      domanda: "In quale anno è ambientato il futuro di 'Ritorno al Futuro - Parte II'?",
+      domanda:
+        "In quale anno è ambientato il futuro di 'Ritorno al Futuro - Parte II'?",
       rispostaGiusta: "2015",
       risposteSbagliate: ["2010", "2020", "2025"],
       tipo: "risposta multipla",
@@ -304,7 +332,8 @@ const domande = {
       tipo: "risposta multipla",
     },
     {
-      domanda: "Il primo film del Marvel Cinematic Universe (MCU) è stato Captain America?",
+      domanda:
+        "Il primo film del Marvel Cinematic Universe (MCU) è stato Captain America?",
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
@@ -312,15 +341,21 @@ const domande = {
   ],
   difficile: [
     {
-      domanda: "Qual è stato il primo lungometraggio animato a colori della storia (1937)?",
+      domanda:
+        "Qual è stato il primo lungometraggio animato a colori della storia (1937)?",
       rispostaGiusta: "Biancaneve e i sette nani",
       risposteSbagliate: ["Pinocchio", "Fantasia", "Bambi"],
       tipo: "risposta multipla",
     },
     {
-      domanda: "Chi ha diretto il capolavoro del neorealismo italiano Ladri di biciclette?",
+      domanda:
+        "Chi ha diretto il capolavoro del neorealismo italiano Ladri di biciclette?",
       rispostaGiusta: "Vittorio De Sica",
-      risposteSbagliate: ["Federico Fellini", "Roberto Rossellini", "Luchino Visconti"],
+      risposteSbagliate: [
+        "Federico Fellini",
+        "Roberto Rossellini",
+        "Luchino Visconti",
+      ],
       tipo: "risposta multipla",
     },
     {
@@ -330,9 +365,14 @@ const domande = {
       tipo: "risposta booleana",
     },
     {
-      domanda: "Quale film detiene il record di 11 Oscar vinti, insieme a Ben-Hur e Titanic?",
+      domanda:
+        "Quale film detiene il record di 11 Oscar vinti, insieme a Ben-Hur e Titanic?",
       rispostaGiusta: "Il Signore degli Anelli - Il ritorno del re",
-      risposteSbagliate: ["Via col vento", "West Side Story", "La lista di Schindler"],
+      risposteSbagliate: [
+        "Via col vento",
+        "West Side Story",
+        "La lista di Schindler",
+      ],
       tipo: "risposta multipla",
     },
     {
@@ -352,11 +392,16 @@ const domande = {
     {
       domanda: "Chi ha diretto il film 'Mulholland Drive'?",
       rispostaGiusta: "David Lynch",
-      risposteSbagliate: ["David Cronenberg", "Darren Aronofsky", "Lars von Trier"],
+      risposteSbagliate: [
+        "David Cronenberg",
+        "Darren Aronofsky",
+        "Lars von Trier",
+      ],
       tipo: "risposta multipla",
     },
     {
-      domanda: "La famosa scena della doccia in 'Psycho' contiene esattamente 100 inquadrature?",
+      domanda:
+        "La famosa scena della doccia in 'Psycho' contiene esattamente 100 inquadrature?",
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
@@ -365,7 +410,11 @@ const domande = {
       domanda:
         "In 'Bastardi senza gloria', qual è il soprannome del personaggio interpretato da Christoph Waltz?",
       rispostaGiusta: "Il cacciatore di ebrei",
-      risposteSbagliate: ["L'orso ebreo", "Il boia di Berlino", "Il lupo delle SS"],
+      risposteSbagliate: [
+        "L'orso ebreo",
+        "Il boia di Berlino",
+        "Il lupo delle SS",
+      ],
       tipo: "risposta multipla",
     },
     {
@@ -376,19 +425,22 @@ const domande = {
       tipo: "risposta booleana",
     },
     {
-      domanda: "Quale film ha vinto la prima Palma d'Oro al Festival di Cannes nel 1939?",
+      domanda:
+        "Quale film ha vinto la prima Palma d'Oro al Festival di Cannes nel 1939?",
       rispostaGiusta: "Via col vento",
       risposteSbagliate: ["Il mago di Oz", "Ombre rosse", "Regole di gioco"],
       tipo: "risposta multipla",
     },
     {
-      domanda: "Bong Joon-ho, regista di Parasite, ha diretto anche il film 'Snowpiercer'?",
+      domanda:
+        "Bong Joon-ho, regista di Parasite, ha diretto anche il film 'Snowpiercer'?",
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
     },
     {
-      domanda: "Chi ha composto la colonna sonora del film 'Il Gladiatore' insieme a Lisa Gerrard?",
+      domanda:
+        "Chi ha composto la colonna sonora del film 'Il Gladiatore' insieme a Lisa Gerrard?",
       rispostaGiusta: "Hans Zimmer",
       risposteSbagliate: ["John Williams", "James Horner", "Howard Shore"],
       tipo: "risposta multipla",
@@ -401,31 +453,40 @@ const domande = {
       tipo: "risposta booleana",
     },
     {
-      domanda: "Emmanuel Lubezki ha vinto 5 Oscar consecutivi per la fotografia?",
+      domanda:
+        "Emmanuel Lubezki ha vinto 5 Oscar consecutivi per la fotografia?",
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
     },
     {
-      domanda: "In quale film di Alfred Hitchcock la protagonista viene uccisa a metà pellicola?",
+      domanda:
+        "In quale film di Alfred Hitchcock la protagonista viene uccisa a metà pellicola?",
       rispostaGiusta: "Psycho",
-      risposteSbagliate: ["La donna che visse due volte", "Gli uccelli", "La finestra sul cortile"],
+      risposteSbagliate: [
+        "La donna che visse due volte",
+        "Gli uccelli",
+        "La finestra sul cortile",
+      ],
       tipo: "risposta multipla",
     },
     {
-      domanda: "Brad Pitt rifiutò il ruolo di Neo in Matrix prima di Keanu Reeves?",
+      domanda:
+        "Brad Pitt rifiutò il ruolo di Neo in Matrix prima di Keanu Reeves?",
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
     },
     {
-      domanda: "Chi ha scritto la sceneggiatura di Quarto Potere insieme a Orson Welles?",
+      domanda:
+        "Chi ha scritto la sceneggiatura di Quarto Potere insieme a Orson Welles?",
       rispostaGiusta: "Herman J. Mankiewicz",
       risposteSbagliate: ["Billy Wilder", "John Huston", "Howard Hawks"],
       tipo: "risposta multipla",
     },
     {
-      domanda: "Qual è l'ultimo film completato da Stanley Kubrick prima della sua morte?",
+      domanda:
+        "Qual è l'ultimo film completato da Stanley Kubrick prima della sua morte?",
       rispostaGiusta: "Eyes Wide Shut",
       risposteSbagliate: ["Full Metal Jacket", "Shining", "Arancia Meccanica"],
       tipo: "risposta multipla",
@@ -443,15 +504,24 @@ const domande = {
       tipo: "risposta booleana",
     },
     {
-      domanda: "Chi interpreta il ruolo di 'Il Brutto' (Tuco) ne Il buono, il brutto, il cattivo?",
+      domanda:
+        "Chi interpreta il ruolo di 'Il Brutto' (Tuco) ne Il buono, il brutto, il cattivo?",
       rispostaGiusta: "Eli Wallach",
-      risposteSbagliate: ["Clint Eastwood", "Lee Van Cleef", "Gian Maria Volonté"],
+      risposteSbagliate: [
+        "Clint Eastwood",
+        "Lee Van Cleef",
+        "Gian Maria Volonté",
+      ],
       tipo: "risposta multipla",
     },
     {
       domanda: "Qual è il titolo del primo film sonoro della storia (1927)?",
       rispostaGiusta: "Il cantante di jazz",
-      risposteSbagliate: ["Luci della città", "Metropolis", "Il gabinetto del dottor Caligari"],
+      risposteSbagliate: [
+        "Luci della città",
+        "Metropolis",
+        "Il gabinetto del dottor Caligari",
+      ],
       tipo: "risposta multipla",
     },
     {
@@ -462,21 +532,22 @@ const domande = {
       tipo: "risposta booleana",
     },
     {
-      domanda: "Il film I Sette Samurai di Kurosawa ha ispirato I magnifici sette?",
+      domanda:
+        "Il film I Sette Samurai di Kurosawa ha ispirato I magnifici sette?",
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
     },
   ],
-}
+};
 
 // SALVO LE DOMANDE PESCATE IN QUESTO ARRAY, IN MODO CHE NON POSSANO USCIRE NUOVAMENTE
-let domandePescate = []
-let indiceDomandePescate = []
+let domandePescate = [];
+let indiceDomandePescate = [];
 // PARTENZA DI BASE DEL PUNTEGGIO
-let punteggio = 0
+let punteggio = 0;
 // CONTEGGIO DOMANDA CORRENTE
-let numeroDomandaCorrente = 1
+let numeroDomandaCorrente = 1;
 // DIFFICOLTà BASE
 // let difficoltà = "facile"
 
@@ -484,198 +555,203 @@ let numeroDomandaCorrente = 1
 
 const estrazioneDomande = () => {
   // SELEZIONO BOTTONI
-  const h2 = document.querySelector("#testo-domanda h2")
-  const btn1 = document.getElementById("risposta-1")
-  const btn2 = document.getElementById("risposta-2")
-  const btn3 = document.getElementById("risposta-3")
-  const btn4 = document.getElementById("risposta-4")
-  const btnRisultati = document.querySelector("#numero-domande button")
-  const containerTimer = document.querySelector(".timer-container")
+  const h2 = document.querySelector("#testo-domanda h2");
+  const btn1 = document.getElementById("risposta-1");
+  const btn2 = document.getElementById("risposta-2");
+  const btn3 = document.getElementById("risposta-3");
+  const btn4 = document.getElementById("risposta-4");
+  const btnRisultati = document.querySelector("#numero-domande button");
+  const containerTimer = document.querySelector(".timer-container");
 
   // RIMUOVO ELEMENTI APPENA PARTE LA PRIMA DOMANDA
-  const formDifficoltà = document.getElementById("form-difficoltà")
-  const pSpiegaione = document.getElementById("spiegazione-progressiva")
-  formDifficoltà.innerHTML = ""
-  pSpiegaione.innerHTML = ""
+  const formDifficoltà = document.getElementById("form-difficoltà");
+  const pSpiegaione = document.getElementById("spiegazione-progressiva");
+  formDifficoltà.innerHTML = "";
+  pSpiegaione.innerHTML = "";
 
   // FINE QUIZ
   if (numeroDomandaCorrente > 10) {
-    h2.innerText = `Controlla i tuoi risultati`
-    btn1.classList.add("no-display")
-    btn2.classList.add("no-display")
-    btn3.classList.add("no-display")
-    btn4.classList.add("no-display")
-    btnRisultati.classList.remove("no-display")
-    containerTimer.innerHTML = ""
-    return
+    h2.innerText = `Controlla i tuoi risultati`;
+    btn1.classList.add("no-display");
+    btn2.classList.add("no-display");
+    btn3.classList.add("no-display");
+    btn4.classList.add("no-display");
+    btnRisultati.classList.remove("no-display");
+    containerTimer.innerHTML = "";
+    return;
   }
 
-  let isProgressiva
+  let isProgressiva;
 
   if (difficoltà === "progressiva") {
-    isProgressiva = true
+    isProgressiva = true;
     if (punteggio <= 3) {
-      difficoltà = "facile"
+      difficoltà = "facile";
     } else if (punteggio < 7) {
-      difficoltà = "medio"
+      difficoltà = "medio";
     } else {
-      difficoltà = "difficile"
+      difficoltà = "difficile";
     }
   }
 
   // PESCO UNA DOMANDA
-  const numeroCasualeDomande = Math.floor(Math.random() * domande[difficoltà].length)
+  const numeroCasualeDomande = Math.floor(
+    Math.random() * domande[difficoltà].length,
+  );
   // CONTROLLO CHE NON SIA GIà USCITA
   if (indiceDomandePescate.includes(numeroCasualeDomande)) {
-    return estrazioneDomande()
+    return estrazioneDomande();
   }
-  domandePescate.push(domande[difficoltà][numeroCasualeDomande])
-  indiceDomandePescate.push(numeroCasualeDomande)
-  console.log(indiceDomandePescate)
+  domandePescate.push(domande[difficoltà][numeroCasualeDomande]);
+  indiceDomandePescate.push(numeroCasualeDomande);
+  console.log(indiceDomandePescate);
 
   // ASSEGNAZIONE DOMANDA ALL'H2 E RISPOSTE AI BOTTONI
-  const domandaInBaseADifficoltà = domande[difficoltà][numeroCasualeDomande]
+  const domandaInBaseADifficoltà = domande[difficoltà][numeroCasualeDomande];
   // QUI è DOVE VA IL TESTO DELLA DOMANDA
-  h2.innerText = domandaInBaseADifficoltà.domanda
+  h2.innerText = domandaInBaseADifficoltà.domanda;
 
   //   QUI ASSEGNO LE RISPOSTE AI BOTTONI
   if (domandaInBaseADifficoltà.tipo === "risposta multipla") {
-    btn1.classList.remove("no-display")
-    btn2.classList.remove("no-display")
-    btn3.classList.remove("no-display")
-    btn4.classList.remove("no-display")
+    btn1.classList.remove("no-display");
+    btn2.classList.remove("no-display");
+    btn3.classList.remove("no-display");
+    btn4.classList.remove("no-display");
     // MISCHIO LE RISPOSTE IN ORDINE CASUALE
     const risposteMischiate = [
       domandaInBaseADifficoltà.rispostaGiusta,
       ...domandaInBaseADifficoltà.risposteSbagliate,
-    ].sort(() => Math.random() - 0.5)
+    ].sort(() => Math.random() - 0.5);
 
-    btn1.innerText = risposteMischiate[0]
-    btn2.innerText = risposteMischiate[1]
-    btn3.innerText = risposteMischiate[2]
-    btn4.innerText = risposteMischiate[3]
+    btn1.innerText = risposteMischiate[0];
+    btn2.innerText = risposteMischiate[1];
+    btn3.innerText = risposteMischiate[2];
+    btn4.innerText = risposteMischiate[3];
   } else {
-    btn1.classList.remove("no-display")
-    btn2.classList.remove("no-display")
-    btn1.innerText = domandaInBaseADifficoltà.rispostaGiusta
-    btn2.innerText = domandaInBaseADifficoltà.risposteSbagliate
-    btn3.classList.add("no-display")
-    btn4.classList.add("no-display")
+    btn1.classList.remove("no-display");
+    btn2.classList.remove("no-display");
+    btn1.innerText = domandaInBaseADifficoltà.rispostaGiusta;
+    btn2.innerText = domandaInBaseADifficoltà.risposteSbagliate;
+    btn3.classList.add("no-display");
+    btn4.classList.add("no-display");
   }
 
   //   CONTROLLO SE RISPOSTA è GIUSTA E IN CASO ASSEGNO I PUNTI
-  const risposta1 = document.getElementById("risposta-1")
+  const risposta1 = document.getElementById("risposta-1");
   risposta1.onclick = function () {
     if (risposta1.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-      punteggio += 1
+      punteggio += 1;
     }
-    estrazioneDomande()
-    clearInterval(contoAllaRovescia)
-    inizioContoRovescia()
-  }
+    estrazioneDomande();
+    clearInterval(contoAllaRovescia);
+    inizioContoRovescia();
+  };
 
-  const risposta2 = document.getElementById("risposta-2")
+  const risposta2 = document.getElementById("risposta-2");
   risposta2.onclick = function () {
     if (risposta2.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-      punteggio += 1
+      punteggio += 1;
     }
-    estrazioneDomande()
-    clearInterval(contoAllaRovescia)
-    inizioContoRovescia()
-  }
+    estrazioneDomande();
+    clearInterval(contoAllaRovescia);
+    inizioContoRovescia();
+  };
 
-  const risposta3 = document.getElementById("risposta-3")
+  const risposta3 = document.getElementById("risposta-3");
   risposta3.onclick = function () {
     if (risposta3.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-      punteggio += 1
+      punteggio += 1;
     }
-    estrazioneDomande()
-    clearInterval(contoAllaRovescia)
-    inizioContoRovescia()
-  }
+    estrazioneDomande();
+    clearInterval(contoAllaRovescia);
+    inizioContoRovescia();
+  };
 
-  const risposta4 = document.getElementById("risposta-4")
+  const risposta4 = document.getElementById("risposta-4");
   risposta4.onclick = function () {
     if (risposta4.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-      punteggio += 1
+      punteggio += 1;
     }
-    estrazioneDomande()
-    clearInterval(contoAllaRovescia)
-    inizioContoRovescia()
-  }
+    estrazioneDomande();
+    clearInterval(contoAllaRovescia);
+    inizioContoRovescia();
+  };
 
   // AGGIORNAMENTO NUMERO DOMANDE BASE PAGINA
 
-  const questionsNum = document.querySelector("#numero-domande P")
-  questionsNum.innerHTML = `QUESTION ${numeroDomandaCorrente}<span>/10</span>`
-  numeroDomandaCorrente += 1
+  const questionsNum = document.querySelector("#numero-domande P");
+  questionsNum.innerHTML = `QUESTION ${numeroDomandaCorrente}<span>/10</span>`;
+  numeroDomandaCorrente += 1;
 
   // inizioContoRovescia()
   if (isProgressiva) {
-    difficoltà = "progressiva"
+    difficoltà = "progressiva";
   }
-}
+};
 
 // ANIMAZIONE DEL TIMER
 
-const tempoTimer = 10 // Durata del timer
+const tempoTimer = 10; // Durata del timer
 
-let tempoRimanente = tempoTimer
-let contoAllaRovescia
+let tempoRimanente = tempoTimer;
+let contoAllaRovescia;
 
-const numeriTimer = document.querySelector(".numeri-timer")
-const progressoTimer = document.querySelector(".progresso-timer")
-const lineaCountdown = 283 // numero per fare la diminuire la linea in maniera giusta
+// Seleziona specificamente lo span del numero
+const numeriTimer = document.querySelector("#countdown-numero");
+const progressoTimer = document.querySelector(".progresso-timer");
+const lineaCountdown = 283;
 
 const updateCountdown = () => {
-  // costante che cambia il numero e il colore della linea quando viene cambiata
-  numeriTimer.innerText = tempoRimanente
+  // Ora aggiorna solo il numero, le scritte rimangono intatte
+  if (numeriTimer) {
+    numeriTimer.innerText = tempoRimanente;
+  }
 
-  const updateLinea = lineaCountdown - (tempoRimanente / tempoTimer) * lineaCountdown
-  progressoTimer.style.strokeDashoffset = updateLinea
-  // Formula matematica che server per far diminure la linea in modo giusto. NON CHIEDERE mi fido di chi l'ha scritta
-}
+  const updateLinea =
+    lineaCountdown - (tempoRimanente / tempoTimer) * lineaCountdown;
+  progressoTimer.style.strokeDashoffset = updateLinea;
+};
 
 const tempoFinito = () => {
-  if (numeroDomandaCorrente > 9) return
-  estrazioneDomande()
-  inizioContoRovescia()
+  if (numeroDomandaCorrente > 9) return;
+  estrazioneDomande();
+  inizioContoRovescia();
 
   // qui andranno inseriti i comportamenti di quello che succederà una volta che il timer sarà scaduto
-} // alert che avverte che il timer è scaduto
+}; // alert che avverte che il timer è scaduto
 
 const inizioContoRovescia = () => {
-  tempoRimanente = tempoTimer
-  updateCountdown()
+  tempoRimanente = tempoTimer;
+  updateCountdown();
 
   contoAllaRovescia = setInterval(() => {
-    tempoRimanente--
-    updateCountdown()
+    tempoRimanente--;
+    updateCountdown();
 
     if (tempoRimanente <= 0) {
-      clearInterval(contoAllaRovescia)
-      tempoFinito()
+      clearInterval(contoAllaRovescia);
+      tempoFinito();
     }
-  }, 1000) //setInterval è un medtodo che richiama la funzione ogni tot secondi. va per millisecondi, 1000 = 1 secondo
-}
+  }, 1000); //setInterval è un medtodo che richiama la funzione ogni tot secondi. va per millisecondi, 1000 = 1 secondo
+};
 
 // window.addEventListener("load", inizioContoRovescia)
 // inizioContoRovescia() //decommentare per vedere il timer partire
 
 // SELEZIONA DIFFICOLTà E INIZIA IL QUIZ
-const form = document.querySelector("#form-difficoltà")
-const select = document.querySelector("#scelta")
+const form = document.querySelector("#form-difficoltà");
+const select = document.querySelector("#scelta");
 
 form.addEventListener("submit", function (e) {
-  e.preventDefault()
-  difficoltà = select.value
+  e.preventDefault();
+  difficoltà = select.value;
 
-  domandePescate = []
-  punteggio = 0
-  numeroDomandaCorrente = 1
-  estrazioneDomande()
+  domandePescate = [];
+  punteggio = 0;
+  numeroDomandaCorrente = 1;
+  estrazioneDomande();
   // inizioContoRovescia()
-})
+});
 
 // Gestione form
 
@@ -688,8 +764,8 @@ form.addEventListener("submit", function (e) {
 // CAMBIA PAGINA IN MOSTRA RISULTATI
 
 const mostraRisultati = function () {
-  const contenitore = document.getElementById("cambia-pagina")
-  contenitore.innerHTML = ""
+  const contenitore = document.getElementById("cambia-pagina");
+  contenitore.innerHTML = "";
   contenitore.innerHTML = `<div class ="results-page"><header>
         <div class="logo">
           <img src="./assets/img/epicode_logo.png" />
@@ -754,26 +830,26 @@ const mostraRisultati = function () {
         <section id="box-domande-correzione">
         </section>
       </div>
-      `
-  riempiCorrezioneDomande()
-  riempiScritteGrafico()
-}
+      `;
+  riempiCorrezioneDomande();
+  riempiScritteGrafico();
+};
 
 const riempiCorrezioneDomande = () => {
   for (let x = 0; x < 10; x++) {
-    const section = document.getElementById("box-domande-correzione")
-    const div = document.createElement("div")
-    const p = document.createElement("p")
-    const i = document.createElement("i")
-    const divRisultati = document.createElement("div")
-    const pRisultati = document.createElement("p")
-    section.appendChild(div)
-    div.appendChild(p)
-    div.appendChild(i)
-    div.appendChild(divRisultati)
-    divRisultati.appendChild(pRisultati)
-    console.log(domandePescate[x].domanda)
-    p.innerText = `Domanda ${x + 1}: ${domandePescate[x].domanda}`
+    const section = document.getElementById("box-domande-correzione");
+    const div = document.createElement("div");
+    const p = document.createElement("p");
+    const i = document.createElement("i");
+    const divRisultati = document.createElement("div");
+    const pRisultati = document.createElement("p");
+    section.appendChild(div);
+    div.appendChild(p);
+    div.appendChild(i);
+    div.appendChild(divRisultati);
+    divRisultati.appendChild(pRisultati);
+    console.log(domandePescate[x].domanda);
+    p.innerText = `Domanda ${x + 1}: ${domandePescate[x].domanda}`;
 
     if (domandePescate[x].tipo === "risposta multipla") {
       divRisultati.innerHTML = `
@@ -783,14 +859,14 @@ const riempiCorrezioneDomande = () => {
         <li>${domandePescate[x].risposteSbagliate[1]}</li>
         <li>${domandePescate[x].risposteSbagliate[2]}</li>
       </ol>
-   `
+   `;
     } else {
       divRisultati.innerHTML = `
       <ol>
         <li>${domandePescate[x].rispostaGiusta} <i class="fas fa-check"></i></li>
         <li>${domandePescate[x].risposteSbagliate}</li>
       </ol>
-   `
+   `;
     }
   }
 
@@ -801,11 +877,11 @@ const riempiCorrezioneDomande = () => {
   // const yValues = [punteggio, 10 - punteggio]
   // const barColors = ["#00ffff", "#d20094"]
 
-  const xValues = ["Wrong", "Correct"]
-  const yValues = [10 - punteggio, punteggio]
-  const barColors = ["#d20094", "#00ffff"]
+  const xValues = ["Wrong", "Correct"];
+  const yValues = [10 - punteggio, punteggio];
+  const barColors = ["#d20094", "#00ffff"];
 
-  const ctx = document.getElementById("grafico-a-torta")
+  const ctx = document.getElementById("grafico-a-torta");
 
   new Chart(ctx, {
     type: "doughnut",
@@ -825,24 +901,24 @@ const riempiCorrezioneDomande = () => {
         legend: { display: false },
       },
     },
-  })
-}
+  });
+};
 const riempiScritteGrafico = () => {
-  const h3 = document.querySelector(".chart-inner h3")
-  const primoP = document.querySelector(".highlight")
-  const secondoP = document.getElementById("secondo-par")
-  const terzoP = document.getElementById("terzo-par")
+  const h3 = document.querySelector(".chart-inner h3");
+  const primoP = document.querySelector(".highlight");
+  const secondoP = document.getElementById("secondo-par");
+  const terzoP = document.getElementById("terzo-par");
 
   if (punteggio >= 6) {
-    h3.innerText = "Congratulations!"
-    primoP.innerText = "You passed the exam."
-    secondoP.innerText = "We'll send you the certificate in few minutes."
-    terzoP.innerText = "Check your email (including promotions / spam folder)"
+    h3.innerText = "Congratulations!";
+    primoP.innerText = "You passed the exam.";
+    secondoP.innerText = "We'll send you the certificate in few minutes.";
+    terzoP.innerText = "Check your email (including promotions / spam folder)";
   } else {
-    h3.innerText = "Exam not passed"
-    primoP.classList.replace("highlight", "highlight-bocciato")
-    primoP.innerText = "Unfortunately, you did not reach the required score."
-    secondoP.innerText = "We recommend reviewing the topics."
-    terzoP.innerText = "You can retake the exam anytime."
+    h3.innerText = "Exam not passed";
+    primoP.classList.replace("highlight", "highlight-bocciato");
+    primoP.innerText = "Unfortunately, you did not reach the required score.";
+    secondoP.innerText = "We recommend reviewing the topics.";
+    terzoP.innerText = "You can retake the exam anytime.";
   }
-}
+};
