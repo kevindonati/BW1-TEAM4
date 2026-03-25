@@ -623,17 +623,19 @@ const tempoTimer = 10 // Durata del timer
 let tempoRimanente = tempoTimer
 let contoAllaRovescia
 
-const numeriTimer = document.querySelector(".numeri-timer")
+// Seleziona specificamente lo span del numero
+const numeriTimer = document.querySelector("#countdown-numero")
 const progressoTimer = document.querySelector(".progresso-timer")
-const lineaCountdown = 283 // numero per fare la diminuire la linea in maniera giusta
+const lineaCountdown = 283
 
 const updateCountdown = () => {
-  // costante che cambia il numero e il colore della linea quando viene cambiata
-  numeriTimer.innerText = tempoRimanente
+  // Ora aggiorna solo il numero, le scritte rimangono intatte
+  if (numeriTimer) {
+    numeriTimer.innerText = tempoRimanente
+  }
 
   const updateLinea = lineaCountdown - (tempoRimanente / tempoTimer) * lineaCountdown
   progressoTimer.style.strokeDashoffset = updateLinea
-  // Formula matematica che server per far diminure la linea in modo giusto. NON CHIEDERE mi fido di chi l'ha scritta
 }
 
 const tempoFinito = () => {
