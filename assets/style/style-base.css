@@ -160,6 +160,11 @@ button:hover {
   display: block;
 }
 
+.test-button-inline div {
+  display: inline-block;
+  text-align: center;
+}
+
 /*CSS Torta con scritte all'interno*/
 .results-page header {
   margin: 0;

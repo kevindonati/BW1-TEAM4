@@ -618,7 +618,7 @@ const estrazioneDomande = () => {
 
 // ANIMAZIONE DEL TIMER
 
-const tempoTimer = 10 // Durata del timer
+const tempoTimer = 10000 // Durata del timer
 
 let tempoRimanente = tempoTimer
 let contoAllaRovescia
@@ -659,9 +659,6 @@ const inizioContoRovescia = () => {
   }, 1000) //setInterval è un medtodo che richiama la funzione ogni tot secondi. va per millisecondi, 1000 = 1 secondo
 }
 
-// window.addEventListener("load", inizioContoRovescia)
-// inizioContoRovescia() //decommentare per vedere il timer partire
-
 // SELEZIONA DIFFICOLTà E INIZIA IL QUIZ
 const form = document.querySelector("#form-difficoltà")
 const select = document.querySelector("#scelta")
@@ -682,8 +679,6 @@ form.addEventListener("submit", function (e) {
 // const formSubmit = (e) => {
 //   e.preventDefault()
 // }
-
-// GRAFICO
 
 // CAMBIA PAGINA IN MOSTRA RISULTATI
 
