@@ -128,11 +128,11 @@ button:hover {
 
 #form-domande {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 15px;                             
-  max-width: 900px;                      
-  margin: 40px auto;                    
-  justify-items: center;                 
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  max-width: 900px;
+  margin: 40px auto;
+  justify-items: center;
 }
 
 #form-domande button {
@@ -412,6 +412,7 @@ label[for="checkbox-promise"] {
   left: 1.5em;
 }
 
-#testo-domanda {
+#testo-domanda h2 {
   text-align: center;
+  font-weight: 350;
 }

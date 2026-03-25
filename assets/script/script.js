@@ -539,15 +539,39 @@ const domande = {
       tipo: "risposta booleana",
     },
   ],
+};
+
+// Setto la seconda metà di ogni domanda in grassetto
+for (let livello in domande) {
+  // Array principale
+  let listaDomande = domande[livello];
+
+  for (let i = 0; i < listaDomande.length; i++) {
+    // Riferimento della domanda crrente
+    let singolaDomanda = listaDomande[i];
+    let testoIniziale = singolaDomanda.domanda;
+
+    // La domanda viene divisa per ogni parola
+    let parole = testoIniziale.split(" ");
+    // Metà esatta di ogni domanda
+    let meta = Math.ceil(parole.length / 2);
+
+    // Modifica effettiva alla seconda parte della domanda
+    // Il testo viene trasformato in grassetto
+    let primaParte = parole.slice(0, meta).join(" ");
+    let secondaParte = parole.slice(meta).join(" ");
+    singolaDomanda.domanda =
+      primaParte + "<br><span class='text-bold'>" + secondaParte + "</span>";
+  }
 }
 
 // SALVO LE DOMANDE PESCATE IN QUESTO ARRAY, IN MODO CHE NON POSSANO USCIRE NUOVAMENTE
-let domandePescate = []
-let indiceDomandePescate = []
+let domandePescate = [];
+let indiceDomandePescate = [];
 // PARTENZA DI BASE DEL PUNTEGGIO
-let punteggio = 0
+let punteggio = 0;
 // CONTEGGIO DOMANDA CORRENTE
-let numeroDomandaCorrente = 1
+let numeroDomandaCorrente = 1;
 // DIFFICOLTà BASE
 // let difficoltà = "facile"
 
@@ -555,185 +579,185 @@ let numeroDomandaCorrente = 1
 
 const estrazioneDomande = () => {
   // SELEZIONO BOTTONI
-  const h2 = document.querySelector("#testo-domanda h2")
-  const btn1 = document.getElementById("risposta-1")
-  const btn2 = document.getElementById("risposta-2")
-  const btn3 = document.getElementById("risposta-3")
-  const btn4 = document.getElementById("risposta-4")
-  const btnNext = document.getElementById("prossima-domanda")
-  const btnRisultati = document.querySelector("#numero-domande button")
-  const containerTimer = document.querySelector(".timer-container")
+  const h2 = document.querySelector("#testo-domanda h2");
+  const btn1 = document.getElementById("risposta-1");
+  const btn2 = document.getElementById("risposta-2");
+  const btn3 = document.getElementById("risposta-3");
+  const btn4 = document.getElementById("risposta-4");
+  const btnNext = document.getElementById("prossima-domanda");
+  const btnRisultati = document.querySelector("#numero-domande button");
+  const containerTimer = document.querySelector(".timer-container");
 
   // RIMUOVO ELEMENTI APPENA PARTE LA PRIMA DOMANDA
-  const formDifficoltà = document.getElementById("form-difficoltà")
-  const pSpiegaione = document.getElementById("spiegazione-progressiva")
-  formDifficoltà.innerHTML = ""
-  pSpiegaione.innerHTML = ""
+  const formDifficoltà = document.getElementById("form-difficoltà");
+  const pSpiegaione = document.getElementById("spiegazione-progressiva");
+  formDifficoltà.innerHTML = "";
+  pSpiegaione.innerHTML = "";
 
   // FINE QUIZ
   if (numeroDomandaCorrente > 10) {
-    h2.innerText = `Controlla i tuoi risultati`
-    btn1.classList.add("no-display")
-    btn2.classList.add("no-display")
-    btn3.classList.add("no-display")
-    btn4.classList.add("no-display")
-    btnRisultati.classList.remove("no-display")
-    containerTimer.innerHTML = ""
-    return
+    h2.innerText = `Controlla i tuoi risultati`;
+    btn1.classList.add("no-display");
+    btn2.classList.add("no-display");
+    btn3.classList.add("no-display");
+    btn4.classList.add("no-display");
+    btnRisultati.classList.remove("no-display");
+    containerTimer.innerHTML = "";
+    return;
   }
 
-  let isProgressiva
+  let isProgressiva;
 
   if (difficoltà === "progressiva") {
-    isProgressiva = true
+    isProgressiva = true;
     if (punteggio <= 3) {
-      difficoltà = "facile"
+      difficoltà = "facile";
     } else if (punteggio < 7) {
-      difficoltà = "medio"
+      difficoltà = "medio";
     } else {
-      difficoltà = "difficile"
+      difficoltà = "difficile";
     }
   }
 
   // PESCO UNA DOMANDA
   const numeroCasualeDomande = Math.floor(
     Math.random() * domande[difficoltà].length,
-  )
+  );
   // CONTROLLO CHE NON SIA GIà USCITA
   if (indiceDomandePescate.includes(numeroCasualeDomande)) {
-    return estrazioneDomande()
+    return estrazioneDomande();
   }
-  domandePescate.push(domande[difficoltà][numeroCasualeDomande])
-  indiceDomandePescate.push(numeroCasualeDomande)
-  console.log(indiceDomandePescate)
+  domandePescate.push(domande[difficoltà][numeroCasualeDomande]);
+  indiceDomandePescate.push(numeroCasualeDomande);
+  console.log(indiceDomandePescate);
 
   // ASSEGNAZIONE DOMANDA ALL'H2 E RISPOSTE AI BOTTONI
-  const domandaInBaseADifficoltà = domande[difficoltà][numeroCasualeDomande]
-  // QUI è DOVE VA IL TESTO DELLA DOMANDA
-  h2.innerText = domandaInBaseADifficoltà.domanda
+  const domandaInBaseADifficoltà = domande[difficoltà][numeroCasualeDomande];
+  // USO .innerHTML PER RENDERIZZARE I TAG HTML CONTENUTI NELLA STRINGA
+  h2.innerHTML = domandaInBaseADifficoltà.domanda;
 
   //   QUI ASSEGNO LE RISPOSTE AI BOTTONI
   if (domandaInBaseADifficoltà.tipo === "risposta multipla") {
-    btn1.classList.remove("no-display")
-    btn2.classList.remove("no-display")
-    btn3.classList.remove("no-display")
-    btn4.classList.remove("no-display")
+    btn1.classList.remove("no-display");
+    btn2.classList.remove("no-display");
+    btn3.classList.remove("no-display");
+    btn4.classList.remove("no-display");
     // MISCHIO LE RISPOSTE IN ORDINE CASUALE
     const risposteMischiate = [
       domandaInBaseADifficoltà.rispostaGiusta,
       ...domandaInBaseADifficoltà.risposteSbagliate,
-    ].sort(() => Math.random() - 0.5)
+    ].sort(() => Math.random() - 0.5);
 
-    btn1.innerText = risposteMischiate[0]
-    btn2.innerText = risposteMischiate[1]
-    btn3.innerText = risposteMischiate[2]
-    btn4.innerText = risposteMischiate[3]
+    btn1.innerText = risposteMischiate[0];
+    btn2.innerText = risposteMischiate[1];
+    btn3.innerText = risposteMischiate[2];
+    btn4.innerText = risposteMischiate[3];
   } else {
-    btn1.classList.remove("no-display")
-    btn2.classList.remove("no-display")
-    btn1.innerText = domandaInBaseADifficoltà.rispostaGiusta
-    btn2.innerText = domandaInBaseADifficoltà.risposteSbagliate
-    btn3.classList.add("no-display")
-    btn4.classList.add("no-display")
+    btn1.classList.remove("no-display");
+    btn2.classList.remove("no-display");
+    btn1.innerText = domandaInBaseADifficoltà.rispostaGiusta;
+    btn2.innerText = domandaInBaseADifficoltà.risposteSbagliate;
+    btn3.classList.add("no-display");
+    btn4.classList.add("no-display");
   }
 
   //   CONTROLLO SE RISPOSTA è GIUSTA E IN CASO ASSEGNO I PUNTI
-  const risposta1 = document.getElementById("risposta-1")
+  const risposta1 = document.getElementById("risposta-1");
   risposta1.onclick = function () {
     if (risposta1.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-      punteggio += 1
-      btn1.classList.add("risposta-corretta")
+      punteggio += 1;
+      btn1.classList.add("risposta-corretta");
     } else {
-      btn1.classList.add("risposta-errata")
+      btn1.classList.add("risposta-errata");
     }
-    btn1.setAttribute("disabled", "")
-    btn2.setAttribute("disabled", "")
-    btn3.setAttribute("disabled", "")
-    btn4.setAttribute("disabled", "")
-    btnNext.classList.remove("no-display")
+    btn1.setAttribute("disabled", "");
+    btn2.setAttribute("disabled", "");
+    btn3.setAttribute("disabled", "");
+    btn4.setAttribute("disabled", "");
+    btnNext.classList.remove("no-display");
 
     if (btn2.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-      btn2.classList.add("risposta-corretta")
+      btn2.classList.add("risposta-corretta");
     } else if (btn3.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-      btn3.classList.add("risposta-corretta")
+      btn3.classList.add("risposta-corretta");
     } else if (btn4.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-      btn4.classList.add("risposta-corretta")
+      btn4.classList.add("risposta-corretta");
     }
-    clearInterval(contoAllaRovescia)
-  }
+    clearInterval(contoAllaRovescia);
+  };
 
-  const risposta2 = document.getElementById("risposta-2")
+  const risposta2 = document.getElementById("risposta-2");
   risposta2.onclick = function () {
     if (risposta2.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-      punteggio += 1
-      btn2.classList.add("risposta-corretta")
-      console.log("cioa")
+      punteggio += 1;
+      btn2.classList.add("risposta-corretta");
+      console.log("cioa");
     } else {
-      btn2.classList.add("risposta-errata")
+      btn2.classList.add("risposta-errata");
     }
-    btn1.setAttribute("disabled", "")
-    btn2.setAttribute("disabled", "")
-    btn3.setAttribute("disabled", "")
-    btn4.setAttribute("disabled", "")
-    btnNext.classList.remove("no-display")
+    btn1.setAttribute("disabled", "");
+    btn2.setAttribute("disabled", "");
+    btn3.setAttribute("disabled", "");
+    btn4.setAttribute("disabled", "");
+    btnNext.classList.remove("no-display");
 
     if (btn1.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-      btn1.classList.add("risposta-corretta")
+      btn1.classList.add("risposta-corretta");
     } else if (btn3.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-      btn3.classList.add("risposta-corretta")
+      btn3.classList.add("risposta-corretta");
     } else if (btn4.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-      btn4.classList.add("risposta-corretta")
+      btn4.classList.add("risposta-corretta");
     }
-    clearInterval(contoAllaRovescia)
-  }
+    clearInterval(contoAllaRovescia);
+  };
 
-  const risposta3 = document.getElementById("risposta-3")
+  const risposta3 = document.getElementById("risposta-3");
   risposta3.onclick = function () {
     if (risposta3.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-      punteggio += 1
-      btn3.classList.add("risposta-corretta")
+      punteggio += 1;
+      btn3.classList.add("risposta-corretta");
     } else {
-      btn3.classList.add("risposta-errata")
+      btn3.classList.add("risposta-errata");
     }
-    btn1.setAttribute("disabled", "")
-    btn2.setAttribute("disabled", "")
-    btn3.setAttribute("disabled", "")
-    btn4.setAttribute("disabled", "")
-    btnNext.classList.remove("no-display")
+    btn1.setAttribute("disabled", "");
+    btn2.setAttribute("disabled", "");
+    btn3.setAttribute("disabled", "");
+    btn4.setAttribute("disabled", "");
+    btnNext.classList.remove("no-display");
 
     if (btn1.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-      btn1.classList.add("risposta-corretta")
+      btn1.classList.add("risposta-corretta");
     } else if (btn2.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-      btn2.classList.add("risposta-corretta")
+      btn2.classList.add("risposta-corretta");
     } else if (btn4.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-      btn4.classList.add("risposta-corretta")
+      btn4.classList.add("risposta-corretta");
     }
-    clearInterval(contoAllaRovescia)
-  }
+    clearInterval(contoAllaRovescia);
+  };
 
-  const risposta4 = document.getElementById("risposta-4")
+  const risposta4 = document.getElementById("risposta-4");
   risposta4.onclick = function () {
     if (risposta4.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-      punteggio += 1
-      btn4.classList.add("risposta-corretta")
+      punteggio += 1;
+      btn4.classList.add("risposta-corretta");
     } else {
-      btn4.classList.add("risposta-errata")
+      btn4.classList.add("risposta-errata");
     }
-    btn1.setAttribute("disabled", "")
-    btn2.setAttribute("disabled", "")
-    btn3.setAttribute("disabled", "")
-    btn4.setAttribute("disabled", "")
-    btnNext.classList.remove("no-display")
+    btn1.setAttribute("disabled", "");
+    btn2.setAttribute("disabled", "");
+    btn3.setAttribute("disabled", "");
+    btn4.setAttribute("disabled", "");
+    btnNext.classList.remove("no-display");
 
     if (btn1.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-      btn1.classList.add("risposta-corretta")
+      btn1.classList.add("risposta-corretta");
     } else if (btn2.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-      btn2.classList.add("risposta-corretta")
+      btn2.classList.add("risposta-corretta");
     } else if (btn3.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-      btn3.classList.add("risposta-corretta")
+      btn3.classList.add("risposta-corretta");
     }
-    clearInterval(contoAllaRovescia)
-  }
+    clearInterval(contoAllaRovescia);
+  };
 
   // if (btn1.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
   //   btn1.classList.add("risposta-corretta")
@@ -746,98 +770,98 @@ const estrazioneDomande = () => {
   // }
 
   btnNext.onclick = function () {
-    btn1.classList.remove("risposta-corretta")
-    btn2.classList.remove("risposta-corretta")
-    btn3.classList.remove("risposta-corretta")
-    btn4.classList.remove("risposta-corretta")
-    btn1.classList.remove("risposta-errata")
-    btn2.classList.remove("risposta-errata")
-    btn3.classList.remove("risposta-errata")
-    btn4.classList.remove("risposta-errata")
-    btnNext.classList.add("no-display")
-    btn1.disabled = false
-    btn2.disabled = false
-    btn3.disabled = false
-    btn4.disabled = false
-    estrazioneDomande()
-    inizioContoRovescia()
-  }
+    btn1.classList.remove("risposta-corretta");
+    btn2.classList.remove("risposta-corretta");
+    btn3.classList.remove("risposta-corretta");
+    btn4.classList.remove("risposta-corretta");
+    btn1.classList.remove("risposta-errata");
+    btn2.classList.remove("risposta-errata");
+    btn3.classList.remove("risposta-errata");
+    btn4.classList.remove("risposta-errata");
+    btnNext.classList.add("no-display");
+    btn1.disabled = false;
+    btn2.disabled = false;
+    btn3.disabled = false;
+    btn4.disabled = false;
+    estrazioneDomande();
+    inizioContoRovescia();
+  };
 
   // AGGIORNAMENTO NUMERO DOMANDE BASE PAGINA
 
-  const questionsNum = document.querySelector("#numero-domande P")
-  questionsNum.innerHTML = `QUESTION ${numeroDomandaCorrente}<span> / 10</span>`
-  numeroDomandaCorrente += 1
+  const questionsNum = document.querySelector("#numero-domande P");
+  questionsNum.innerHTML = `QUESTION ${numeroDomandaCorrente}<span> / 10</span>`;
+  numeroDomandaCorrente += 1;
 
   // inizioContoRovescia()
   if (isProgressiva) {
-    difficoltà = "progressiva"
+    difficoltà = "progressiva";
   }
-}
+};
 
 // ANIMAZIONE DEL TIMER
 
-const tempoTimer = 10 // Durata del timer
+const tempoTimer = 10; // Durata del timer
 
-let tempoRimanente = tempoTimer
-let contoAllaRovescia
+let tempoRimanente = tempoTimer;
+let contoAllaRovescia;
 
 // Seleziona specificamente lo span del numero
-const numeriTimer = document.querySelector("#countdown-numero")
-const progressoTimer = document.querySelector(".progresso-timer")
-const lineaCountdown = 283
+const numeriTimer = document.querySelector("#countdown-numero");
+const progressoTimer = document.querySelector(".progresso-timer");
+const lineaCountdown = 283;
 
 const updateCountdown = () => {
   // Ora aggiorna solo il numero, le scritte rimangono intatte
   if (numeriTimer) {
-    numeriTimer.innerText = tempoRimanente
+    numeriTimer.innerText = tempoRimanente;
   }
 
   const updateLinea =
-    lineaCountdown - (tempoRimanente / tempoTimer) * lineaCountdown
-  progressoTimer.style.strokeDashoffset = updateLinea
-}
+    lineaCountdown - (tempoRimanente / tempoTimer) * lineaCountdown;
+  progressoTimer.style.strokeDashoffset = updateLinea;
+};
 
 const tempoFinito = () => {
-  if (numeroDomandaCorrente > 9) return
-  estrazioneDomande()
-  inizioContoRovescia()
+  if (numeroDomandaCorrente > 9) return;
+  estrazioneDomande();
+  inizioContoRovescia();
 
   // qui andranno inseriti i comportamenti di quello che succederà una volta che il timer sarà scaduto
-} // alert che avverte che il timer è scaduto
+}; // alert che avverte che il timer è scaduto
 
 const inizioContoRovescia = () => {
-  tempoRimanente = tempoTimer
-  updateCountdown()
+  tempoRimanente = tempoTimer;
+  updateCountdown();
 
   contoAllaRovescia = setInterval(() => {
-    tempoRimanente--
-    updateCountdown()
+    tempoRimanente--;
+    updateCountdown();
 
     if (tempoRimanente <= 0) {
-      clearInterval(contoAllaRovescia)
-      tempoFinito()
+      clearInterval(contoAllaRovescia);
+      tempoFinito();
     }
-  }, 1000) //setInterval è un medtodo che richiama la funzione ogni tot secondi. va per millisecondi, 1000 = 1 secondo
-}
+  }, 1000); //setInterval è un medtodo che richiama la funzione ogni tot secondi. va per millisecondi, 1000 = 1 secondo
+};
 
 // window.addEventListener("load", inizioContoRovescia)
 // inizioContoRovescia() //decommentare per vedere il timer partire
 
 // SELEZIONA DIFFICOLTà E INIZIA IL QUIZ
-const form = document.querySelector("#form-difficoltà")
-const select = document.querySelector("#scelta")
+const form = document.querySelector("#form-difficoltà");
+const select = document.querySelector("#scelta");
 
 form.addEventListener("submit", function (e) {
-  e.preventDefault()
-  difficoltà = select.value
+  e.preventDefault();
+  difficoltà = select.value;
 
-  domandePescate = []
-  punteggio = 0
-  numeroDomandaCorrente = 1
-  estrazioneDomande()
+  domandePescate = [];
+  punteggio = 0;
+  numeroDomandaCorrente = 1;
+  estrazioneDomande();
   // inizioContoRovescia()
-})
+});
 
 // Gestione form
 
@@ -850,8 +874,8 @@ form.addEventListener("submit", function (e) {
 // CAMBIA PAGINA IN MOSTRA RISULTATI
 
 const mostraRisultati = function () {
-  const contenitore = document.getElementById("cambia-pagina")
-  contenitore.innerHTML = ""
+  const contenitore = document.getElementById("cambia-pagina");
+  contenitore.innerHTML = "";
   contenitore.innerHTML = `<div class ="results-page"><header>
         <div class="logo">
           <img src="./assets/img/epicode_logo.png" />
@@ -916,26 +940,26 @@ const mostraRisultati = function () {
         <section id="box-domande-correzione">
         </section>
       </div>
-      `
-  riempiCorrezioneDomande()
-  riempiScritteGrafico()
-}
+      `;
+  riempiCorrezioneDomande();
+  riempiScritteGrafico();
+};
 
 const riempiCorrezioneDomande = () => {
   for (let x = 0; x < 10; x++) {
-    const section = document.getElementById("box-domande-correzione")
-    const div = document.createElement("div")
-    const p = document.createElement("p")
-    const i = document.createElement("i")
-    const divRisultati = document.createElement("div")
-    const pRisultati = document.createElement("p")
-    section.appendChild(div)
-    div.appendChild(p)
-    div.appendChild(i)
-    div.appendChild(divRisultati)
-    divRisultati.appendChild(pRisultati)
-    console.log(domandePescate[x].domanda)
-    p.innerText = `Domanda ${x + 1}: ${domandePescate[x].domanda}`
+    const section = document.getElementById("box-domande-correzione");
+    const div = document.createElement("div");
+    const p = document.createElement("p");
+    const i = document.createElement("i");
+    const divRisultati = document.createElement("div");
+    const pRisultati = document.createElement("p");
+    section.appendChild(div);
+    div.appendChild(p);
+    div.appendChild(i);
+    div.appendChild(divRisultati);
+    divRisultati.appendChild(pRisultati);
+    console.log(domandePescate[x].domanda);
+    p.innerText = `Domanda ${x + 1}: ${domandePescate[x].domanda}`;
 
     if (domandePescate[x].tipo === "risposta multipla") {
       divRisultati.innerHTML = `
@@ -945,14 +969,14 @@ const riempiCorrezioneDomande = () => {
         <li>${domandePescate[x].risposteSbagliate[1]}</li>
         <li>${domandePescate[x].risposteSbagliate[2]}</li>
       </ol>
-   `
+   `;
     } else {
       divRisultati.innerHTML = `
       <ol>
         <li>${domandePescate[x].rispostaGiusta} <i class="fas fa-check"></i></li>
         <li>${domandePescate[x].risposteSbagliate}</li>
       </ol>
-   `
+   `;
     }
   }
 
@@ -963,11 +987,11 @@ const riempiCorrezioneDomande = () => {
   // const yValues = [punteggio, 10 - punteggio]
   // const barColors = ["#00ffff", "#d20094"]
 
-  const xValues = ["Wrong", "Correct"]
-  const yValues = [10 - punteggio, punteggio]
-  const barColors = ["#d20094", "#00ffff"]
+  const xValues = ["Wrong", "Correct"];
+  const yValues = [10 - punteggio, punteggio];
+  const barColors = ["#d20094", "#00ffff"];
 
-  const ctx = document.getElementById("grafico-a-torta")
+  const ctx = document.getElementById("grafico-a-torta");
 
   new Chart(ctx, {
     type: "doughnut",
@@ -987,24 +1011,24 @@ const riempiCorrezioneDomande = () => {
         legend: { display: false },
       },
     },
-  })
-}
+  });
+};
 const riempiScritteGrafico = () => {
-  const h3 = document.querySelector(".chart-inner h3")
-  const primoP = document.querySelector(".highlight")
-  const secondoP = document.getElementById("secondo-par")
-  const terzoP = document.getElementById("terzo-par")
+  const h3 = document.querySelector(".chart-inner h3");
+  const primoP = document.querySelector(".highlight");
+  const secondoP = document.getElementById("secondo-par");
+  const terzoP = document.getElementById("terzo-par");
 
   if (punteggio >= 6) {
-    h3.innerText = "Congratulations!"
-    primoP.innerText = "You passed the exam."
-    secondoP.innerText = "We'll send you the certificate in few minutes."
-    terzoP.innerText = "Check your email (including promotions / spam folder)"
+    h3.innerText = "Congratulations!";
+    primoP.innerText = "You passed the exam.";
+    secondoP.innerText = "We'll send you the certificate in few minutes.";
+    terzoP.innerText = "Check your email (including promotions / spam folder)";
   } else {
-    h3.innerText = "Exam not passed"
-    primoP.classList.replace("highlight", "highlight-bocciato")
-    primoP.innerText = "Unfortunately, you did not reach the required score."
-    secondoP.innerText = "We recommend reviewing the topics."
-    terzoP.innerText = "You can retake the exam anytime."
+    h3.innerText = "Exam not passed";
+    primoP.classList.replace("highlight", "highlight-bocciato");
+    primoP.innerText = "Unfortunately, you did not reach the required score.";
+    secondoP.innerText = "We recommend reviewing the topics.";
+    terzoP.innerText = "You can retake the exam anytime.";
   }
-}
+};
