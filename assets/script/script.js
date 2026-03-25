@@ -556,7 +556,6 @@ for (let livello in domande) {
     // METÀ ESATTA DI OGNI DOMANDA
     let meta = Math.ceil(parole.length / 2)
 
-    
     // IL TESTO DELLA SECONDA PARTE DELLA DOMANDA DIVENTA IN GRASSETTO
     let primaParte = parole.slice(0, meta).join(" ")
     let secondaParte = parole.slice(meta).join(" ")
@@ -568,8 +567,9 @@ for (let livello in domande) {
   }
 }
 
-// SALVO LE DOMANDE PESCATE IN QUESTO ARRAY, IN MODO CHE NON POSSANO USCIRE NUOVAMENTE
+// SALVO LE DOMANDE PESCATE IN QUESTO ARRAY, PER POTERLE USARE DOPO NELLA COREZIONE
 let domandePescate = []
+// SALVO INDICE DELLE DOMANDE PESCATE IN QUESTO ARRAY, IN MODO CHE NON POSSANO USCIRE NUOVAMENTE
 let indiceDomandePescate = []
 // PARTENZA DI BASE DEL PUNTEGGIO
 let punteggio = 0
@@ -577,10 +577,10 @@ let punteggio = 0
 let numeroDomandaCorrente = 1
 // DIFFICOLTÀ  BASE
 // LET DIFFICOLTÀ = "FACILE"
-// FUNZIONE ESTRAZIONE DOMANDE
 
+// FUNZIONE ESTRAZIONE DOMANDE
 const estrazioneDomande = () => {
-  // SELEZIONO BOTTONI
+  // SELEZIONO TUTTI GLI ELEMENTI CHE MI SERVONO
   const h2 = document.querySelector("#testo-domanda h2")
   const btn1 = document.getElementById("risposta-1")
   const btn2 = document.getElementById("risposta-2")
@@ -591,14 +591,15 @@ const estrazioneDomande = () => {
   const containerTimer = document.querySelector(".timer-container")
   const pNumeroDomande = document.getElementById("question-count")
   const divForm = document.getElementById("contenitore-form-bottoni")
-
-  // RIMUOVO ELEMENTI APPENA PARTE LA PRIMA DOMANDA
   const formDifficoltà = document.getElementById("form-difficoltà")
   const pSpiegaione = document.getElementById("spiegazione-progressiva")
+
+  // RIMUOVO ELEMENTI APPENA PARTE LA PRIMA DOMANDA
   formDifficoltà.innerHTML = ""
   pSpiegaione.innerHTML = ""
 
-  // FINE QUIZ
+  // COSA SUCCEDE DOPO L'ULTIMA DOMANDA
+  // NASCONDO IL FORM CON I BOTTONI E FACCIO USCIRE BOTTONE PER VEDERE RISULTATI
   if (numeroDomandaCorrente > 10) {
     h2.innerText = `Controlla i tuoi risultati`
     divForm.classList.add("no-display")
@@ -608,8 +609,8 @@ const estrazioneDomande = () => {
     return
   }
 
+  // MODALITà PROGRESSIVA
   let isProgressiva
-
   if (difficoltà === "progressiva") {
     isProgressiva = true
     if (punteggio <= 3) {
@@ -621,7 +622,7 @@ const estrazioneDomande = () => {
     }
   }
 
-  // PESCO UNA DOMANDA
+  // ESTRAE INDICE DELLA DOMADA
   const numeroCasualeDomande = Math.floor(
     Math.random() * domande[difficoltà].length,
   )
@@ -629,28 +630,33 @@ const estrazioneDomande = () => {
   if (indiceDomandePescate.includes(numeroCasualeDomande)) {
     return estrazioneDomande()
   }
+
+  // METTO L'INDICE DENTRO IL SUO ARRAY, E DOMANDA DENTRO IL. SUO ARRAY
   domandePescate.push(domande[difficoltà][numeroCasualeDomande])
   indiceDomandePescate.push(numeroCasualeDomande)
   console.log(indiceDomandePescate)
 
-  // ASSEGNAZIONE DOMANDA ALL'H2 E RISPOSTE AI BOTTONI
-  const domandaInBaseADifficoltà = domande[difficoltà][numeroCasualeDomande]
-  h2.innerHTML = domandaInBaseADifficoltà.domanda
+  // TROVO L'OGGETTO DELLA DOMANDA ESTRATTA
+  const oggettoDomandaEstratta = domande[difficoltà][numeroCasualeDomande]
+  // ASSEGNO LA DOMANDA DALL'OGGETTO TROVATO SOPRA
+  h2.innerHTML = oggettoDomandaEstratta.domanda
 
+  // FACCIO APPARRIRE CONTEGGIO DOMANDE E FORM CON BOTTONI
   pNumeroDomande.classList.remove("no-display")
   divForm.classList.remove("no-display")
+  // CENTRO IL TESTO DELLA DOMANDA
   h2.style.textAlign = "center"
 
   //   QUI ASSEGNO LE RISPOSTE AI BOTTONI
-  if (domandaInBaseADifficoltà.tipo === "risposta multipla") {
+  if (oggettoDomandaEstratta.tipo === "risposta multipla") {
     btn1.classList.remove("no-display")
     btn2.classList.remove("no-display")
     btn3.classList.remove("no-display")
     btn4.classList.remove("no-display")
     // MISCHIO LE RISPOSTE IN ORDINE CASUALE
     const risposteMischiate = [
-      domandaInBaseADifficoltà.rispostaGiusta,
-      ...domandaInBaseADifficoltà.risposteSbagliate,
+      oggettoDomandaEstratta.rispostaGiusta,
+      ...oggettoDomandaEstratta.risposteSbagliate,
     ].sort(() => Math.random() - 0.5)
 
     btn1.innerText = risposteMischiate[0]
@@ -660,16 +666,17 @@ const estrazioneDomande = () => {
   } else {
     btn1.classList.remove("no-display")
     btn2.classList.remove("no-display")
-    btn1.innerText = domandaInBaseADifficoltà.rispostaGiusta
-    btn2.innerText = domandaInBaseADifficoltà.risposteSbagliate
+    btn1.innerText = oggettoDomandaEstratta.rispostaGiusta
+    btn2.innerText = oggettoDomandaEstratta.risposteSbagliate
     btn3.classList.add("no-display")
     btn4.classList.add("no-display")
   }
 
-  //  CONTROLLO SE LA RISPOSTA È GIUSTA E IN CASO ASSEGNO I PUNTI
+  //  CONTROLLO SE LA RISPOSTA È GIUSTA E IN CASO ASSEGNO I PUNTI.
+  // SE è GIUSTA DIVENTA VERDE, AALTRIMENTI ROSSA
   const risposta1 = document.getElementById("risposta-1")
   risposta1.onclick = function () {
-    if (risposta1.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
+    if (risposta1.innerText === oggettoDomandaEstratta.rispostaGiusta) {
       punteggio += 1
       btn1.classList.add("risposta-corretta")
     } else {
@@ -682,23 +689,24 @@ const estrazioneDomande = () => {
     btn4.setAttribute("disabled", "")
     // MOSTRO IL BOTTONE PROSSIMA DOMANDA
     btnNext.classList.remove("no-display")
- 
-    // EVIDENZIO LA RISPOSTA CORRETTA 
-    if (btn2.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
+
+    // CONTROLLO TUTTE LE RISPOSTE ED EVIDENZIO LA RISPOSTA CORRETTA
+    if (btn2.innerText === oggettoDomandaEstratta.rispostaGiusta) {
       btn2.classList.add("risposta-corretta")
-    } else if (btn3.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
+    } else if (btn3.innerText === oggettoDomandaEstratta.rispostaGiusta) {
       btn3.classList.add("risposta-corretta")
-    } else if (btn4.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
+    } else if (btn4.innerText === oggettoDomandaEstratta.rispostaGiusta) {
       btn4.classList.add("risposta-corretta")
     }
-    // FERMO IL TIMER QUANDO L'UTENTE RISPONDE
+    // FERMO IL TIMER QUANDO L'UTENTE RISPONDE (PULSANTE CLICCATO)
     clearInterval(contoAllaRovescia)
   }
 
   //  CONTROLLO SE LA RISPOSTA È GIUSTA E IN CASO ASSEGNO I PUNTI
+  // SE è GIUSTA DIVENTA VERDE, AALTRIMENTI ROSSA
   const risposta2 = document.getElementById("risposta-2")
   risposta2.onclick = function () {
-    if (risposta2.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
+    if (risposta2.innerText === oggettoDomandaEstratta.rispostaGiusta) {
       punteggio += 1
       btn2.classList.add("risposta-corretta")
       console.log("cioa")
@@ -712,22 +720,23 @@ const estrazioneDomande = () => {
     btn4.setAttribute("disabled", "")
     btnNext.classList.remove("no-display")
 
-    // EVIDENZIO LA RISPOSTA CORRETTA 
-    if (btn1.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
+    // CONTROLLO TUTTE LE RISPOSTE ED EVIDENZIO LA RISPOSTA CORRETTA
+    if (btn1.innerText === oggettoDomandaEstratta.rispostaGiusta) {
       btn1.classList.add("risposta-corretta")
-    } else if (btn3.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
+    } else if (btn3.innerText === oggettoDomandaEstratta.rispostaGiusta) {
       btn3.classList.add("risposta-corretta")
-    } else if (btn4.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
+    } else if (btn4.innerText === oggettoDomandaEstratta.rispostaGiusta) {
       btn4.classList.add("risposta-corretta")
     }
-     // FERMO IL TIMER QUANDO L'UTENTE RISPONDE
+    // FERMO IL TIMER QUANDO L'UTENTE RISPONDE (PULSANTE CLICCATO)
     clearInterval(contoAllaRovescia)
   }
 
   //  CONTROLLO SE LA RISPOSTA È GIUSTA E IN CASO ASSEGNO I PUNTI
+  // SE è GIUSTA DIVENTA VERDE, AALTRIMENTI ROSSA
   const risposta3 = document.getElementById("risposta-3")
   risposta3.onclick = function () {
-    if (risposta3.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
+    if (risposta3.innerText === oggettoDomandaEstratta.rispostaGiusta) {
       punteggio += 1
       btn3.classList.add("risposta-corretta")
     } else {
@@ -740,74 +749,66 @@ const estrazioneDomande = () => {
     btn4.setAttribute("disabled", "")
     btnNext.classList.remove("no-display")
 
-    // EVIDENZIO LA RISPOSTA CORRETTA 
-    if (btn1.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
+    // CONTROLLO TUTTE LE RISPOSTE ED EVIDENZIO LA RISPOSTA CORRETTA
+    if (btn1.innerText === oggettoDomandaEstratta.rispostaGiusta) {
       btn1.classList.add("risposta-corretta")
-    } else if (btn2.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
+    } else if (btn2.innerText === oggettoDomandaEstratta.rispostaGiusta) {
       btn2.classList.add("risposta-corretta")
-    } else if (btn4.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
+    } else if (btn4.innerText === oggettoDomandaEstratta.rispostaGiusta) {
       btn4.classList.add("risposta-corretta")
     }
-     // FERMO IL TIMER QUANDO L'UTENTE RISPONDE
+    // FERMO IL TIMER QUANDO L'UTENTE RISPONDE (PULSANTE CLICCATO)
     clearInterval(contoAllaRovescia)
   }
-    //  CONTROLLO SE LA RISPOSTA È GIUSTA E IN CASO ASSEGNO I PUNTI
+  //  CONTROLLO SE LA RISPOSTA È GIUSTA E IN CASO ASSEGNO I PUNTI
+  // SE è GIUSTA DIVENTA VERDE, AALTRIMENTI ROSSA
   const risposta4 = document.getElementById("risposta-4")
   risposta4.onclick = function () {
-    if (risposta4.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
+    if (risposta4.innerText === oggettoDomandaEstratta.rispostaGiusta) {
       punteggio += 1
       btn4.classList.add("risposta-corretta")
     } else {
       btn4.classList.add("risposta-errata")
     }
-     // DISABILITO TUTTI I BOTTONI PER EVITARE ALTRI CLICK
+    // DISABILITO TUTTI I BOTTONI PER EVITARE ALTRI CLICK
     btn1.setAttribute("disabled", "")
     btn2.setAttribute("disabled", "")
     btn3.setAttribute("disabled", "")
     btn4.setAttribute("disabled", "")
     btnNext.classList.remove("no-display")
 
-    // EVIDENZIO LA RISPOSTA CORRETTA
-    if (btn1.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
+    // CONTROLLO TUTTE LE RISPOSTE ED EVIDENZIO LA RISPOSTA CORRETTA
+    if (btn1.innerText === oggettoDomandaEstratta.rispostaGiusta) {
       btn1.classList.add("risposta-corretta")
-    } else if (btn2.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
+    } else if (btn2.innerText === oggettoDomandaEstratta.rispostaGiusta) {
       btn2.classList.add("risposta-corretta")
-    } else if (btn3.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
+    } else if (btn3.innerText === oggettoDomandaEstratta.rispostaGiusta) {
       btn3.classList.add("risposta-corretta")
     }
-    // FERMO IL TIMER QUANDO L'UTENTE RISPONDE
+    // FERMO IL TIMER QUANDO L'UTENTE RISPONDE (PULSANTE CLICCATO)
     clearInterval(contoAllaRovescia)
   }
 
-  // if (btn1.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-  //   btn1.classList.add("risposta-corretta")
-  // } else if (btn2.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-  //   btn2.classList.add("risposta-corretta")
-  // } else if (btn3.innerText === domandaInBaseADifficoltà.rispostaGiusta) {
-  //   btn3.classList.add("risposta-corretta")
-  // } else {
-  //   btn4.classList.add("risposta-corretta")
-  // }
-
+  // DECIDO COSA SUCCEDE QUANDO SCHIACCIO IL BOTTONE PROSSIMA DOMANDA
   btnNext.onclick = function () {
-    // RIMUOVE LA CLASSE "risposta-corretta" DA TUTTI I BOTTONI
+    // TOLGO SFONDO VERDE A RISPOSTA CORRETTA
     btn1.classList.remove("risposta-corretta")
     btn2.classList.remove("risposta-corretta")
     btn3.classList.remove("risposta-corretta")
     btn4.classList.remove("risposta-corretta")
-    // RIMUOVE LA CLASSE "risposta-errata" DA TUTTI I BOTTONI
+    // TOLGO SFONDO ROSSO A RISPOSTA ERRATA
     btn1.classList.remove("risposta-errata")
     btn2.classList.remove("risposta-errata")
     btn3.classList.remove("risposta-errata")
     btn4.classList.remove("risposta-errata")
-    // NASCONDE IL PULSANTE PROSSIMA DOMANDA
+    // NASCONDO IL PULSANTE PROSSIMA DOMANDA
     btnNext.classList.add("no-display")
     // RIABILITA TUTTI I BOTTONI DELLE RISPOSTE PER LA DOMANDA NUOVA
     btn1.disabled = false
     btn2.disabled = false
     btn3.disabled = false
     btn4.disabled = false
-    // ESTRAZIONE DELLA PROSSIMA DOMANDA , RIAVVIO CONTO ALLA ROVESCIA
+    // ESTRAZIONE DELLA PROSSIMA DOMANDA, RIAVVIO CONTO ALLA ROVESCIA
     estrazioneDomande()
     inizioContoRovescia()
   }
@@ -818,14 +819,14 @@ const estrazioneDomande = () => {
   questionsNum.innerHTML = `QUESTION ${numeroDomandaCorrente}<span> / 10</span>`
   numeroDomandaCorrente += 1
 
-  // inizioContoRovescia()
+  // SERVE PER FAR FUNZIONARE MODALITà PROGRESSIVA
   if (isProgressiva) {
     difficoltà = "progressiva"
   }
 }
 
+// TIMER
 // ANIMAZIONE DEL TIMER
-
 const tempoTimer = 10 // DURATA DEL TIMER
 
 let tempoRimanente = tempoTimer
@@ -848,9 +849,10 @@ const updateCountdown = () => {
   progressoTimer.style.strokeDashoffset = updateLinea
 }
 
+// COSA SUCCEDE SE SCADE IL TEMPO E NON RISPONDO
 const tempoFinito = () => {
   console.log("cicci")
-  
+
   // PRENDI TUTTI I BOTTONI E LA DOMANDA
   const btn1 = document.getElementById("risposta-1")
   const btn2 = document.getElementById("risposta-2")
@@ -867,12 +869,13 @@ const tempoFinito = () => {
   btnNext.classList.remove("no-display")
 }
 
-// INIZIO TIMER
+// FA PARTIRE IL TIMER
 const inizioContoRovescia = () => {
   tempoRimanente = tempoTimer
   updateCountdown()
 
-  contoAllaRovescia = setInterval(() => { // setInterval ESEGUE UNA FUNZIONE A INTERVALLI REGOLARI (1000 MS = 1 SECONDO)
+  contoAllaRovescia = setInterval(() => {
+    // setInterval ESEGUE UNA FUNZIONE A INTERVALLI REGOLARI (1000 MS = 1 SECONDO)
     tempoRimanente--
     updateCountdown()
 
@@ -880,7 +883,7 @@ const inizioContoRovescia = () => {
       clearInterval(contoAllaRovescia)
       tempoFinito()
     }
-  }, 1000) 
+  }, 1000)
 }
 
 // SELEZIONA DIFFICOLTÀ E INIZIA IL QUIZ
@@ -888,9 +891,12 @@ const form = document.querySelector("#form-difficoltà")
 const select = document.querySelector("#scelta")
 
 form.addEventListener("submit", function (e) {
+  // EVITO RESET DELLA PAGINA
   e.preventDefault()
+  // ASSEGNO LA DIFFICOLTà IN BASE A QUELLA SCELTA DALL'UTENTE
   difficoltà = select.value
 
+  // SVUOTO EVENTUALI DOMANDE ESTRATTE, RESETTO IL PUNTEGGIO E CONTEGGIO NUMERO DOMANDE, FACCIO PARTIRE LA PRIMA DOMANDA
   domandePescate = []
   punteggio = 0
   numeroDomandaCorrente = 1
@@ -898,10 +904,11 @@ form.addEventListener("submit", function (e) {
 })
 
 // CAMBIA PAGINA IN MOSTRA RISULTATI
-
 const mostraRisultati = function () {
   const contenitore = document.getElementById("cambia-pagina")
+  // SVUOTO LA PAGINA
   contenitore.innerHTML = ""
+  // RIEMPO LA PAGINA CON I RISULTATI
   contenitore.innerHTML = `<div class ="results-page"><header>
         <div class="logo">
           <img src="./assets/img/epicode_logo.png" />
@@ -999,23 +1006,22 @@ const riempiCorrezioneDomande = () => {
     div.appendChild(p)
     div.appendChild(divRisultati)
 
-   
     let contenutoRisposte = ""
     // CONTROLLA IL TIPO DI DOMANDA. SE È A RISPOSTA MULTIPLA , CREA UNA LISTA CON 4 OPZIONI
     if (domandePescate[x].tipo === "risposta multipla") {
       contenutoRisposte = `
         <ol>
-          <li>${domandePescate[x].rispostaGiusta} <i class="fas fa-check"></i></li> 
+          <li>${domandePescate[x].rispostaGiusta} <i class="green fas fa-check"></i></li> 
           <li>${domandePescate[x].risposteSbagliate[0]}</li>
           <li>${domandePescate[x].risposteSbagliate[1]}</li>
           <li>${domandePescate[x].risposteSbagliate[2]}</li>
         </ol>`
 
-        //  SE NON È MULTIPLA , CREA UNA LISTA CON 2 OPZIONI (GIUSTA/SBAGLIATA)
+      //  SE NON È MULTIPLA , CREA UNA LISTA CON 2 OPZIONI (GIUSTA/SBAGLIATA)
     } else {
       contenutoRisposte = `
         <ol>
-          <li>${domandePescate[x].rispostaGiusta} <i class="fas fa-check"></i></li>
+          <li>${domandePescate[x].rispostaGiusta} <i class="green fas fa-check"></i></li>
           <li>${domandePescate[x].risposteSbagliate}</li>
         </ol>`
     }
@@ -1050,7 +1056,7 @@ const riempiCorrezioneDomande = () => {
     },
   })
 }
-  // RIEMPIMENTO GRAFICO
+// RIEMPIMENTO GRAFICO
 const riempiScritteGrafico = () => {
   const h3 = document.querySelector(".chart-inner h3")
   const primoP = document.querySelector(".highlight")

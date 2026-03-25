@@ -509,3 +509,9 @@ textarea::placeholder {
 #box-domande-correzione > div {
   margin-top: 2em;
 }
+
+/* serve per icone nella lista risposte corrette */
+
+.green {
+  color: rgb(43, 192, 5);
+}
