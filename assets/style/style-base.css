@@ -187,8 +187,9 @@ button:hover {
 }
 
 #form-difficoltà .btn {
-  margin: 2em 0;
+  margin: 3em auto;
   display: block;
+  width: fit-content; /* Centra il button */
 }
 
 #question-count {
@@ -484,6 +485,9 @@ label[for="checkbox-promise"] {
 
 #spiegazione-progressiva {
   text-align: left;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 0.9rem;
 }
 
 #box-domande-correzione {
