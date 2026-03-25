@@ -607,7 +607,7 @@ const estrazioneDomande = () => {
   // AGGIORNAMENTO NUMERO DOMANDE BASE PAGINA
 
   const questionsNum = document.querySelector("#numero-domande P")
-  questionsNum.innerHTML = `QUESTION ${numeroDomandaCorrente}<span>/10</span>`
+  questionsNum.innerHTML = `QUESTION ${numeroDomandaCorrente}<span> / 10</span>`
   numeroDomandaCorrente += 1
 
   // inizioContoRovescia()
