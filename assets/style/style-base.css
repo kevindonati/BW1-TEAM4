@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap");
-
+/*GENERALE*/
 body {
   background-image: url(../img/bg.jpg);
   background-size: cover;
@@ -69,6 +69,7 @@ label {
   margin: 0 auto;
   padding: 4em;
 }
+/* WELCOME PAGE */
 
 .btn {
   text-transform: uppercase;
@@ -83,7 +84,8 @@ label {
   box-shadow: 0 0 15px 5px #00ffff80;
 }
 
-button {
+button,
+#prossima-domanda {
   background: transparent;
   color: white;
   border: 2px solid white;
@@ -92,6 +94,10 @@ button {
   font-weight: 700;
   cursor: pointer;
   transition: 0.3s ease;
+}
+
+#prossima-domanda {
+  text-align: center;
 }
 
 button:hover {
@@ -111,6 +117,8 @@ button:hover {
   margin-top: 6em;
 }
 
+/* TEST */
+
 #form-welcome button {
   margin-left: 8em;
   display: inline-block;
@@ -127,15 +135,22 @@ button:hover {
 }
 
 #form-domande {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
   max-width: 900px;
   margin: 40px auto;
-  justify-items: center;
+  text-align: center;
 }
 
-#form-domande button {
+#form-domande div {
+  display: inline-block;
+  width: 40%;
+  padding: 1em;
+}
+#form-domande div:last-child {
+  display: block;
+  width: 100%;
+}
+
+.btn-risposte {
   width: 100%;
   padding: 0.8em 3em;
   border: none;
@@ -151,7 +166,7 @@ button:hover {
   margin-bottom: 1em;
 }
 
-#form-domande button:hover {
+.btn-risposte:hover {
   background: linear-gradient(to bottom, #d20094, #900080);
 }
 
