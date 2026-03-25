@@ -563,6 +563,7 @@ const estrazioneDomande = () => {
   const btnNext = document.getElementById("prossima-domanda")
   const btnRisultati = document.querySelector("#numero-domande button")
   const containerTimer = document.querySelector(".timer-container")
+  const pNumeroDomande = document.getElementById("question-count")
 
   // RIMUOVO ELEMENTI APPENA PARTE LA PRIMA DOMANDA
   const formDifficoltà = document.getElementById("form-difficoltà")
@@ -578,6 +579,7 @@ const estrazioneDomande = () => {
     btn3.classList.add("no-display")
     btn4.classList.add("no-display")
     btnRisultati.classList.remove("no-display")
+    pNumeroDomande.classList.add("no-display")
     containerTimer.innerHTML = ""
     return
   }
@@ -611,6 +613,7 @@ const estrazioneDomande = () => {
   const domandaInBaseADifficoltà = domande[difficoltà][numeroCasualeDomande]
   // QUI è DOVE VA IL TESTO DELLA DOMANDA
   h2.innerText = domandaInBaseADifficoltà.domanda
+  pNumeroDomande.classList.remove("no-display")
 
   //   QUI ASSEGNO LE RISPOSTE AI BOTTONI
   if (domandaInBaseADifficoltà.tipo === "risposta multipla") {
