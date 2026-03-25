@@ -322,3 +322,55 @@ textarea::placeholder {
 #stelline {
   margin-bottom: 6em;
 }
+
+/* Label resa relativa per consentire di modificare lo switch */
+label[for="checkbox-promise"] {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+/* L'input originiale viene nascosto ma è sempre cliccabile */
+#checkbox-promise {
+  opacity: 0;
+  position: absolute;
+}
+
+/* Stile sfondo switch */
+.checkmark {
+  position: relative;
+  width: 3em;
+  height: 1.5em;
+  background: #c6c6c6;
+  border-radius: 20px;
+  transition: 0.5s;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+}
+
+/* Stile pallino switch */
+.checkmark::before {
+  content: "";
+  position: absolute;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background: #fff;
+  top: 0;
+  left: 0;
+  transform: scale(1.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+
+/* Quando l'input è checkato, cambia il colore */
+#checkbox-promise:checked + .checkmark {
+  background: #00ffff;
+}
+
+/* Quando l'input è checkato, sposta il pallino */
+#checkbox-promise:checked + .checkmark::before {
+  left: 1.5em;
+}
