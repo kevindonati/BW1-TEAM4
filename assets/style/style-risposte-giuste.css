@@ -1,0 +1,7 @@
+.risposta-corretta {
+  background-color: forestgreen !important;
+}
+
+.risposta-errata {
+  background-color: crimson !important;
+}
