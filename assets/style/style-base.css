@@ -307,10 +307,10 @@ textarea {
   background: transparent;
   color: white;
   resize: none;
-  font-size: 14px;
-  border-style: none none solid none;
+  border: none;
   border-bottom: 2px solid #d20094;
-  height: 1.5em;
+  font-family: "Inter", sans-serif;
+  height: 5em;
 }
 
 textarea::placeholder {
