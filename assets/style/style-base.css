@@ -307,7 +307,7 @@ canvas {
 }
 
 .testo-piccolo {
-  font-size: 0.3em;
+  font-size: 0.23em;
   font-weight: 400;
   color: #ffffff;
   letter-spacing: 1px;
@@ -394,4 +394,8 @@ label[for="checkbox-promise"] {
 
 #checkbox-promise:checked + .checkmark::before {
   left: 1.5em;
+}
+
+#testo-domanda {
+  text-align: center;
 }
