@@ -27,14 +27,9 @@ const domande = {
       tipo: "risposta multipla",
     },
     {
-      domanda:
-        "In quale film i protagonisti seguono la 'strada di mattoni gialli'?",
+      domanda: "In quale film i protagonisti seguono la 'strada di mattoni gialli'?",
       rispostaGiusta: "Il Mago di Oz",
-      risposteSbagliate: [
-        "Alice nel Paese delle Meraviglie",
-        "Harry Potter",
-        "Shrek",
-      ],
+      risposteSbagliate: ["Alice nel Paese delle Meraviglie", "Harry Potter", "Shrek"],
       tipo: "risposta multipla",
     },
     {
@@ -51,8 +46,7 @@ const domande = {
       tipo: "risposta multipla",
     },
     {
-      domanda:
-        "Chi è il nemico giurato di Batman che ha le sembianze di un clown?",
+      domanda: "Chi è il nemico giurato di Batman che ha le sembianze di un clown?",
       rispostaGiusta: "Joker",
       risposteSbagliate: ["Pinguino", "Enigmista", "Due Facce"],
       tipo: "risposta multipla",
@@ -64,8 +58,7 @@ const domande = {
       tipo: "risposta booleana",
     },
     {
-      domanda:
-        "In Matrix, Neo sceglie la pillola rossa per scoprire la verità?",
+      domanda: "In Matrix, Neo sceglie la pillola rossa per scoprire la verità?",
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
@@ -77,8 +70,7 @@ const domande = {
       tipo: "risposta multipla",
     },
     {
-      domanda:
-        "Quale attore interpreta Iron Man nel Marvel Cinematic Universe?",
+      domanda: "Quale attore interpreta Iron Man nel Marvel Cinematic Universe?",
       rispostaGiusta: "Robert Downey Jr.",
       risposteSbagliate: ["Chris Evans", "Chris Hemsworth", "Mark Ruffalo"],
       tipo: "risposta multipla",
@@ -90,15 +82,13 @@ const domande = {
       tipo: "risposta booleana",
     },
     {
-      domanda:
-        "Quale archeologo è famoso per la sua tecnica di combattimento con la frusta?",
+      domanda: "Quale archeologo è famoso per la sua tecnica di combattimento con la frusta?",
       rispostaGiusta: "Indiana Jones",
       risposteSbagliate: ["Lara Croft", "Nathan Drake", "Rick O'Connell"],
       tipo: "risposta multipla",
     },
     {
-      domanda:
-        "In Guerre Stellari, Darth Vader rivela a Luke di essere suo padre?",
+      domanda: "In Guerre Stellari, Darth Vader rivela a Luke di essere suo padre?",
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
@@ -116,8 +106,7 @@ const domande = {
       tipo: "risposta booleana",
     },
     {
-      domanda:
-        "Chi è l'orco verde protagonista dell'omonimo film d'animazione?",
+      domanda: "Chi è l'orco verde protagonista dell'omonimo film d'animazione?",
       rispostaGiusta: "Shrek",
       risposteSbagliate: ["Ciuchino", "Gatto con gli stivali", "Lord Farquaad"],
       tipo: "risposta multipla",
@@ -130,8 +119,7 @@ const domande = {
       tipo: "risposta booleana",
     },
     {
-      domanda:
-        "Qual è la specialità culinaria preferita delle Tartarughe Ninja?",
+      domanda: "Qual è la specialità culinaria preferita delle Tartarughe Ninja?",
       rispostaGiusta: "Pizza",
       risposteSbagliate: ["Sushi", "Hamburger", "Pasta"],
       tipo: "risposta multipla",
@@ -175,8 +163,7 @@ const domande = {
       tipo: "risposta multipla",
     },
     {
-      domanda:
-        "In quale anno è uscito nelle sale il primo film della saga di Star Wars?",
+      domanda: "In quale anno è uscito nelle sale il primo film della saga di Star Wars?",
       rispostaGiusta: "1977",
       risposteSbagliate: ["1975", "1980", "1983"],
       tipo: "risposta multipla",
@@ -189,36 +176,31 @@ const domande = {
       tipo: "risposta booleana",
     },
     {
-      domanda:
-        "Chi interpreta il Joker nel film Il Cavaliere Oscuro di Christopher Nolan?",
+      domanda: "Chi interpreta il Joker nel film Il Cavaliere Oscuro di Christopher Nolan?",
       rispostaGiusta: "Heath Ledger",
       risposteSbagliate: ["Jared Leto", "Joaquin Phoenix", "Jack Nicholson"],
       tipo: "risposta multipla",
     },
     {
-      domanda:
-        "Qual è il nome dell'intelligenza artificiale in 2001: Odissea nello spazio?",
+      domanda: "Qual è il nome dell'intelligenza artificiale in 2001: Odissea nello spazio?",
       rispostaGiusta: "HAL 9000",
       risposteSbagliate: ["JARVIS", "SKYNET", "DAVID"],
       tipo: "risposta multipla",
     },
     {
-      domanda:
-        "In quale città francese è ambientato il film Pixar Ratatouille?",
+      domanda: "In quale città francese è ambientato il film Pixar Ratatouille?",
       rispostaGiusta: "Parigi",
       risposteSbagliate: ["Lione", "Marsiglia", "Nizza"],
       tipo: "risposta multipla",
     },
     {
-      domanda:
-        "Steven Spielberg ha diretto la trilogia de Il Signore degli Anelli?",
+      domanda: "Steven Spielberg ha diretto la trilogia de Il Signore degli Anelli?",
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
     },
     {
-      domanda:
-        "Per quale film Leonardo DiCaprio ha vinto il suo primo Oscar come Migliore Attore?",
+      domanda: "Per quale film Leonardo DiCaprio ha vinto il suo primo Oscar come Migliore Attore?",
       rispostaGiusta: "Revenant - Redivivo",
       risposteSbagliate: ["The Wolf of Wall Street", "Inception", "Titanic"],
       tipo: "risposta multipla",
@@ -230,15 +212,13 @@ const domande = {
       tipo: "risposta multipla",
     },
     {
-      domanda:
-        "Quale attrice interpreta Katniss Everdeen nella saga di Hunger Games?",
+      domanda: "Quale attrice interpreta Katniss Everdeen nella saga di Hunger Games?",
       rispostaGiusta: "Jennifer Lawrence",
       risposteSbagliate: ["Emma Watson", "Shailene Woodley", "Margot Robbie"],
       tipo: "risposta multipla",
     },
     {
-      domanda:
-        "Ennio Morricone ha composto la colonna sonora originale di Interstellar?",
+      domanda: "Ennio Morricone ha composto la colonna sonora originale di Interstellar?",
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
@@ -250,8 +230,7 @@ const domande = {
       tipo: "risposta multipla",
     },
     {
-      domanda:
-        "La Città Incantata dello Studio Ghibli ha vinto l'Oscar nel 2003?",
+      domanda: "La Città Incantata dello Studio Ghibli ha vinto l'Oscar nel 2003?",
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
@@ -263,8 +242,7 @@ const domande = {
       tipo: "risposta multipla",
     },
     {
-      domanda:
-        "Qual è il nome della terra immaginaria in cui è ambientato Avatar?",
+      domanda: "Qual è il nome della terra immaginaria in cui è ambientato Avatar?",
       rispostaGiusta: "Pandora",
       risposteSbagliate: ["Naboo", "Asgard", "Arrakis"],
       tipo: "risposta multipla",
@@ -285,23 +263,17 @@ const domande = {
     {
       domanda: "Chi ha diretto il film 'The Departed'?",
       rispostaGiusta: "Martin Scorsese",
-      risposteSbagliate: [
-        "Francis Ford Coppola",
-        "Ridley Scott",
-        "Brian De Palma",
-      ],
+      risposteSbagliate: ["Francis Ford Coppola", "Ridley Scott", "Brian De Palma"],
       tipo: "risposta multipla",
     },
     {
-      domanda:
-        "Joaquin Phoenix ha vinto l'Oscar per la sua interpretazione di Joker?",
+      domanda: "Joaquin Phoenix ha vinto l'Oscar per la sua interpretazione di Joker?",
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
     },
     {
-      domanda:
-        "In quale anno è ambientato il futuro di 'Ritorno al Futuro - Parte II'?",
+      domanda: "In quale anno è ambientato il futuro di 'Ritorno al Futuro - Parte II'?",
       rispostaGiusta: "2015",
       risposteSbagliate: ["2010", "2020", "2025"],
       tipo: "risposta multipla",
@@ -332,8 +304,7 @@ const domande = {
       tipo: "risposta multipla",
     },
     {
-      domanda:
-        "Il primo film del Marvel Cinematic Universe (MCU) è stato Captain America?",
+      domanda: "Il primo film del Marvel Cinematic Universe (MCU) è stato Captain America?",
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
@@ -341,21 +312,15 @@ const domande = {
   ],
   difficile: [
     {
-      domanda:
-        "Qual è stato il primo lungometraggio animato a colori della storia (1937)?",
+      domanda: "Qual è stato il primo lungometraggio animato a colori della storia (1937)?",
       rispostaGiusta: "Biancaneve e i sette nani",
       risposteSbagliate: ["Pinocchio", "Fantasia", "Bambi"],
       tipo: "risposta multipla",
     },
     {
-      domanda:
-        "Chi ha diretto il capolavoro del neorealismo italiano Ladri di biciclette?",
+      domanda: "Chi ha diretto il capolavoro del neorealismo italiano Ladri di biciclette?",
       rispostaGiusta: "Vittorio De Sica",
-      risposteSbagliate: [
-        "Federico Fellini",
-        "Roberto Rossellini",
-        "Luchino Visconti",
-      ],
+      risposteSbagliate: ["Federico Fellini", "Roberto Rossellini", "Luchino Visconti"],
       tipo: "risposta multipla",
     },
     {
@@ -365,14 +330,9 @@ const domande = {
       tipo: "risposta booleana",
     },
     {
-      domanda:
-        "Quale film detiene il record di 11 Oscar vinti, insieme a Ben-Hur e Titanic?",
+      domanda: "Quale film detiene il record di 11 Oscar vinti, insieme a Ben-Hur e Titanic?",
       rispostaGiusta: "Il Signore degli Anelli - Il ritorno del re",
-      risposteSbagliate: [
-        "Via col vento",
-        "West Side Story",
-        "La lista di Schindler",
-      ],
+      risposteSbagliate: ["Via col vento", "West Side Story", "La lista di Schindler"],
       tipo: "risposta multipla",
     },
     {
@@ -392,16 +352,11 @@ const domande = {
     {
       domanda: "Chi ha diretto il film 'Mulholland Drive'?",
       rispostaGiusta: "David Lynch",
-      risposteSbagliate: [
-        "David Cronenberg",
-        "Darren Aronofsky",
-        "Lars von Trier",
-      ],
+      risposteSbagliate: ["David Cronenberg", "Darren Aronofsky", "Lars von Trier"],
       tipo: "risposta multipla",
     },
     {
-      domanda:
-        "La famosa scena della doccia in 'Psycho' contiene esattamente 100 inquadrature?",
+      domanda: "La famosa scena della doccia in 'Psycho' contiene esattamente 100 inquadrature?",
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
@@ -410,11 +365,7 @@ const domande = {
       domanda:
         "In 'Bastardi senza gloria', qual è il soprannome del personaggio interpretato da Christoph Waltz?",
       rispostaGiusta: "Il cacciatore di ebrei",
-      risposteSbagliate: [
-        "L'orso ebreo",
-        "Il boia di Berlino",
-        "Il lupo delle SS",
-      ],
+      risposteSbagliate: ["L'orso ebreo", "Il boia di Berlino", "Il lupo delle SS"],
       tipo: "risposta multipla",
     },
     {
@@ -425,22 +376,19 @@ const domande = {
       tipo: "risposta booleana",
     },
     {
-      domanda:
-        "Quale film ha vinto la prima Palma d'Oro al Festival di Cannes nel 1939?",
+      domanda: "Quale film ha vinto la prima Palma d'Oro al Festival di Cannes nel 1939?",
       rispostaGiusta: "Via col vento",
       risposteSbagliate: ["Il mago di Oz", "Ombre rosse", "Regole di gioco"],
       tipo: "risposta multipla",
     },
     {
-      domanda:
-        "Bong Joon-ho, regista di Parasite, ha diretto anche il film 'Snowpiercer'?",
+      domanda: "Bong Joon-ho, regista di Parasite, ha diretto anche il film 'Snowpiercer'?",
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
     },
     {
-      domanda:
-        "Chi ha composto la colonna sonora del film 'Il Gladiatore' insieme a Lisa Gerrard?",
+      domanda: "Chi ha composto la colonna sonora del film 'Il Gladiatore' insieme a Lisa Gerrard?",
       rispostaGiusta: "Hans Zimmer",
       risposteSbagliate: ["John Williams", "James Horner", "Howard Shore"],
       tipo: "risposta multipla",
@@ -453,40 +401,31 @@ const domande = {
       tipo: "risposta booleana",
     },
     {
-      domanda:
-        "Emmanuel Lubezki ha vinto 5 Oscar consecutivi per la fotografia?",
+      domanda: "Emmanuel Lubezki ha vinto 5 Oscar consecutivi per la fotografia?",
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
     },
     {
-      domanda:
-        "In quale film di Alfred Hitchcock la protagonista viene uccisa a metà pellicola?",
+      domanda: "In quale film di Alfred Hitchcock la protagonista viene uccisa a metà pellicola?",
       rispostaGiusta: "Psycho",
-      risposteSbagliate: [
-        "La donna che visse due volte",
-        "Gli uccelli",
-        "La finestra sul cortile",
-      ],
+      risposteSbagliate: ["La donna che visse due volte", "Gli uccelli", "La finestra sul cortile"],
       tipo: "risposta multipla",
     },
     {
-      domanda:
-        "Brad Pitt rifiutò il ruolo di Neo in Matrix prima di Keanu Reeves?",
+      domanda: "Brad Pitt rifiutò il ruolo di Neo in Matrix prima di Keanu Reeves?",
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
     },
     {
-      domanda:
-        "Chi ha scritto la sceneggiatura di Quarto Potere insieme a Orson Welles?",
+      domanda: "Chi ha scritto la sceneggiatura di Quarto Potere insieme a Orson Welles?",
       rispostaGiusta: "Herman J. Mankiewicz",
       risposteSbagliate: ["Billy Wilder", "John Huston", "Howard Hawks"],
       tipo: "risposta multipla",
     },
     {
-      domanda:
-        "Qual è l'ultimo film completato da Stanley Kubrick prima della sua morte?",
+      domanda: "Qual è l'ultimo film completato da Stanley Kubrick prima della sua morte?",
       rispostaGiusta: "Eyes Wide Shut",
       risposteSbagliate: ["Full Metal Jacket", "Shining", "Arancia Meccanica"],
       tipo: "risposta multipla",
@@ -504,24 +443,15 @@ const domande = {
       tipo: "risposta booleana",
     },
     {
-      domanda:
-        "Chi interpreta il ruolo di 'Il Brutto' (Tuco) ne Il buono, il brutto, il cattivo?",
+      domanda: "Chi interpreta il ruolo di 'Il Brutto' (Tuco) ne Il buono, il brutto, il cattivo?",
       rispostaGiusta: "Eli Wallach",
-      risposteSbagliate: [
-        "Clint Eastwood",
-        "Lee Van Cleef",
-        "Gian Maria Volonté",
-      ],
+      risposteSbagliate: ["Clint Eastwood", "Lee Van Cleef", "Gian Maria Volonté"],
       tipo: "risposta multipla",
     },
     {
       domanda: "Qual è il titolo del primo film sonoro della storia (1927)?",
       rispostaGiusta: "Il cantante di jazz",
-      risposteSbagliate: [
-        "Luci della città",
-        "Metropolis",
-        "Il gabinetto del dottor Caligari",
-      ],
+      risposteSbagliate: ["Luci della città", "Metropolis", "Il gabinetto del dottor Caligari"],
       tipo: "risposta multipla",
     },
     {
@@ -532,8 +462,7 @@ const domande = {
       tipo: "risposta booleana",
     },
     {
-      domanda:
-        "Il film I Sette Samurai di Kurosawa ha ispirato I magnifici sette?",
+      domanda: "Il film I Sette Samurai di Kurosawa ha ispirato I magnifici sette?",
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
@@ -543,6 +472,7 @@ const domande = {
 
 // SALVO LE DOMANDE PESCATE IN QUESTO ARRAY, IN MODO CHE NON POSSANO USCIRE NUOVAMENTE
 let domandePescate = []
+let indiceDomandePescate = []
 // PARTENZA DI BASE DEL PUNTEGGIO
 let punteggio = 0
 // CONTEGGIO DOMANDA CORRENTE
@@ -594,14 +524,14 @@ const estrazioneDomande = () => {
   }
 
   // PESCO UNA DOMANDA
-  const numeroCasualeDomande = Math.floor(
-    Math.random() * domande[difficoltà].length,
-  )
+  const numeroCasualeDomande = Math.floor(Math.random() * domande[difficoltà].length)
   // CONTROLLO CHE NON SIA GIà USCITA
-  if (domandePescate.includes(numeroCasualeDomande)) {
+  if (indiceDomandePescate.includes(numeroCasualeDomande)) {
     return estrazioneDomande()
   }
   domandePescate.push(domande[difficoltà][numeroCasualeDomande])
+  indiceDomandePescate.push(numeroCasualeDomande)
+  console.log(indiceDomandePescate)
 
   // ASSEGNAZIONE DOMANDA ALL'H2 E RISPOSTE AI BOTTONI
   const domandaInBaseADifficoltà = domande[difficoltà][numeroCasualeDomande]
@@ -701,8 +631,7 @@ const updateCountdown = () => {
   // costante che cambia il numero e il colore della linea quando viene cambiata
   numeriTimer.innerText = tempoRimanente
 
-  const updateLinea =
-    lineaCountdown - (tempoRimanente / tempoTimer) * lineaCountdown
+  const updateLinea = lineaCountdown - (tempoRimanente / tempoTimer) * lineaCountdown
   progressoTimer.style.strokeDashoffset = updateLinea
   // Formula matematica che server per far diminure la linea in modo giusto. NON CHIEDERE mi fido di chi l'ha scritta
 }
