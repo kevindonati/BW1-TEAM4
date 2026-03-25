@@ -229,10 +229,25 @@ button:hover {
   vertical-align: center;
 }
 
+.punteggio-domande {
+  background-color: rgba(0, 0, 0, 0.372);
+  border-radius: 2em;
+}
+
+.punteggio-domande h2 {
+  margin-bottom: 0;
+}
+
 .punteggio-domande div {
   display: inline-block;
   width: 33%;
   text-align: center;
+  padding: 1em 0;
+  border-right: 1px solid white;
+}
+
+.punteggio-domande div:last-child {
+  border: none;
 }
 
 .titolo {
@@ -376,6 +391,10 @@ canvas {
 
 .risposta-errata {
   background-color: crimson !important;
+}
+
+.crimson-color {
+  color: crimson;
 }
 
 .feedback-box {
