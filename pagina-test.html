@@ -28,7 +28,11 @@
             <circle class="timer-bg" cx="50" cy="50" r="45"></circle>
             <circle class="progresso-timer" cx="50" cy="50" r="45"></circle>
           </svg>
-          <p class="numeri-timer">10</p>
+          <div class="numeri-timer">
+            <span class="testo-piccolo">SECONDS</span>
+            <span id="countdown-numero">10</span>
+            <span class="testo-piccolo">REMAINING</span>
+          </div>
         </div>
       </header>
       <main>
@@ -79,8 +83,7 @@
           <button class="no-display" onclick="mostraRisultati()">
             Scopri i risultati
           </button>
-          <!-- Bottone di prova per vedere l'innerText cambiare DA RIMUOVERE-->
-          <p>QUESTION 1/10</p>
+          <p id="question-count">QUESTION 1 <span>/ 10</span></p>
           <p id="spiegazione-progressiva">
             &#42; Difficoltà progressiva: con l'aumentare delle risposte
             corrette, anche la difficoltà aumenterà.
