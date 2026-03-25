@@ -121,6 +121,7 @@ button:hover {
 
 #form-welcome {
   margin-top: 6em;
+  display: flex;
 }
 
 /* TEST */
@@ -413,7 +414,6 @@ textarea {
   border: none;
   border-bottom: 2px solid #d20094;
   font-family: "Inter", sans-serif;
-  height: 5em;
 }
 
 textarea::placeholder {
