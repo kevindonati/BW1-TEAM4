@@ -457,6 +457,10 @@ label[for="checkbox-promise"] {
 }
 
 #testo-domanda h2 {
-  text-align: center;
+  text-align: left;
   font-weight: 350;
+}
+
+#spiegazione-progressiva {
+  text-align: left;
 }
