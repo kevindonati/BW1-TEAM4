@@ -964,38 +964,49 @@ const mostraRisultati = function () {
 }
 
 const riempiCorrezioneDomande = () => {
+  const section = document.getElementById("box-domande-correzione")
+  section.innerHTML = ""
+
   for (let x = 0; x < 10; x++) {
-    const section = document.getElementById("box-domande-correzione")
     const div = document.createElement("div")
     const p = document.createElement("p")
-    const i = document.createElement("i")
     const divRisultati = document.createElement("div")
-    const pRisultati = document.createElement("p")
+
+    // Domanda scritta in modo sbagliato
+    let domandaConTag = domandePescate[x].domanda
+
+    // Sostituzione del tag con uno spazio prima di pulire il testo
+    // "da<span>Johnny" diventa "da Johnny"
+    let testoSistemato = domandaConTag.replace("<span", " <span")
+
+    let pulitore = document.createElement("div")
+    pulitore.innerHTML = testoSistemato
+    let testoVeramentePulito = pulitore.innerText
+
+    p.innerText = `Domanda ${x + 1}: ${testoVeramentePulito}`
+
     section.appendChild(div)
     div.appendChild(p)
-    div.appendChild(i)
     div.appendChild(divRisultati)
-    divRisultati.appendChild(pRisultati)
-    console.log(domandePescate[x].domanda)
-    p.innerText = `Domanda ${x + 1}: ${domandePescate[x].domanda}`
 
+    // Gestione risposte
+    let contenutoRisposte = ""
     if (domandePescate[x].tipo === "risposta multipla") {
-      divRisultati.innerHTML = `
-      <ol>
-        <li>${domandePescate[x].rispostaGiusta} <i class="fas fa-check"></i></li>
-        <li>${domandePescate[x].risposteSbagliate[0]}</li>
-        <li>${domandePescate[x].risposteSbagliate[1]}</li>
-        <li>${domandePescate[x].risposteSbagliate[2]}</li>
-      </ol>
-   `
+      contenutoRisposte = `
+        <ol>
+          <li>${domandePescate[x].rispostaGiusta} <i class="fas fa-check"></i></li>
+          <li>${domandePescate[x].risposteSbagliate[0]}</li>
+          <li>${domandePescate[x].risposteSbagliate[1]}</li>
+          <li>${domandePescate[x].risposteSbagliate[2]}</li>
+        </ol>`
     } else {
-      divRisultati.innerHTML = `
-      <ol>
-        <li>${domandePescate[x].rispostaGiusta} <i class="fas fa-check"></i></li>
-        <li>${domandePescate[x].risposteSbagliate}</li>
-      </ol>
-   `
+      contenutoRisposte = `
+        <ol>
+          <li>${domandePescate[x].rispostaGiusta} <i class="fas fa-check"></i></li>
+          <li>${domandePescate[x].risposteSbagliate}</li>
+        </ol>`
     }
+    divRisultati.innerHTML = contenutoRisposte
   }
 
   // SCRITTE DENTRO GRAFICO A TORTA
