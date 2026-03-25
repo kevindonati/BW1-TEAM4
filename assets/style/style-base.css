@@ -181,20 +181,30 @@ button:hover {
 }
 
 .content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 60px;
   margin-top: 3em;
+  height: 600px;
+  box-sizing: border-box;
+  padding-bottom: 100px;
+}
+
+.grafico {
+  position: relative;
+  width: 600px;
+  display: inline-block;
+}
+
+.side {
+  display: inline-block;
+  width: 340px;
+  text-align: center;
+  vertical-align: center;
 }
 
 .titolo {
   text-align: center;
 }
 
-.side,
 .chart-inner {
-  display: inline-block;
   text-align: center;
 }
 .button-wrapper {
@@ -249,9 +259,6 @@ canvas {
   height: 600px;
 }
 
-.grafico {
-  position: relative;
-}
 .chart-inner {
   position: absolute;
   box-sizing: border-box;
