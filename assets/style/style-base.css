@@ -216,11 +216,15 @@ button:hover {
   margin-bottom: 8px;
 }
 
-.chart-inner .highlight {
+.chart-inner .highlight,
+.chart-inner .highlight-bocciato {
   color: #19dbe3;
   font-size: 1.8rem;
   font-weight: 800;
   margin-bottom: 20px;
+}
+.chart-inner .highlight-bocciato {
+  color: #d20094;
 }
 
 .chart-inner p {
