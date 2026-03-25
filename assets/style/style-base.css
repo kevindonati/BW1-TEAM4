@@ -133,11 +133,13 @@ button:hover {
 #form-difficoltà #scelta {
   font-size: 1.3em;
   margin: 0 1em 0 0.2em;
-  border: none;
-  border-radius: 0;
-  background-color: #00ffff;
-  color: #00363a;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1em;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: white;
   text-transform: uppercase;
+  text-align: center;
 }
 
 #form-domande {
@@ -230,7 +232,7 @@ button:hover {
 }
 
 .punteggio-domande {
-  background-color: rgba(0, 0, 0, 0.372);
+  background-color: rgba(82, 74, 233, 0.125);
   border-radius: 2em;
 }
 
@@ -243,7 +245,7 @@ button:hover {
   width: 33%;
   text-align: center;
   padding: 1em 0;
-  border-right: 1px solid white;
+  border-right: 1px solid rgba(255, 255, 255, 0.517);
 }
 
 .punteggio-domande div:last-child {
@@ -482,4 +484,15 @@ label[for="checkbox-promise"] {
 
 #spiegazione-progressiva {
   text-align: left;
+}
+
+#box-domande-correzione {
+  margin-top: 5em;
+  background-color: rgba(82, 74, 233, 0.125);
+  padding: 2em;
+  border-radius: 2em;
+}
+
+#box-domande-correzione > div {
+  margin-top: 2em;
 }
