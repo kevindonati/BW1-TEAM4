@@ -160,6 +160,16 @@ button:hover {
   display: block;
 }
 
+#question-count {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+#question-count span {
+  color: #d20094;
+}
+
 /*CSS Torta con scritte all'interno*/
 .results-page header {
   margin: 0;
@@ -301,10 +311,10 @@ textarea {
   background: transparent;
   color: white;
   resize: none;
-  font-size: 14px;
-  border-style: none none solid none;
+  border: none;
   border-bottom: 2px solid #d20094;
-  height: 1.5em;
+  font-family: "Inter", sans-serif;
+  height: 5em;
 }
 
 textarea::placeholder {
