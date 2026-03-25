@@ -128,11 +128,11 @@ button:hover {
 
 #form-domande {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 15px;                             
-  max-width: 900px;                      
-  margin: 40px auto;                    
-  justify-items: center;                 
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  max-width: 900px;
+  margin: 40px auto;
+  justify-items: center;
 }
 
 #form-domande button {
@@ -187,7 +187,6 @@ button:hover {
   margin-top: 3em;
   height: 600px;
   box-sizing: border-box;
-  padding-bottom: 100px;
 }
 
 .grafico {
@@ -197,6 +196,8 @@ button:hover {
 }
 
 .side {
+  vertical-align: top;
+  margin-top: 10em;
   display: inline-block;
   width: 340px;
   text-align: center;
