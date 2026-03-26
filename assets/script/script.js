@@ -829,9 +829,20 @@ const estrazioneDomande = () => {
 const textArea = document.querySelector("textarea");
 
 const invioAlert = () => {
-  alert("Il tuo feedback è stato ricevuto! Ti ringraziamo!"); // la funzione che lancia l'Alert
-  textArea.value = "";
+  if (textArea.value === "") {
+    alert("Non hai fornito alcun feedback!");
+  } else {
+    alert("Il tuo feedback è stato ricevuto! Ti ringraziamo!"); // la funzione che lancia l'Alert
+    textArea.value = "";
+  }
 };
+
+const buttonMoreInfo = document.getElementById("btn-more-info"); // abbiamo recuperato il bottone 'more info' dall'HTML per lavorarci in JS
+const apriPaginaInfo = () => {
+  window.location.href = "./pagina-moreInfo.html"; // funzione secondo cui quando la chiamo apre nuova pagina (window.location) ed in questo caso è pagina-moreInfo (.href)
+};
+buttonMoreInfo.addEventListener("click", apriPaginaInfo); // abbiamo aggiunto l'event listener 'click' al bottone more info e poi abbiamo chiamato la funzione. Senza chiamare la funzione sarebbe
+// stato solo 'cliccabile' ma senza uscita
 
 // TIMER
 // ANIMAZIONE DEL TIMER
@@ -910,7 +921,6 @@ form.addEventListener("submit", function (e) {
   numeroDomandaCorrente = 1;
   estrazioneDomande();
 });
-
 // CAMBIA PAGINA IN MOSTRA RISULTATI
 const mostraRisultati = function () {
   const contenitore = document.getElementById("cambia-pagina");
