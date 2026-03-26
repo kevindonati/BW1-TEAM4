@@ -653,11 +653,15 @@ const estrazioneDomande = () => {
     btn2.classList.remove("no-display")
     btn3.classList.remove("no-display")
     btn4.classList.remove("no-display")
+
     // MISCHIO LE RISPOSTE IN ORDINE CASUALE
     const risposteMischiate = [
       oggettoDomandaEstratta.rispostaGiusta,
       ...oggettoDomandaEstratta.risposteSbagliate,
     ].sort(() => Math.random() - 0.5)
+
+    // LE SALVO PER MOSTRARLE DOPO NELLA CORREZIONE
+    oggettoDomandaEstratta.risposteMischiate = risposteMischiate
 
     btn1.innerText = risposteMischiate[0]
     btn2.innerText = risposteMischiate[1]
@@ -676,6 +680,7 @@ const estrazioneDomande = () => {
   // SE è GIUSTA DIVENTA VERDE, AALTRIMENTI ROSSA
   const risposta1 = document.getElementById("risposta-1")
   risposta1.onclick = function () {
+    oggettoDomandaEstratta.rispostaScelta = risposta1.innerText
     if (risposta1.innerText === oggettoDomandaEstratta.rispostaGiusta) {
       punteggio += 1
       btn1.classList.add("risposta-corretta")
@@ -706,6 +711,7 @@ const estrazioneDomande = () => {
   // SE è GIUSTA DIVENTA VERDE, AALTRIMENTI ROSSA
   const risposta2 = document.getElementById("risposta-2")
   risposta2.onclick = function () {
+    oggettoDomandaEstratta.rispostaScelta = risposta2.innerText
     if (risposta2.innerText === oggettoDomandaEstratta.rispostaGiusta) {
       punteggio += 1
       btn2.classList.add("risposta-corretta")
@@ -736,6 +742,7 @@ const estrazioneDomande = () => {
   // SE è GIUSTA DIVENTA VERDE, AALTRIMENTI ROSSA
   const risposta3 = document.getElementById("risposta-3")
   risposta3.onclick = function () {
+    oggettoDomandaEstratta.rispostaScelta = risposta3.innerText
     if (risposta3.innerText === oggettoDomandaEstratta.rispostaGiusta) {
       punteggio += 1
       btn3.classList.add("risposta-corretta")
@@ -764,6 +771,7 @@ const estrazioneDomande = () => {
   // SE è GIUSTA DIVENTA VERDE, AALTRIMENTI ROSSA
   const risposta4 = document.getElementById("risposta-4")
   risposta4.onclick = function () {
+    oggettoDomandaEstratta.rispostaScelta = risposta4.innerText
     if (risposta4.innerText === oggettoDomandaEstratta.rispostaGiusta) {
       punteggio += 1
       btn4.classList.add("risposta-corretta")
@@ -851,8 +859,10 @@ const updateCountdown = () => {
 
 // COSA SUCCEDE SE SCADE IL TEMPO E NON RISPONDO
 const tempoFinito = () => {
-  console.log("cicci")
-
+  // SE UTENTE NON SCEGLIE UNA RISPOSTA, ASSEGNO NULL (MI SERVE PER ASSEGNARE RISPOSTA NELLA CORREZIONE DOMANDE)
+  if (domandePescate.length > 0) {
+    domandePescate[domandePescate.length - 1].rispostaScelta = null
+  }
   // PRENDI TUTTI I BOTTONI E LA DOMANDA
   const btn1 = document.getElementById("risposta-1")
   const btn2 = document.getElementById("risposta-2")
@@ -1009,21 +1019,33 @@ const riempiCorrezioneDomande = () => {
     let contenutoRisposte = ""
     // CONTROLLA IL TIPO DI DOMANDA. SE È A RISPOSTA MULTIPLA , CREA UNA LISTA CON 4 OPZIONI
     if (domandePescate[x].tipo === "risposta multipla") {
-      contenutoRisposte = `
-        <ol>
-          <li>${domandePescate[x].rispostaGiusta} <i class="green fas fa-check"></i></li> 
-          <li>${domandePescate[x].risposteSbagliate[0]}</li>
-          <li>${domandePescate[x].risposteSbagliate[1]}</li>
-          <li>${domandePescate[x].risposteSbagliate[2]}</li>
-        </ol>`
+      const ordine = domandePescate[x].risposteMischiate
+      const scelta = domandePescate[x].rispostaScelta
 
-      //  SE NON È MULTIPLA , CREA UNA LISTA CON 2 OPZIONI (GIUSTA/SBAGLIATA)
-    } else {
       contenutoRisposte = `
-        <ol>
-          <li>${domandePescate[x].rispostaGiusta} <i class="green fas fa-check"></i></li>
-          <li>${domandePescate[x].risposteSbagliate}</li>
-        </ol>`
+    <ol>
+      ${ordine
+        .map((r) => {
+          const isGiusta = r === domandePescate[x].rispostaGiusta
+          const isScelta = r === scelta && !isGiusta
+          return `<li>
+          ${r}
+          ${isGiusta ? '<i class="fas fa-check" style="color:green"></i>' : ""}
+          ${isScelta ? '<i class="fas fa-times" style="color:red"></i>' : ""}
+        </li>`
+        })
+        .join("")}
+    </ol>`
+    } else {
+      const scelta = domandePescate[x].rispostaScelta
+      const giusta = domandePescate[x].rispostaGiusta
+      const sbagliata = domandePescate[x].risposteSbagliate
+
+      contenutoRisposte = `
+    <ol>
+      <li>${giusta} <i class="fas fa-check" style="color:green"></i></li>
+      <li>${sbagliata} ${scelta === sbagliata ? '<i class="fas fa-times" style="color:red"></i>' : ""}</li>
+    </ol>`
     }
     // MOSTRA LE RISPOSTE NEL DIV
     divRisultati.innerHTML = contenutoRisposte

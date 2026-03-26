@@ -515,3 +515,11 @@ textarea::placeholder {
 .green {
   color: rgb(43, 192, 5);
 }
+
+.red {
+  color: rgb(240, 25, 25);
+}
+
+#box-domande-correzione i {
+  padding-left: 3px;
+}
