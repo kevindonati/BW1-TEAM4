@@ -996,8 +996,8 @@ const invioAlert = () => {
 }
 
 const apriPaginaInfo = () => {
-  window.location.href = "./pagina-moreInfo.html";
-}; // funzione secondo cui quando la chiamo apre nuova pagina (window.location) ed in questo caso è pagina-moreInfo (.href)
+  window.location.href = "./pagina-moreInfo.html"
+} // funzione secondo cui quando la chiamo apre nuova pagina (window.location) ed in questo caso è pagina-moreInfo (.href)
 
 // TIMER
 // ANIMAZIONE DEL TIMER
@@ -1066,7 +1066,7 @@ const inizioContoRovescia = () => {
 const buttonDropdownMenu = document.getElementById("dropbtn")
 const changeDifficulty = (event) => {
   const arrayOfLinks = document.getElementsByClassName("single-difficulty")
-  buttonDropdownMenu.innerHTML = `${arrayOfLinks[event].innerText}`
+  buttonDropdownMenu.innerHTML = `${arrayOfLinks[event].innerText}<i class="fas fa-caret-down"></i>`
 }
 
 const form = document.querySelector("#form-difficoltà")

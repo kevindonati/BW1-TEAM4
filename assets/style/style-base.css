@@ -202,8 +202,8 @@ label[for="checkbox-promise"] {
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
-  min-width: 160px;
-  max-width: 160px;
+  min-width: 180px;
+  max-width: 180px;
 }
 
 /* Dropdown content */
@@ -227,6 +227,8 @@ label[for="checkbox-promise"] {
   margin-bottom: 0.2em;
   font-size: 1em;
   font-weight: 400;
+  display: flex;
+  justify-content: space-between;
 
   /* box-shadow: 0 -1px 0 2px #fff; */
 }
