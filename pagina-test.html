@@ -13,8 +13,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
       integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+      referrerpolicy="no-referrer" />
   </head>
   <body>
     <div id="cambia-pagina" class="contenitore-generale">
@@ -44,57 +43,53 @@
         <form id="form-difficoltà">
           <label for="scelta">Scegli un'opzione di difficoltà:</label>
 
-          <select name="scelta" id="scelta">
+          <div class="dropdown">
+            <button id="dropbtn">difficoltà &#9660;</button>
+            <div class="dropdown-content">
+              <ul>
+                <li class="single-difficulty" onclick="changeDifficulty(0)" href="#">facile</li>
+                <li class="single-difficulty" onclick="changeDifficulty(1)" href="#">medio</li>
+                <li class="single-difficulty" onclick="changeDifficulty(2)" href="#">difficile</li>
+                <li class="single-difficulty" onclick="changeDifficulty(3)" href="#">
+                  progressiva
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- <select name="scelta" id="scelta">
             <option value="facile">facile</option>
             <option value="medio">medio</option>
             <option value="difficile">difficile</option>
             <option value="progressiva">progressiva</option>
-          </select>
+          </select> -->
 
-          <button onclick="inizioContoRovescia()" class="btn" type="submit">
-            Inizia il quiz
-          </button>
+          <button onclick="inizioContoRovescia()" class="btn" type="submit">Inizia il quiz</button>
         </form>
         <p id="spiegazione-progressiva">
-          &#42; Difficoltà progressiva: con l'aumentare delle risposte corrette,
-          anche la difficoltà aumenterà.
+          &#42; Difficoltà progressiva: con l'aumentare delle risposte corrette, anche la difficoltà
+          aumenterà.
         </p>
         <!-- Form con i button per le risposte-->
         <div id="contenitore-form-bottoni" class="no-display">
           <form id="form-domande">
             <div>
-              <button
-                class="no-display btn-risposte"
-                id="risposta-1"
-                type="button"
-              >
+              <button class="no-display btn-risposte" id="risposta-1" type="button">
                 Risposta 1
               </button>
             </div>
             <div>
-              <button
-                class="no-display btn-risposte"
-                id="risposta-2"
-                type="button"
-              >
+              <button class="no-display btn-risposte" id="risposta-2" type="button">
                 Risposta 2
               </button>
             </div>
             <div>
-              <button
-                class="no-display btn-risposte"
-                id="risposta-3"
-                type="button"
-              >
+              <button class="no-display btn-risposte" id="risposta-3" type="button">
                 Risposta 3
               </button>
             </div>
             <div>
-              <button
-                class="no-display btn-risposte"
-                id="risposta-4"
-                type="button"
-              >
+              <button class="no-display btn-risposte" id="risposta-4" type="button">
                 Risposta 4
               </button>
             </div>
@@ -107,12 +102,8 @@
         </div>
         <!-- Div ordine domande -->
         <div id="numero-domande" class="text-center">
-          <button class="no-display" onclick="mostraRisultati()">
-            Scopri i risultati
-          </button>
-          <p class="no-display" id="question-count">
-            QUESTION 1 <span>/ 10</span>
-          </p>
+          <button class="no-display" onclick="mostraRisultati()">Scopri i risultati</button>
+          <p class="no-display" id="question-count">QUESTION 1 <span>/ 10</span></p>
         </div>
       </main>
       <footer></footer>
