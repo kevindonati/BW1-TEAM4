@@ -466,7 +466,8 @@ canvas {
   position: relative;
   float: right;
   margin: 20px;
-  display: flex;
+  /* MI SERVE CHE PARTE NONE COSì ALL'INIZIO è NASCOSTO, ALLA PRIMA DOMANDA GLI ASSEGNO FLEX */
+  display: none;
   justify-content: center;
   align-items: center;
 }
@@ -603,8 +604,8 @@ textarea::placeholder {
 }
 
 .spiegazione {
-  font-style: italic;
-  text-decoration: underline;
+  font-size: 0.9em;
+  color: #b0bec5;
 }
 
 #btn-pagina-feedback {
@@ -617,4 +618,9 @@ textarea::placeholder {
   font-size: 0.8em;
   padding: 0.8em 2.5em;
   margin-top: 1em;
+}
+
+.icona-lampadina {
+  margin-right: 7px;
+  font-size: 1.2em;
 }

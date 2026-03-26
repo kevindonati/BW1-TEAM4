@@ -743,6 +743,7 @@ const estrazioneDomande = () => {
   const divForm = document.getElementById("contenitore-form-bottoni")
   const formDifficoltà = document.getElementById("form-difficoltà")
   const pSpiegaione = document.getElementById("spiegazione-progressiva")
+  const timer = document.querySelector(".timer-container")
 
   // RIMUOVO ELEMENTI APPENA PARTE LA PRIMA DOMANDA
   formDifficoltà.innerHTML = ""
@@ -794,6 +795,7 @@ const estrazioneDomande = () => {
   // FACCIO APPARRIRE CONTEGGIO DOMANDE E FORM CON BOTTONI
   pNumeroDomande.classList.remove("no-display")
   divForm.classList.remove("no-display")
+  timer.style.display = "flex"
   // CENTRO IL TESTO DELLA DOMANDA
   h2.style.textAlign = "center"
 
@@ -1225,7 +1227,7 @@ const riempiCorrezioneDomande = () => {
     if (domandePescate[x].rispostaScelta !== domandePescate[x].rispostaGiusta) {
       const pSpiegazione = document.createElement("p")
       pSpiegazione.classList.add("spiegazione")
-      pSpiegazione.innerHTML = `${domandePescate[x].spiegazione}`
+      pSpiegazione.innerHTML = `<i class="far fa-lightbulb icona-lampadina"></i>${domandePescate[x].spiegazione}`
       div.appendChild(pSpiegazione)
     }
   }
