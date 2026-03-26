@@ -1070,6 +1070,7 @@ const riempiScritteGrafico = () => {
     primoP.innerText = "You passed the exam.";
     secondoP.innerText = "We'll send you the certificate in few minutes.";
     terzoP.innerText = "Check your email (including promotions / spam folder)";
+    lanciaConfetti();
     // SE NON L HAI SUPERATO , APPARIRÀ QUESTO:
   } else {
     h3.innerText = "Exam not passed";
@@ -1079,3 +1080,64 @@ const riempiScritteGrafico = () => {
     terzoP.innerText = "You can retake the exam anytime.";
   }
 };
+
+// CORIANDOLI
+
+const colori = [
+  "#00ffff",
+  "#d20094",
+  "#ffe400",
+  "#ff4747",
+  "#4dff91",
+  "#a855f7",
+];
+let coriandoli = [];
+let animazione = null;
+
+function lanciaConfetti() {
+  const canvas = document.getElementById("confetti-canvas");
+  const ctx = canvas.getContext("2d");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  coriandoli = [];
+  for (let i = 0; i < 150; i++) {
+    coriandoli.push({
+      x: Math.random() * canvas.width,
+      y: -Math.random() * 300,
+      w: Math.random() * 10 + 6,
+      h: Math.random() * 5 + 4,
+      colore: colori[Math.floor(Math.random() * colori.length)],
+      velocitàY: Math.random() * 3 + 2,
+      velocitàX: (Math.random() - 0.5) * 2,
+      rotazione: Math.random() * Math.PI * 2,
+      velocitàRotazione: (Math.random() - 0.5) * 0.2,
+      fase: Math.random() * Math.PI * 2,
+    });
+  }
+
+  if (animazione) cancelAnimationFrame(animazione);
+
+  function anima() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    coriandoli.forEach((c) => {
+      c.y += c.velocitàY;
+      c.x += c.velocitàX + Math.sin(c.fase) * 0.8;
+      c.rotazione += c.velocitàRotazione;
+      c.fase += 0.05;
+      ctx.save();
+      ctx.translate(c.x, c.y);
+      ctx.rotate(c.rotazione);
+      ctx.fillStyle = c.colore;
+      ctx.fillRect(-c.w / 2, -c.h / 2, c.w, c.h);
+      ctx.restore();
+    });
+    coriandoli = coriandoli.filter((c) => c.y < canvas.height + 20);
+    if (coriandoli.length > 0) {
+      animazione = requestAnimationFrame(anima);
+    } else {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  }
+  anima();
+}
