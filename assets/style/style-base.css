@@ -516,6 +516,19 @@ textarea::placeholder {
   color: rgb(43, 192, 5);
 }
 
+.red {
+  color: rgb(240, 25, 25);
+}
+
+#box-domande-correzione i {
+  padding-left: 3px;
+}
+
+.spiegazione {
+  font-style: italic;
+  text-decoration: underline;
+}
+
 #btn-pagina-feedback {
   text-align: justify;
   padding: 0 2em;

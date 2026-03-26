@@ -6,18 +6,24 @@ const domande = {
       rispostaGiusta: "Leonardo DiCaprio",
       risposteSbagliate: ["Brad Pitt", "Tom Cruise", "Matt Damon"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Jack Dawson è interpretato da Leonardo DiCaprio, non dagli altri attori citati.",
     },
     {
       domanda: "Qual è il nome del pupazzo di neve in Frozen?",
       rispostaGiusta: "Olaf",
       risposteSbagliate: ["Sven", "Kristoff", "Hans"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Olaf è il pupazzo di neve magico creato da Elsa. Sven è la renna, Kristoff il cacciatore di ghiaccio e Hans il principe antagonista.",
     },
     {
       domanda: "I nani nel classico Disney di Biancaneve sono dieci?",
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
+      spiegazione:
+        "I nani sono sette: Brontolo, Cucciolo, Dotto, Eolo, Gongolo, Mammolo e Pisolo.",
     },
     {
       domanda:
@@ -25,6 +31,8 @@ const domande = {
       rispostaGiusta: "Spider-Man",
       risposteSbagliate: ["Batman", "Superman", "Iron Man"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Questa frase è legata allo Zio Ben di Peter Parker ed è il principio guida di Spider-Man.",
     },
     {
       domanda:
@@ -36,6 +44,8 @@ const domande = {
         "Shrek",
       ],
       tipo: "risposta multipla",
+      spiegazione:
+        "La strada di mattoni gialli conduce alla città di Smeraldo nel film Il Mago di Oz del 1939.",
     },
     {
       domanda:
@@ -43,12 +53,16 @@ const domande = {
       rispostaGiusta: "Jack Sparrow",
       risposteSbagliate: ["Barbossa", "Davy Jones", "Will Turner"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Johnny Depp interpreta il Capitano Jack Sparrow, protagonista eccentrico della saga.",
     },
     {
       domanda: "Quale pesce dà il nome a un famoso film Pixar del 2003?",
       rispostaGiusta: "Nemo",
       risposteSbagliate: ["Dory", "Marlin", "Bruce"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Il film si intitola 'Alla ricerca di Nemo'. Dory, Marlin e Bruce sono personaggi del film, non il protagonista.",
     },
     {
       domanda:
@@ -56,12 +70,16 @@ const domande = {
       rispostaGiusta: "Joker",
       risposteSbagliate: ["Pinguino", "Enigmista", "Due Facce"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Il Joker è il villain clown per eccellenza di Batman. Gli altri sono nemici reali ma senza travestimento da clown.",
     },
     {
       domanda: "In Harry Potter, Harry viene smistato nella casa Serpeverde?",
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
+      spiegazione:
+        "Harry viene smistato nella casa Grifondoro, non in Serpeverde, che è la casa del suo rivale Draco Malfoy.",
     },
     {
       domanda:
@@ -69,12 +87,16 @@ const domande = {
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
+      spiegazione:
+        "Morfeo offre a Neo due pillole: la blu per restare nell'illusione, la rossa per scoprire la realtà. Neo sceglie la rossa.",
     },
     {
       domanda: "Chi ha diretto il film E.T. l'extra-terrestre?",
       rispostaGiusta: "Steven Spielberg",
       risposteSbagliate: ["George Lucas", "James Cameron", "Ridley Scott"],
       tipo: "risposta multipla",
+      spiegazione:
+        "E.T. del 1982 è uno dei film più celebri di Steven Spielberg. George Lucas è il padre di Star Wars.",
     },
     {
       domanda:
@@ -82,12 +104,16 @@ const domande = {
       rispostaGiusta: "Robert Downey Jr.",
       risposteSbagliate: ["Chris Evans", "Chris Hemsworth", "Mark Ruffalo"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Robert Downey Jr. interpreta Tony Stark/Iron Man. Chris Evans è Captain America, Chris Hemsworth è Thor, Mark Ruffalo è Hulk.",
     },
     {
       domanda: "Il leone protagonista de Il Re Leone si chiama Mufasa?",
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
+      spiegazione:
+        "Il protagonista è Simba. Mufasa è il padre di Simba, che muore nella storia.",
     },
     {
       domanda:
@@ -95,6 +121,8 @@ const domande = {
       rispostaGiusta: "Indiana Jones",
       risposteSbagliate: ["Lara Croft", "Nathan Drake", "Rick O'Connell"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Indiana Jones, interpretato da Harrison Ford, usa la frusta come arma e strumento iconico.",
     },
     {
       domanda:
@@ -102,18 +130,24 @@ const domande = {
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
+      spiegazione:
+        "In 'L'Impero colpisce ancora', Darth Vader pronuncia la celebre frase 'Io sono tuo padre'.",
     },
     {
       domanda: "Quale animale è il protagonista del film Ratatouille?",
       rispostaGiusta: "Un topo",
       risposteSbagliate: ["Un gatto", "Un cane", "Un criceto"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Remy è un topo che sogna di diventare chef a Parigi. Il nome del film deriva da 'rat' (topo in francese).",
     },
     {
       domanda: "Il film 'Lo Squalo' è stato diretto da Steven Spielberg?",
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
+      spiegazione:
+        "Lo Squalo (Jaws, 1975) è uno dei primissimi blockbuster di Spielberg, che lo consacrò come regista.",
     },
     {
       domanda:
@@ -121,6 +155,8 @@ const domande = {
       rispostaGiusta: "Shrek",
       risposteSbagliate: ["Ciuchino", "Gatto con gli stivali", "Lord Farquaad"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Shrek è l'orco verde protagonista. Ciuchino è il suo amico, il Gatto con gli stivali un alleato, Farquaad il villain.",
     },
     {
       domanda:
@@ -128,6 +164,8 @@ const domande = {
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
+      spiegazione:
+        "Kevin viene dimenticato a casa durante le vacanze di Natale, non di Pasqua.",
     },
     {
       domanda:
@@ -135,36 +173,48 @@ const domande = {
       rispostaGiusta: "Pizza",
       risposteSbagliate: ["Sushi", "Hamburger", "Pasta"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Le Tartarughe Ninja sono famose per la loro passione sconfinata per la pizza.",
     },
     {
       domanda: "Il Grinch odia profondamente il Natale?",
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
+      spiegazione:
+        "Il Grinch è il personaggio iconico che odia il Natale e tenta di rovinarlo agli abitanti di Chinonsò.",
     },
     {
       domanda: "Chi interpreta il pirata Jack Sparrow?",
       rispostaGiusta: "Johnny Depp",
       risposteSbagliate: ["Orlando Bloom", "Brad Pitt", "Tom Cruise"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Johnny Depp ha creato il personaggio iconico di Jack Sparrow. Orlando Bloom interpreta Will Turner.",
     },
     {
       domanda: "Woody e Buzz Lightyear sono i protagonisti di Toy Story?",
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
+      spiegazione:
+        "Woody, il cowboy di pezza, e Buzz Lightyear, il ranger spaziale, sono i due protagonisti principali di Toy Story.",
     },
     {
       domanda: "In quale città vive il supereroe Batman?",
       rispostaGiusta: "Gotham City",
       risposteSbagliate: ["Metropolis", "Central City", "New York"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Batman protegge Gotham City. Metropolis è la città di Superman, Central City quella di Flash.",
     },
     {
       domanda: "Cenerentola perde una scarpetta d'oro?",
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
+      spiegazione:
+        "Cenerentola perde una scarpetta di vetro (cristallo), non d'oro.",
     },
   ],
   medio: [
@@ -173,6 +223,8 @@ const domande = {
       rispostaGiusta: "Quentin Tarantino",
       risposteSbagliate: ["Martin Scorsese", "Guy Ritchie", "David Fincher"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Pulp Fiction (1994) è il capolavoro di Quentin Tarantino, che vinse la Palma d'Oro a Cannes.",
     },
     {
       domanda:
@@ -180,6 +232,8 @@ const domande = {
       rispostaGiusta: "1977",
       risposteSbagliate: ["1975", "1980", "1983"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Star Wars: Episodio IV - Una nuova speranza uscì il 25 maggio 1977, diventando subito un fenomeno culturale.",
     },
     {
       domanda:
@@ -187,6 +241,8 @@ const domande = {
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
+      spiegazione:
+        "Parasite di Bong Joon-ho vinse l'Oscar come Miglior Film nel 2020, primo film non anglofono a riuscirci.",
     },
     {
       domanda:
@@ -194,6 +250,8 @@ const domande = {
       rispostaGiusta: "Heath Ledger",
       risposteSbagliate: ["Jared Leto", "Joaquin Phoenix", "Jack Nicholson"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Heath Ledger vinse l'Oscar postumo per questa interpretazione. Joaquin Phoenix ha interpretato il Joker nel film del 2019.",
     },
     {
       domanda:
@@ -201,6 +259,8 @@ const domande = {
       rispostaGiusta: "HAL 9000",
       risposteSbagliate: ["JARVIS", "SKYNET", "DAVID"],
       tipo: "risposta multipla",
+      spiegazione:
+        "HAL 9000 è il computer di bordo della nave spaziale Discovery. JARVIS è l'AI di Iron Man, SKYNET è di Terminator.",
     },
     {
       domanda:
@@ -208,6 +268,8 @@ const domande = {
       rispostaGiusta: "Parigi",
       risposteSbagliate: ["Lione", "Marsiglia", "Nizza"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Ratatouille è ambientato a Parigi, nella cucina del ristorante Gusteau's, vicino alla Torre Eiffel.",
     },
     {
       domanda:
@@ -215,6 +277,8 @@ const domande = {
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
+      spiegazione:
+        "La trilogia de Il Signore degli Anelli è stata diretta da Peter Jackson, non da Spielberg.",
     },
     {
       domanda:
@@ -222,12 +286,16 @@ const domande = {
       rispostaGiusta: "Revenant - Redivivo",
       risposteSbagliate: ["The Wolf of Wall Street", "Inception", "Titanic"],
       tipo: "risposta multipla",
+      spiegazione:
+        "DiCaprio vinse il suo primo Oscar nel 2016 per Revenant, dopo numerose candidature senza vittoria.",
     },
     {
       domanda: "Come si chiama l'hotel infestato del film Shining?",
       rispostaGiusta: "Overlook Hotel",
       risposteSbagliate: ["Bates Motel", "Continental", "Grand Budapest Hotel"],
       tipo: "risposta multipla",
+      spiegazione:
+        "L'Overlook Hotel è l'hotel isolato in montagna dove Jack Torrance impazzisce. Bates Motel è di Psycho.",
     },
     {
       domanda:
@@ -235,6 +303,8 @@ const domande = {
       rispostaGiusta: "Jennifer Lawrence",
       risposteSbagliate: ["Emma Watson", "Shailene Woodley", "Margot Robbie"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Jennifer Lawrence ha interpretato Katniss in tutti e quattro i film della saga di Hunger Games.",
     },
     {
       domanda:
@@ -242,12 +312,16 @@ const domande = {
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
+      spiegazione:
+        "La colonna sonora di Interstellar è stata composta da Hans Zimmer. Morricone è noto per i western di Leone.",
     },
     {
       domanda: "In Inception, quale oggetto usa Cobb come 'totem'?",
       rispostaGiusta: "Una trottola",
       risposteSbagliate: ["Una moneta", "Un dado", "Una chiave"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Cobb usa una trottola per capire se si trova in sogno o nella realtà: se continua a girare, è in sogno.",
     },
     {
       domanda:
@@ -255,12 +329,16 @@ const domande = {
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
+      spiegazione:
+        "La Città Incantata (Sen to Chihiro) di Miyazaki vinse l'Oscar come Miglior Film d'Animazione nel 2003.",
     },
     {
       domanda: "Chi interpreta il protagonista nel film Forrest Gump?",
       rispostaGiusta: "Tom Hanks",
       risposteSbagliate: ["Richard Gere", "Harrison Ford", "Kevin Costner"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Tom Hanks vinse l'Oscar come Migliore Attore per la sua interpretazione di Forrest Gump nel 1994.",
     },
     {
       domanda:
@@ -268,12 +346,16 @@ const domande = {
       rispostaGiusta: "Pandora",
       risposteSbagliate: ["Naboo", "Asgard", "Arrakis"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Pandora è la luna aliena abitata dai Na'vi in Avatar. Naboo è di Star Wars, Asgard di Thor, Arrakis di Dune.",
     },
     {
       domanda: "Quale attore interpreta il protagonista in 'The Truman Show'?",
       rispostaGiusta: "Jim Carrey",
       risposteSbagliate: ["Robin Williams", "Adam Sandler", "Ben Stiller"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Jim Carrey interpreta Truman Burbank, un uomo ignaro di vivere all'interno di un reality show.",
     },
     {
       domanda:
@@ -281,6 +363,8 @@ const domande = {
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
+      spiegazione:
+        "La La Land fu erroneamente annunciato vincitore, ma il vero vincitore era Moonlight. Quindi non vinse.",
     },
     {
       domanda: "Chi ha diretto il film 'The Departed'?",
@@ -291,6 +375,8 @@ const domande = {
         "Brian De Palma",
       ],
       tipo: "risposta multipla",
+      spiegazione:
+        "The Departed (2006) è di Martin Scorsese, che vinse l'Oscar alla regia con questo film.",
     },
     {
       domanda:
@@ -298,6 +384,8 @@ const domande = {
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
+      spiegazione:
+        "Joaquin Phoenix vinse l'Oscar come Migliore Attore nel 2020 per la sua interpretazione di Arthur Fleck/Joker.",
     },
     {
       domanda:
@@ -305,18 +393,24 @@ const domande = {
       rispostaGiusta: "2015",
       risposteSbagliate: ["2010", "2020", "2025"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Marty McFly e Doc Brown viaggiano al 21 ottobre 2015 nel secondo capitolo della saga.",
     },
     {
       domanda: "Il film 'La Vita è Bella' di Benigni ha vinto 3 premi Oscar?",
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
+      spiegazione:
+        "La Vita è Bella vinse tre Oscar nel 1999: Miglior Film Straniero, Migliore Attore e Migliore Colonna Sonora.",
     },
     {
       domanda: "Qual è il vero nome di Black Panther?",
       rispostaGiusta: "T'Challa",
       risposteSbagliate: ["Killmonger", "M'Baku", "Okoye"],
       tipo: "risposta multipla",
+      spiegazione:
+        "T'Challa è il re del Wakanda e il supereroe Black Panther. Killmonger è il villain del film.",
     },
     {
       domanda:
@@ -324,12 +418,16 @@ const domande = {
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
+      spiegazione:
+        "La simmetria visiva e le inquadrature centrate sono uno dei tratti stilistici più riconoscibili di Wes Anderson.",
     },
     {
       domanda: "Chi interpreta l'agente 007 nel film 'Skyfall'?",
       rispostaGiusta: "Daniel Craig",
       risposteSbagliate: ["Pierce Brosnan", "Roger Moore", "Sean Connery"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Daniel Craig ha interpretato James Bond in Skyfall (2012). Pierce Brosnan fu Bond negli anni '90.",
     },
     {
       domanda:
@@ -337,6 +435,8 @@ const domande = {
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
+      spiegazione:
+        "Il primo film dell'MCU è stato Iron Man (2008), non Captain America: Il primo Vendicatore (2011).",
     },
   ],
   difficile: [
@@ -346,6 +446,8 @@ const domande = {
       rispostaGiusta: "Biancaneve e i sette nani",
       risposteSbagliate: ["Pinocchio", "Fantasia", "Bambi"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Biancaneve e i sette nani (1937) fu il primo lungometraggio animato della storia. Pinocchio uscì nel 1940.",
     },
     {
       domanda:
@@ -357,12 +459,16 @@ const domande = {
         "Luchino Visconti",
       ],
       tipo: "risposta multipla",
+      spiegazione:
+        "Ladri di biciclette (1948) è di Vittorio De Sica, uno dei pilastri del neorealismo italiano.",
     },
     {
       domanda: "Il protagonista di Casablanca si chiama Rick Blaine?",
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
+      spiegazione:
+        "Rick Blaine, interpretato da Humphrey Bogart, è il proprietario del Café Américain a Casablanca.",
     },
     {
       domanda:
@@ -374,6 +480,8 @@ const domande = {
         "La lista di Schindler",
       ],
       tipo: "risposta multipla",
+      spiegazione:
+        "Il ritorno del re (2003) vinse tutti e 11 gli Oscar per cui era candidato, eguagliando Ben-Hur e Titanic.",
     },
     {
       domanda:
@@ -381,6 +489,8 @@ const domande = {
       rispostaGiusta: "Daniel Day-Lewis",
       risposteSbagliate: ["Joaquin Phoenix", "Christian Bale", "Sean Penn"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Daniel Day-Lewis vinse l'Oscar per la sua interpretazione di Daniel Plainview nel film del 2007.",
     },
     {
       domanda:
@@ -388,6 +498,8 @@ const domande = {
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
+      spiegazione:
+        "Kubrick ritirò il film dalla distribuzione britannica nel 1973 dopo minacce alla sua famiglia, e rimase bandito fino alla sua morte.",
     },
     {
       domanda: "Chi ha diretto il film 'Mulholland Drive'?",
@@ -398,6 +510,8 @@ const domande = {
         "Lars von Trier",
       ],
       tipo: "risposta multipla",
+      spiegazione:
+        "Mulholland Drive (2001) è il surreale capolavoro di David Lynch ambientato a Hollywood.",
     },
     {
       domanda:
@@ -405,6 +519,8 @@ const domande = {
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
+      spiegazione:
+        "La scena della doccia contiene circa 70-77 inquadrature in 45 secondi, non esattamente 100.",
     },
     {
       domanda:
@@ -416,6 +532,8 @@ const domande = {
         "Il lupo delle SS",
       ],
       tipo: "risposta multipla",
+      spiegazione:
+        "Hans Landa, interpretato da Waltz, è soprannominato 'Il cacciatore di ebrei'. Waltz vinse l'Oscar per questo ruolo.",
     },
     {
       domanda:
@@ -423,6 +541,8 @@ const domande = {
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
+      spiegazione:
+        "Birdman simula un unico piano sequenza ma in realtà usa tagli nascosti digitalmente dal direttore della fotografia Lubezki.",
     },
     {
       domanda:
@@ -430,6 +550,8 @@ const domande = {
       rispostaGiusta: "Via col vento",
       risposteSbagliate: ["Il mago di Oz", "Ombre rosse", "Regole di gioco"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Via col vento vinse la prima Palma d'Oro nella storia del Festival di Cannes nel 1939.",
     },
     {
       domanda:
@@ -437,6 +559,8 @@ const domande = {
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
+      spiegazione:
+        "Snowpiercer (2013) è un film di fantascienza distopica diretto da Bong Joon-ho prima del successo mondiale di Parasite.",
     },
     {
       domanda:
@@ -444,6 +568,8 @@ const domande = {
       rispostaGiusta: "Hans Zimmer",
       risposteSbagliate: ["John Williams", "James Horner", "Howard Shore"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Hans Zimmer e Lisa Gerrard hanno composto insieme la celebre colonna sonora de Il Gladiatore (2000).",
     },
     {
       domanda:
@@ -451,6 +577,8 @@ const domande = {
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
+      spiegazione:
+        "Il personaggio di Charles Foster Kane è ampiamente ispirato al magnate dell'editoria William Randolph Hearst.",
     },
     {
       domanda:
@@ -458,6 +586,8 @@ const domande = {
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
+      spiegazione:
+        "Lubezki ha vinto 3 Oscar consecutivi (Gravity, Birdman, Revenant), non 5. Un record comunque straordinario.",
     },
     {
       domanda:
@@ -469,6 +599,8 @@ const domande = {
         "La finestra sul cortile",
       ],
       tipo: "risposta multipla",
+      spiegazione:
+        "In Psycho, Marion Crane (Janet Leigh), apparente protagonista, viene uccisa nella scena della doccia a metà film.",
     },
     {
       domanda:
@@ -476,6 +608,8 @@ const domande = {
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
+      spiegazione:
+        "Il ruolo fu offerto a Will Smith prima di Keanu Reeves, non a Brad Pitt. Smith rifiutò per girare Wild Wild West.",
     },
     {
       domanda:
@@ -483,6 +617,8 @@ const domande = {
       rispostaGiusta: "Herman J. Mankiewicz",
       risposteSbagliate: ["Billy Wilder", "John Huston", "Howard Hawks"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Herman J. Mankiewicz e Orson Welles scrissero Quarto Potere. Entrambi vinsero l'Oscar per la sceneggiatura.",
     },
     {
       domanda:
@@ -490,18 +626,24 @@ const domande = {
       rispostaGiusta: "Eyes Wide Shut",
       risposteSbagliate: ["Full Metal Jacket", "Shining", "Arancia Meccanica"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Eyes Wide Shut (1999) con Tom Hanks e Nicole Kidman fu completato da Kubrick pochi giorni prima della sua morte.",
     },
     {
       domanda: "Come si chiama il protagonista del film Memento?",
       rispostaGiusta: "Leonard Shelby",
       risposteSbagliate: ["Teddy Gammell", "John Doe", "Guy Pearce"],
       tipo: "risposta multipla",
+      spiegazione:
+        "Leonard Shelby, interpretato da Guy Pearce, è l'uomo con amnesia anterograda che indaga sull'omicidio di sua moglie.",
     },
     {
       domanda: "Il primo Festival del Cinema di Venezia si è svolto nel 1950?",
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
+      spiegazione:
+        "La prima edizione della Mostra del Cinema di Venezia si tenne nel 1932, non nel 1950. È il festival cinematografico più antico del mondo.",
     },
     {
       domanda:
@@ -513,6 +655,8 @@ const domande = {
         "Gian Maria Volonté",
       ],
       tipo: "risposta multipla",
+      spiegazione:
+        "Eli Wallach interpreta Tuco 'Il Brutto'. Clint Eastwood è 'Il Buono' e Lee Van Cleef è 'Il Cattivo'.",
     },
     {
       domanda: "Qual è il titolo del primo film sonoro della storia (1927)?",
@@ -523,6 +667,8 @@ const domande = {
         "Il gabinetto del dottor Caligari",
       ],
       tipo: "risposta multipla",
+      spiegazione:
+        "Il cantante di jazz (The Jazz Singer, 1927) con Al Jolson fu il primo lungometraggio con dialoghi sincronizzati.",
     },
     {
       domanda:
@@ -530,6 +676,8 @@ const domande = {
       rispostaGiusta: "Falso",
       risposteSbagliate: "Vero",
       tipo: "risposta booleana",
+      spiegazione:
+        "Meryl Streep ha vinto 3 Oscar ed è la più candidata, ma Katharine Hepburn detiene il record con 4 vittorie.",
     },
     {
       domanda:
@@ -537,6 +685,8 @@ const domande = {
       rispostaGiusta: "Vero",
       risposteSbagliate: "Falso",
       tipo: "risposta booleana",
+      spiegazione:
+        "I magnifici sette (1960) è un remake western ufficiale de I sette samurai (1954) di Akira Kurosawa.",
     },
   ],
 };
@@ -653,11 +803,15 @@ const estrazioneDomande = () => {
     btn2.classList.remove("no-display");
     btn3.classList.remove("no-display");
     btn4.classList.remove("no-display");
+
     // MISCHIO LE RISPOSTE IN ORDINE CASUALE
     const risposteMischiate = [
       oggettoDomandaEstratta.rispostaGiusta,
       ...oggettoDomandaEstratta.risposteSbagliate,
     ].sort(() => Math.random() - 0.5);
+
+    // LE SALVO PER MOSTRARLE DOPO NELLA CORREZIONE
+    oggettoDomandaEstratta.risposteMischiate = risposteMischiate;
 
     btn1.innerText = risposteMischiate[0];
     btn2.innerText = risposteMischiate[1];
@@ -676,6 +830,7 @@ const estrazioneDomande = () => {
   // SE è GIUSTA DIVENTA VERDE, AALTRIMENTI ROSSA
   const risposta1 = document.getElementById("risposta-1");
   risposta1.onclick = function () {
+    oggettoDomandaEstratta.rispostaScelta = risposta1.innerText;
     if (risposta1.innerText === oggettoDomandaEstratta.rispostaGiusta) {
       punteggio += 1;
       btn1.classList.add("risposta-corretta");
@@ -706,6 +861,7 @@ const estrazioneDomande = () => {
   // SE è GIUSTA DIVENTA VERDE, AALTRIMENTI ROSSA
   const risposta2 = document.getElementById("risposta-2");
   risposta2.onclick = function () {
+    oggettoDomandaEstratta.rispostaScelta = risposta2.innerText;
     if (risposta2.innerText === oggettoDomandaEstratta.rispostaGiusta) {
       punteggio += 1;
       btn2.classList.add("risposta-corretta");
@@ -736,6 +892,7 @@ const estrazioneDomande = () => {
   // SE è GIUSTA DIVENTA VERDE, AALTRIMENTI ROSSA
   const risposta3 = document.getElementById("risposta-3");
   risposta3.onclick = function () {
+    oggettoDomandaEstratta.rispostaScelta = risposta3.innerText;
     if (risposta3.innerText === oggettoDomandaEstratta.rispostaGiusta) {
       punteggio += 1;
       btn3.classList.add("risposta-corretta");
@@ -764,6 +921,7 @@ const estrazioneDomande = () => {
   // SE è GIUSTA DIVENTA VERDE, AALTRIMENTI ROSSA
   const risposta4 = document.getElementById("risposta-4");
   risposta4.onclick = function () {
+    oggettoDomandaEstratta.rispostaScelta = risposta4.innerText;
     if (risposta4.innerText === oggettoDomandaEstratta.rispostaGiusta) {
       punteggio += 1;
       btn4.classList.add("risposta-corretta");
@@ -870,8 +1028,10 @@ const updateCountdown = () => {
 
 // COSA SUCCEDE SE SCADE IL TEMPO E NON RISPONDO
 const tempoFinito = () => {
-  console.log("cicci");
-
+  // SE UTENTE NON SCEGLIE UNA RISPOSTA, ASSEGNO NULL (MI SERVE PER ASSEGNARE RISPOSTA NELLA CORREZIONE DOMANDE)
+  if (domandePescate.length > 0) {
+    domandePescate[domandePescate.length - 1].rispostaScelta = null;
+  }
   // PRENDI TUTTI I BOTTONI E LA DOMANDA
   const btn1 = document.getElementById("risposta-1");
   const btn2 = document.getElementById("risposta-2");
@@ -1006,6 +1166,7 @@ const riempiCorrezioneDomande = () => {
     const div = document.createElement("div");
     const p = document.createElement("p");
     const divRisultati = document.createElement("div");
+    const pSpiegazione = document.createElement("p");
 
     // DOMANDA SCRITTA IN MODO SBAGLIATO
     let domandaConTag = domandePescate[x].domanda;
@@ -1023,28 +1184,47 @@ const riempiCorrezioneDomande = () => {
     section.appendChild(div);
     div.appendChild(p);
     div.appendChild(divRisultati);
+    div.appendChild(pSpiegazione);
 
     let contenutoRisposte = "";
     // CONTROLLA IL TIPO DI DOMANDA. SE È A RISPOSTA MULTIPLA , CREA UNA LISTA CON 4 OPZIONI
     if (domandePescate[x].tipo === "risposta multipla") {
-      contenutoRisposte = `
-        <ol>
-          <li>${domandePescate[x].rispostaGiusta} <i class="green fas fa-check"></i></li> 
-          <li>${domandePescate[x].risposteSbagliate[0]}</li>
-          <li>${domandePescate[x].risposteSbagliate[1]}</li>
-          <li>${domandePescate[x].risposteSbagliate[2]}</li>
-        </ol>`;
+      const ordine = domandePescate[x].risposteMischiate;
+      const scelta = domandePescate[x].rispostaScelta;
 
-      //  SE NON È MULTIPLA , CREA UNA LISTA CON 2 OPZIONI (GIUSTA/SBAGLIATA)
-    } else {
       contenutoRisposte = `
-        <ol>
-          <li>${domandePescate[x].rispostaGiusta} <i class="green fas fa-check"></i></li>
-          <li>${domandePescate[x].risposteSbagliate}</li>
-        </ol>`;
+    <ol>
+      ${ordine
+        .map((r) => {
+          const isGiusta = r === domandePescate[x].rispostaGiusta;
+          const isScelta = r === scelta && !isGiusta;
+          return `<li>
+          ${r}
+          ${isGiusta ? '<i class="fas fa-check" style="color:green"></i>' : ""}
+          ${isScelta ? '<i class="fas fa-times" style="color:red"></i>' : ""}
+        </li>`;
+        })
+        .join("")}
+    </ol>`;
+    } else {
+      const scelta = domandePescate[x].rispostaScelta;
+      const giusta = domandePescate[x].rispostaGiusta;
+      const sbagliata = domandePescate[x].risposteSbagliate;
+
+      contenutoRisposte = `
+    <ol>
+      <li>${giusta} <i class="fas fa-check" style="color:green"></i></li>
+      <li>${sbagliata} ${scelta === sbagliata ? '<i class="fas fa-times" style="color:red"></i>' : ""}</li>
+    </ol>`;
     }
     // MOSTRA LE RISPOSTE NEL DIV
     divRisultati.innerHTML = contenutoRisposte;
+    if (domandePescate[x].rispostaScelta !== domandePescate[x].rispostaGiusta) {
+      const pSpiegazione = document.createElement("p");
+      pSpiegazione.classList.add("spiegazione");
+      pSpiegazione.innerHTML = `${domandePescate[x].spiegazione}`;
+      div.appendChild(pSpiegazione);
+    }
   }
 
   const xValues = ["Wrong", "Correct"]; // ETICHETTE DELLE SEZIONI DEL GRAFICO
