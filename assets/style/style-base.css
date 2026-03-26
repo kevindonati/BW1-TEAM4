@@ -303,10 +303,10 @@ label[for="checkbox-promise"] {
   border: none;
   box-shadow:
     0 -1px 0px 2px #ffffff97,
-    0 -1px 0px 2px #ffffffe8;
+    0 -1px 0px 2px #ffffff33;
   border-radius: 50px;
   color: #fff;
-  background-color: #ffffff4a;
+  background-color: rgba(255, 255, 255, 0.1);
   font-weight: 600;
   font-size: 1em;
   cursor: pointer;
