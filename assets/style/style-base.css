@@ -528,3 +528,15 @@ textarea::placeholder {
   font-style: italic;
   text-decoration: underline;
 }
+
+#btn-pagina-feedback {
+  text-align: justify;
+  padding: 0 2em;
+}
+
+#btn-more-info {
+  float: right;
+  font-size: 0.8em;
+  padding: 0.8em 2.5em;
+  margin-top: 1em;
+}
