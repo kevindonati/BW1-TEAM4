@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dropdown.css" />
+    <title>Dropdown Menu</title>
+  </head>
+  <body>
+    <div class="dropdown">
+      <button id="dropbtn">difficoltà &#9660;</button>
+      <div class="dropdown-content">
+        <a class="single-difficulty" onclick="changeDifficulty(0)" href="#">facile</a>
+        <a class="single-difficulty" onclick="changeDifficulty(1)" href="#">medio</a>
+        <a class="single-difficulty" onclick="changeDifficulty(2)" href="#">difficile</a>
+        <a class="single-difficulty" onclick="changeDifficulty(3)" href="#">progressiva</a>
+      </div>
+    </div>
+    <script src="./dropdown.js"></script>
+  </body>
+</html>
