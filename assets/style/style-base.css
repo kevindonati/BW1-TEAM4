@@ -523,3 +523,8 @@ textarea::placeholder {
 #box-domande-correzione i {
   padding-left: 3px;
 }
+
+.spiegazione {
+  font-style: italic;
+  text-decoration: underline;
+}
