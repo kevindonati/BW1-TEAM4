@@ -825,6 +825,14 @@ const estrazioneDomande = () => {
   }
 };
 
+// Inizio gestione bottone invia
+const textArea = document.querySelector("textarea");
+
+const invioAlert = () => {
+  alert("Il tuo feedback è stato ricevuto! Ti ringraziamo!"); // la funzione che lancia l'Alert
+  textArea.value = "";
+};
+
 // TIMER
 // ANIMAZIONE DEL TIMER
 const tempoTimer = 10; // DURATA DEL TIMER
