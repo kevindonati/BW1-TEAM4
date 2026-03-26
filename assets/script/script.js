@@ -995,12 +995,12 @@ const invioAlert = () => {
   }
 };
 
-const buttonMoreInfo = document.getElementById("btn-more-info"); // abbiamo recuperato il bottone 'more info' dall'HTML per lavorarci in JS
+/* const buttonMoreInfo = document.getElementById("btn-more-info"); // abbiamo recuperato il bottone 'more info' dall'HTML per lavorarci in JS
 const apriPaginaInfo = () => {
   window.location.href = "./pagina-moreInfo.html"; // funzione secondo cui quando la chiamo apre nuova pagina (window.location) ed in questo caso è pagina-moreInfo (.href)
 };
 buttonMoreInfo.addEventListener("click", apriPaginaInfo); // abbiamo aggiunto l'event listener 'click' al bottone more info e poi abbiamo chiamato la funzione. Senza chiamare la funzione sarebbe
-// stato solo 'cliccabile' ma senza uscita
+// stato solo 'cliccabile' ma senza uscita */
 
 // TIMER
 // ANIMAZIONE DEL TIMER
