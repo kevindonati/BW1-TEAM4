@@ -689,408 +689,414 @@ const domande = {
         "I magnifici sette (1960) è un remake western ufficiale de I sette samurai (1954) di Akira Kurosawa.",
     },
   ],
-}
+};
 
 // IMPOSTO LA SECONDA PARTE DI OGNI DOMANDA IN GRASSETTO
 for (let livello in domande) {
   // ARRAY PRINCIPALE
-  let listaDomande = domande[livello]
+  let listaDomande = domande[livello];
 
   for (let i = 0; i < listaDomande.length; i++) {
     // RIFERIMENTO ALLA DOMANDA CORRENTE
-    let singolaDomanda = listaDomande[i]
-    let testoIniziale = singolaDomanda.domanda
+    let singolaDomanda = listaDomande[i];
+    let testoIniziale = singolaDomanda.domanda;
 
     // LA DOMANDA VIENE DIVISA PAROLA PER PAROLA
-    let parole = testoIniziale.split(" ")
+    let parole = testoIniziale.split(" ");
     // METÀ ESATTA DI OGNI DOMANDA
-    let meta = Math.ceil(parole.length / 2)
+    let meta = Math.ceil(parole.length / 2);
 
     // IL TESTO DELLA SECONDA PARTE DELLA DOMANDA DIVENTA IN GRASSETTO
-    let primaParte = parole.slice(0, meta).join(" ")
-    let secondaParte = parole.slice(meta).join(" ")
+    let primaParte = parole.slice(0, meta).join(" ");
+    let secondaParte = parole.slice(meta).join(" ");
     singolaDomanda.domanda =
       primaParte +
       "<span class='text-bold' style='display:block; margin-top:10px;'>" +
       secondaParte +
-      "</span>"
+      "</span>";
   }
 }
 
 // SALVO LE DOMANDE PESCATE IN QUESTO ARRAY, PER POTERLE USARE DOPO NELLA COREZIONE
-let domandePescate = []
+let domandePescate = [];
 // SALVO INDICE DELLE DOMANDE PESCATE IN QUESTO ARRAY, IN MODO CHE NON POSSANO USCIRE NUOVAMENTE
-let indiceDomandePescate = []
+let indiceDomandePescate = [];
 // PARTENZA DI BASE DEL PUNTEGGIO
-let punteggio = 0
+let punteggio = 0;
 // CONTEGGIO DOMANDA CORRENTE
-let numeroDomandaCorrente = 1
+let numeroDomandaCorrente = 1;
 // DIFFICOLTÀ  BASE
 // LET DIFFICOLTÀ = "FACILE"
 
 // FUNZIONE ESTRAZIONE DOMANDE
 const estrazioneDomande = () => {
   // SELEZIONO TUTTI GLI ELEMENTI CHE MI SERVONO
-  const h2 = document.querySelector("#testo-domanda h2")
-  const btn1 = document.getElementById("risposta-1")
-  const btn2 = document.getElementById("risposta-2")
-  const btn3 = document.getElementById("risposta-3")
-  const btn4 = document.getElementById("risposta-4")
-  const btnNext = document.getElementById("prossima-domanda")
-  const btnRisultati = document.querySelector("#numero-domande button")
-  const containerTimer = document.querySelector(".timer-container")
-  const pNumeroDomande = document.getElementById("question-count")
-  const divForm = document.getElementById("contenitore-form-bottoni")
-  const formDifficoltà = document.getElementById("form-difficoltà")
-  const pSpiegaione = document.getElementById("spiegazione-progressiva")
-  const timer = document.querySelector(".timer-container")
+  const h2 = document.querySelector("#testo-domanda h2");
+  const btn1 = document.getElementById("risposta-1");
+  const btn2 = document.getElementById("risposta-2");
+  const btn3 = document.getElementById("risposta-3");
+  const btn4 = document.getElementById("risposta-4");
+  const btnNext = document.getElementById("prossima-domanda");
+  const btnRisultati = document.querySelector("#numero-domande button");
+  const containerTimer = document.querySelector(".timer-container");
+  const pNumeroDomande = document.getElementById("question-count");
+  const divForm = document.getElementById("contenitore-form-bottoni");
+  const formDifficoltà = document.getElementById("form-difficoltà");
+  const pSpiegaione = document.getElementById("spiegazione-progressiva");
+  const timer = document.querySelector(".timer-container");
 
   // RIMUOVO ELEMENTI APPENA PARTE LA PRIMA DOMANDA
-  formDifficoltà.innerHTML = ""
-  pSpiegaione.innerHTML = ""
+  formDifficoltà.innerHTML = "";
+  pSpiegaione.innerHTML = "";
 
   // COSA SUCCEDE DOPO L'ULTIMA DOMANDA
   // NASCONDO IL FORM CON I BOTTONI E FACCIO USCIRE BOTTONE PER VEDERE RISULTATI
   if (numeroDomandaCorrente > 10) {
-    h2.innerText = `Controlla i tuoi risultati`
-    divForm.classList.add("no-display")
-    btnRisultati.classList.remove("no-display")
-    pNumeroDomande.classList.add("no-display")
-    containerTimer.innerHTML = ""
-    return
+    h2.innerText = `Controlla i tuoi risultati`;
+    divForm.classList.add("no-display");
+    btnRisultati.classList.remove("no-display");
+    pNumeroDomande.classList.add("no-display");
+    containerTimer.innerHTML = "";
+    return;
   }
 
   // MODALITà PROGRESSIVA
-  let isProgressiva
+  let isProgressiva;
   if (difficoltà === "progressiva") {
-    isProgressiva = true
+    isProgressiva = true;
     if (punteggio < 3) {
-      difficoltà = "facile"
+      difficoltà = "facile";
     } else if (punteggio < 7) {
-      difficoltà = "medio"
+      difficoltà = "medio";
     } else {
-      difficoltà = "difficile"
+      difficoltà = "difficile";
     }
   }
 
   // ESTRAE INDICE DELLA DOMADA
   const numeroCasualeDomande = Math.floor(
     Math.random() * domande[difficoltà].length,
-  )
+  );
   // CONTROLLO CHE NON SIA GIÀ USCITA
   if (indiceDomandePescate.includes(numeroCasualeDomande)) {
-    return estrazioneDomande()
+    return estrazioneDomande();
   }
 
   // METTO L'INDICE DENTRO IL SUO ARRAY, E DOMANDA DENTRO IL. SUO ARRAY
-  domandePescate.push(domande[difficoltà][numeroCasualeDomande])
-  indiceDomandePescate.push(numeroCasualeDomande)
-  console.log(indiceDomandePescate)
+  domandePescate.push(domande[difficoltà][numeroCasualeDomande]);
+  indiceDomandePescate.push(numeroCasualeDomande);
+  console.log(indiceDomandePescate);
 
   // TROVO L'OGGETTO DELLA DOMANDA ESTRATTA
-  const oggettoDomandaEstratta = domande[difficoltà][numeroCasualeDomande]
+  const oggettoDomandaEstratta = domande[difficoltà][numeroCasualeDomande];
   // ASSEGNO LA DOMANDA DALL'OGGETTO TROVATO SOPRA
-  h2.innerHTML = oggettoDomandaEstratta.domanda
+  h2.innerHTML = oggettoDomandaEstratta.domanda;
 
   // FACCIO APPARRIRE CONTEGGIO DOMANDE E FORM CON BOTTONI
-  pNumeroDomande.classList.remove("no-display")
-  divForm.classList.remove("no-display")
-  timer.style.display = "flex"
+  pNumeroDomande.classList.remove("no-display");
+  divForm.classList.remove("no-display");
+  timer.style.display = "flex";
   // CENTRO IL TESTO DELLA DOMANDA
-  h2.style.textAlign = "center"
+  h2.style.textAlign = "center";
 
   //   QUI ASSEGNO LE RISPOSTE AI BOTTONI
   if (oggettoDomandaEstratta.tipo === "risposta multipla") {
-    btn1.classList.remove("no-display")
-    btn2.classList.remove("no-display")
-    btn3.classList.remove("no-display")
-    btn4.classList.remove("no-display")
+    btn1.classList.remove("no-display");
+    btn2.classList.remove("no-display");
+    btn3.classList.remove("no-display");
+    btn4.classList.remove("no-display");
 
     // MISCHIO LE RISPOSTE IN ORDINE CASUALE
     const risposteMischiate = [
       oggettoDomandaEstratta.rispostaGiusta,
       ...oggettoDomandaEstratta.risposteSbagliate,
-    ].sort(() => Math.random() - 0.5)
+    ].sort(() => Math.random() - 0.5);
+    console.log(risposteMischiate);
 
     // LE SALVO PER MOSTRARLE DOPO NELLA CORREZIONE
-    oggettoDomandaEstratta.risposteMischiate = risposteMischiate
+    oggettoDomandaEstratta.risposteMischiate = risposteMischiate;
 
-    btn1.innerText = risposteMischiate[0]
-    btn2.innerText = risposteMischiate[1]
-    btn3.innerText = risposteMischiate[2]
-    btn4.innerText = risposteMischiate[3]
+    btn1.innerText = risposteMischiate[0];
+    btn2.innerText = risposteMischiate[1];
+    btn3.innerText = risposteMischiate[2];
+    btn4.innerText = risposteMischiate[3];
   } else {
-    btn1.classList.remove("no-display")
-    btn2.classList.remove("no-display")
-    btn1.innerText = oggettoDomandaEstratta.rispostaGiusta
-    btn2.innerText = oggettoDomandaEstratta.risposteSbagliate
-    btn3.classList.add("no-display")
-    btn4.classList.add("no-display")
+    btn1.classList.remove("no-display");
+    btn2.classList.remove("no-display");
+    btn3.classList.add("no-display");
+    btn4.classList.add("no-display");
+    const risposteBooleaneMischiate = [
+      oggettoDomandaEstratta.rispostaGiusta,
+      oggettoDomandaEstratta.risposteSbagliate,
+    ].sort(() => Math.random() - 0.5);
+    oggettoDomandaEstratta.risposteMischiate = risposteBooleaneMischiate;
+    btn1.innerText = risposteBooleaneMischiate[0];
+    btn2.innerText = risposteBooleaneMischiate[1];
   }
 
   //  CONTROLLO SE LA RISPOSTA È GIUSTA E IN CASO ASSEGNO I PUNTI.
   // SE è GIUSTA DIVENTA VERDE, AALTRIMENTI ROSSA
-  const risposta1 = document.getElementById("risposta-1")
+  const risposta1 = document.getElementById("risposta-1");
   risposta1.onclick = function () {
-    oggettoDomandaEstratta.rispostaScelta = risposta1.innerText
+    oggettoDomandaEstratta.rispostaScelta = risposta1.innerText;
     if (risposta1.innerText === oggettoDomandaEstratta.rispostaGiusta) {
-      punteggio += 1
-      btn1.classList.add("risposta-corretta")
+      punteggio += 1;
+      btn1.classList.add("risposta-corretta");
     } else {
-      btn1.classList.add("risposta-errata")
+      btn1.classList.add("risposta-errata");
     }
     //  DISABILITO TUTTI I BOTTONI PER EVITARE ALTRI CLICK
-    btn1.setAttribute("disabled", "")
-    btn2.setAttribute("disabled", "")
-    btn3.setAttribute("disabled", "")
-    btn4.setAttribute("disabled", "")
+    btn1.setAttribute("disabled", "");
+    btn2.setAttribute("disabled", "");
+    btn3.setAttribute("disabled", "");
+    btn4.setAttribute("disabled", "");
     // MOSTRO IL BOTTONE PROSSIMA DOMANDA
-    btnNext.classList.remove("no-display")
+    btnNext.classList.remove("no-display");
 
     // CONTROLLO TUTTE LE RISPOSTE ED EVIDENZIO LA RISPOSTA CORRETTA
     if (btn2.innerText === oggettoDomandaEstratta.rispostaGiusta) {
-      btn2.classList.add("risposta-corretta")
+      btn2.classList.add("risposta-corretta");
     } else if (btn3.innerText === oggettoDomandaEstratta.rispostaGiusta) {
-      btn3.classList.add("risposta-corretta")
+      btn3.classList.add("risposta-corretta");
     } else if (btn4.innerText === oggettoDomandaEstratta.rispostaGiusta) {
-      btn4.classList.add("risposta-corretta")
+      btn4.classList.add("risposta-corretta");
     }
     // FERMO IL TIMER QUANDO L'UTENTE RISPONDE (PULSANTE CLICCATO)
-    clearInterval(contoAllaRovescia)
-  }
+    clearInterval(contoAllaRovescia);
+  };
 
   //  CONTROLLO SE LA RISPOSTA È GIUSTA E IN CASO ASSEGNO I PUNTI
   // SE è GIUSTA DIVENTA VERDE, AALTRIMENTI ROSSA
-  const risposta2 = document.getElementById("risposta-2")
+  const risposta2 = document.getElementById("risposta-2");
   risposta2.onclick = function () {
-    oggettoDomandaEstratta.rispostaScelta = risposta2.innerText
+    oggettoDomandaEstratta.rispostaScelta = risposta2.innerText;
     if (risposta2.innerText === oggettoDomandaEstratta.rispostaGiusta) {
-      punteggio += 1
-      btn2.classList.add("risposta-corretta")
-      console.log("cioa")
+      punteggio += 1;
+      btn2.classList.add("risposta-corretta");
+      console.log("cioa");
     } else {
-      btn2.classList.add("risposta-errata")
+      btn2.classList.add("risposta-errata");
     }
     //  DISABILITO TUTTI I BOTTONI PER EVITARE ALTRI CLICK
-    btn1.setAttribute("disabled", "")
-    btn2.setAttribute("disabled", "")
-    btn3.setAttribute("disabled", "")
-    btn4.setAttribute("disabled", "")
-    btnNext.classList.remove("no-display")
+    btn1.setAttribute("disabled", "");
+    btn2.setAttribute("disabled", "");
+    btn3.setAttribute("disabled", "");
+    btn4.setAttribute("disabled", "");
+    btnNext.classList.remove("no-display");
 
     // CONTROLLO TUTTE LE RISPOSTE ED EVIDENZIO LA RISPOSTA CORRETTA
     if (btn1.innerText === oggettoDomandaEstratta.rispostaGiusta) {
-      btn1.classList.add("risposta-corretta")
+      btn1.classList.add("risposta-corretta");
     } else if (btn3.innerText === oggettoDomandaEstratta.rispostaGiusta) {
-      btn3.classList.add("risposta-corretta")
+      btn3.classList.add("risposta-corretta");
     } else if (btn4.innerText === oggettoDomandaEstratta.rispostaGiusta) {
-      btn4.classList.add("risposta-corretta")
+      btn4.classList.add("risposta-corretta");
     }
     // FERMO IL TIMER QUANDO L'UTENTE RISPONDE (PULSANTE CLICCATO)
-    clearInterval(contoAllaRovescia)
-  }
+    clearInterval(contoAllaRovescia);
+  };
 
   //  CONTROLLO SE LA RISPOSTA È GIUSTA E IN CASO ASSEGNO I PUNTI
   // SE è GIUSTA DIVENTA VERDE, AALTRIMENTI ROSSA
-  const risposta3 = document.getElementById("risposta-3")
+  const risposta3 = document.getElementById("risposta-3");
   risposta3.onclick = function () {
-    oggettoDomandaEstratta.rispostaScelta = risposta3.innerText
+    oggettoDomandaEstratta.rispostaScelta = risposta3.innerText;
     if (risposta3.innerText === oggettoDomandaEstratta.rispostaGiusta) {
-      punteggio += 1
-      btn3.classList.add("risposta-corretta")
+      punteggio += 1;
+      btn3.classList.add("risposta-corretta");
     } else {
-      btn3.classList.add("risposta-errata")
+      btn3.classList.add("risposta-errata");
     }
     // DISABILITO TUTTI I BOTTONI PER EVITARE ALTRI CLICK
-    btn1.setAttribute("disabled", "")
-    btn2.setAttribute("disabled", "")
-    btn3.setAttribute("disabled", "")
-    btn4.setAttribute("disabled", "")
-    btnNext.classList.remove("no-display")
+    btn1.setAttribute("disabled", "");
+    btn2.setAttribute("disabled", "");
+    btn3.setAttribute("disabled", "");
+    btn4.setAttribute("disabled", "");
+    btnNext.classList.remove("no-display");
 
     // CONTROLLO TUTTE LE RISPOSTE ED EVIDENZIO LA RISPOSTA CORRETTA
     if (btn1.innerText === oggettoDomandaEstratta.rispostaGiusta) {
-      btn1.classList.add("risposta-corretta")
+      btn1.classList.add("risposta-corretta");
     } else if (btn2.innerText === oggettoDomandaEstratta.rispostaGiusta) {
-      btn2.classList.add("risposta-corretta")
+      btn2.classList.add("risposta-corretta");
     } else if (btn4.innerText === oggettoDomandaEstratta.rispostaGiusta) {
-      btn4.classList.add("risposta-corretta")
+      btn4.classList.add("risposta-corretta");
     }
     // FERMO IL TIMER QUANDO L'UTENTE RISPONDE (PULSANTE CLICCATO)
-    clearInterval(contoAllaRovescia)
-  }
+    clearInterval(contoAllaRovescia);
+  };
   //  CONTROLLO SE LA RISPOSTA È GIUSTA E IN CASO ASSEGNO I PUNTI
   // SE è GIUSTA DIVENTA VERDE, AALTRIMENTI ROSSA
-  const risposta4 = document.getElementById("risposta-4")
+  const risposta4 = document.getElementById("risposta-4");
   risposta4.onclick = function () {
-    oggettoDomandaEstratta.rispostaScelta = risposta4.innerText
+    oggettoDomandaEstratta.rispostaScelta = risposta4.innerText;
     if (risposta4.innerText === oggettoDomandaEstratta.rispostaGiusta) {
-      punteggio += 1
-      btn4.classList.add("risposta-corretta")
+      punteggio += 1;
+      btn4.classList.add("risposta-corretta");
     } else {
-      btn4.classList.add("risposta-errata")
+      btn4.classList.add("risposta-errata");
     }
     // DISABILITO TUTTI I BOTTONI PER EVITARE ALTRI CLICK
-    btn1.setAttribute("disabled", "")
-    btn2.setAttribute("disabled", "")
-    btn3.setAttribute("disabled", "")
-    btn4.setAttribute("disabled", "")
-    btnNext.classList.remove("no-display")
+    btn1.setAttribute("disabled", "");
+    btn2.setAttribute("disabled", "");
+    btn3.setAttribute("disabled", "");
+    btn4.setAttribute("disabled", "");
+    btnNext.classList.remove("no-display");
 
     // CONTROLLO TUTTE LE RISPOSTE ED EVIDENZIO LA RISPOSTA CORRETTA
     if (btn1.innerText === oggettoDomandaEstratta.rispostaGiusta) {
-      btn1.classList.add("risposta-corretta")
+      btn1.classList.add("risposta-corretta");
     } else if (btn2.innerText === oggettoDomandaEstratta.rispostaGiusta) {
-      btn2.classList.add("risposta-corretta")
+      btn2.classList.add("risposta-corretta");
     } else if (btn3.innerText === oggettoDomandaEstratta.rispostaGiusta) {
-      btn3.classList.add("risposta-corretta")
+      btn3.classList.add("risposta-corretta");
     }
     // FERMO IL TIMER QUANDO L'UTENTE RISPONDE (PULSANTE CLICCATO)
-    clearInterval(contoAllaRovescia)
-  }
+    clearInterval(contoAllaRovescia);
+  };
 
   // DECIDO COSA SUCCEDE QUANDO SCHIACCIO IL BOTTONE PROSSIMA DOMANDA
   btnNext.onclick = function () {
     // TOLGO SFONDO VERDE A RISPOSTA CORRETTA
-    btn1.classList.remove("risposta-corretta")
-    btn2.classList.remove("risposta-corretta")
-    btn3.classList.remove("risposta-corretta")
-    btn4.classList.remove("risposta-corretta")
+    btn1.classList.remove("risposta-corretta");
+    btn2.classList.remove("risposta-corretta");
+    btn3.classList.remove("risposta-corretta");
+    btn4.classList.remove("risposta-corretta");
     // TOLGO SFONDO ROSSO A RISPOSTA ERRATA
-    btn1.classList.remove("risposta-errata")
-    btn2.classList.remove("risposta-errata")
-    btn3.classList.remove("risposta-errata")
-    btn4.classList.remove("risposta-errata")
+    btn1.classList.remove("risposta-errata");
+    btn2.classList.remove("risposta-errata");
+    btn3.classList.remove("risposta-errata");
+    btn4.classList.remove("risposta-errata");
     // NASCONDO IL PULSANTE PROSSIMA DOMANDA
-    btnNext.classList.add("no-display")
+    btnNext.classList.add("no-display");
     // RIABILITA TUTTI I BOTTONI DELLE RISPOSTE PER LA DOMANDA NUOVA
-    btn1.disabled = false
-    btn2.disabled = false
-    btn3.disabled = false
-    btn4.disabled = false
+    btn1.disabled = false;
+    btn2.disabled = false;
+    btn3.disabled = false;
+    btn4.disabled = false;
     // ESTRAZIONE DELLA PROSSIMA DOMANDA, RIAVVIO CONTO ALLA ROVESCIA
-    estrazioneDomande()
-    inizioContoRovescia()
-  }
+    estrazioneDomande();
+    inizioContoRovescia();
+  };
 
   // AGGIORNAMENTO NUMERO DOMANDE BASE PAGINA
 
-  const questionsNum = document.querySelector("#numero-domande P")
-  questionsNum.innerHTML = `QUESTION ${numeroDomandaCorrente}<span> / 10</span>`
-  numeroDomandaCorrente += 1
+  const questionsNum = document.querySelector("#numero-domande P");
+  questionsNum.innerHTML = `QUESTION ${numeroDomandaCorrente}<span> / 10</span>`;
+  numeroDomandaCorrente += 1;
 
   // SERVE PER FAR FUNZIONARE MODALITà PROGRESSIVA
   if (isProgressiva) {
-    difficoltà = "progressiva"
+    difficoltà = "progressiva";
   }
-}
+};
 
 // Inizio gestione bottone invia
-const textArea = document.querySelector("textarea")
+const textArea = document.querySelector("textarea");
 
 const invioAlert = () => {
   if (textArea.value === "") {
-    alert("Non hai fornito alcun feedback!")
+    alert("Non hai fornito alcun feedback!");
   } else {
-    alert("Il tuo feedback è stato ricevuto! Ti ringraziamo!") // la funzione che lancia l'Alert
-    textArea.value = ""
+    alert("Il tuo feedback è stato ricevuto! Ti ringraziamo!"); // la funzione che lancia l'Alert
+    textArea.value = "";
   }
-}
+};
 
 const apriPaginaInfo = () => {
-  window.location.href = "./pagina-moreInfo.html"
-} // funzione secondo cui quando la chiamo apre nuova pagina (window.location) ed in questo caso è pagina-moreInfo (.href)
+  window.location.href = "./pagina-moreInfo.html";
+}; // funzione secondo cui quando la chiamo apre nuova pagina (window.location) ed in questo caso è pagina-moreInfo (.href)
 
 // TIMER
 // ANIMAZIONE DEL TIMER
-const tempoTimer = 10 // DURATA DEL TIMER
+const tempoTimer = 10; // DURATA DEL TIMER
 
-let tempoRimanente = tempoTimer
-let contoAllaRovescia
+let tempoRimanente = tempoTimer;
+let contoAllaRovescia;
 
 // SELEZIONA SPECIFICAMENTE LO SPAN DEL NUMERO
-const numeriTimer = document.querySelector("#countdown-numero")
-const progressoTimer = document.querySelector(".progresso-timer")
-const lineaCountdown = 283
+const numeriTimer = document.querySelector("#countdown-numero");
+const progressoTimer = document.querySelector(".progresso-timer");
+const lineaCountdown = 283;
 
 const updateCountdown = () => {
   // ORA AGGIUNGO IL NUMERO , LE SCRITTE RIMANGONO INTATTE
   if (numeriTimer) {
-    numeriTimer.innerText = tempoRimanente
+    numeriTimer.innerText = tempoRimanente;
   }
 
   // AGGIORNA LA BARRA DEL TIMER IN BASE AL TEMPO RIMASTO
   const updateLinea =
-    lineaCountdown - (tempoRimanente / tempoTimer) * lineaCountdown
-  progressoTimer.style.strokeDashoffset = updateLinea
-}
+    lineaCountdown - (tempoRimanente / tempoTimer) * lineaCountdown;
+  progressoTimer.style.strokeDashoffset = updateLinea;
+};
 
 // COSA SUCCEDE SE SCADE IL TEMPO E NON RISPONDO
 const tempoFinito = () => {
   // SE UTENTE NON SCEGLIE UNA RISPOSTA, ASSEGNO NULL (MI SERVE PER ASSEGNARE RISPOSTA NELLA CORREZIONE DOMANDE)
   if (domandePescate.length > 0) {
-    domandePescate[domandePescate.length - 1].rispostaScelta = null
+    domandePescate[domandePescate.length - 1].rispostaScelta = null;
   }
   // PRENDI TUTTI I BOTTONI E LA DOMANDA
-  const btn1 = document.getElementById("risposta-1")
-  const btn2 = document.getElementById("risposta-2")
-  const btn3 = document.getElementById("risposta-3")
-  const btn4 = document.getElementById("risposta-4")
-  const btnNext = document.getElementById("prossima-domanda")
-  const h2 = document.querySelector("#testo-domanda h2")
+  const btn1 = document.getElementById("risposta-1");
+  const btn2 = document.getElementById("risposta-2");
+  const btn3 = document.getElementById("risposta-3");
+  const btn4 = document.getElementById("risposta-4");
+  const btnNext = document.getElementById("prossima-domanda");
+  const h2 = document.querySelector("#testo-domanda h2");
 
   //  DISABILITO TUTTI I BOTTONI PER EVITARE ALTRI CLICK
-  btn1.setAttribute("disabled", "")
-  btn2.setAttribute("disabled", "")
-  btn3.setAttribute("disabled", "")
-  btn4.setAttribute("disabled", "")
-  btnNext.classList.remove("no-display")
-}
+  btn1.setAttribute("disabled", "");
+  btn2.setAttribute("disabled", "");
+  btn3.setAttribute("disabled", "");
+  btn4.setAttribute("disabled", "");
+  btnNext.classList.remove("no-display");
+};
 
 // FA PARTIRE IL TIMER
 const inizioContoRovescia = () => {
-  tempoRimanente = tempoTimer
-  updateCountdown()
+  tempoRimanente = tempoTimer;
+  updateCountdown();
 
   contoAllaRovescia = setInterval(() => {
     // setInterval ESEGUE UNA FUNZIONE A INTERVALLI REGOLARI (1000 MS = 1 SECONDO)
-    tempoRimanente--
-    updateCountdown()
+    tempoRimanente--;
+    updateCountdown();
 
     if (tempoRimanente <= 0) {
-      clearInterval(contoAllaRovescia)
-      tempoFinito()
+      clearInterval(contoAllaRovescia);
+      tempoFinito();
     }
-  }, 1000)
-}
+  }, 1000);
+};
 
 // SELEZIONA DIFFICOLTÀ E INIZIA IL QUIZ
-const buttonDropdownMenu = document.getElementById("dropbtn")
+const buttonDropdownMenu = document.getElementById("dropbtn");
 const changeDifficulty = (event) => {
-  const arrayOfLinks = document.getElementsByClassName("single-difficulty")
-  buttonDropdownMenu.innerHTML = `${arrayOfLinks[event].innerText}<i class="fas fa-caret-down"></i>`
-}
+  const arrayOfLinks = document.getElementsByClassName("single-difficulty");
+  buttonDropdownMenu.innerHTML = `${arrayOfLinks[event].innerText}<i class="fas fa-caret-down"></i>`;
+};
 
-const form = document.querySelector("#form-difficoltà")
+const form = document.querySelector("#form-difficoltà");
 form.addEventListener("submit", function (e) {
   // EVITO RESET DELLA PAGINA
-  e.preventDefault()
+  e.preventDefault();
   // ASSEGNO LA DIFFICOLTà IN BASE A QUELLA SCELTA DALL'UTENTE
-  let buttonDropdownMenu = document.getElementById("dropbtn")
-  difficoltà = buttonDropdownMenu.innerText
-  difficoltà = difficoltà.toLowerCase()
-  console.log(buttonDropdownMenu.innerText)
-  domandePescate = []
-  punteggio = 0
-  numeroDomandaCorrente = 1
-  estrazioneDomande()
-})
+  let buttonDropdownMenu = document.getElementById("dropbtn");
+  difficoltà = buttonDropdownMenu.innerText;
+  difficoltà = difficoltà.toLowerCase();
+  console.log(buttonDropdownMenu.innerText);
+  domandePescate = [];
+  punteggio = 0;
+  numeroDomandaCorrente = 1;
+  estrazioneDomande();
+});
 
 // CAMBIA PAGINA IN MOSTRA RISULTATI
 const mostraRisultati = function () {
-  const contenitore = document.getElementById("cambia-pagina")
+  const contenitore = document.getElementById("cambia-pagina");
   // SVUOTO LA PAGINA
-  contenitore.innerHTML = ""
+  contenitore.innerHTML = "";
   // RIEMPO LA PAGINA CON I RISULTATI
   contenitore.innerHTML = `<div class ="results-page"><header>
         <div class="logo">
@@ -1156,87 +1162,77 @@ const mostraRisultati = function () {
         <section id="box-domande-correzione">
         </section>
       </div>
-      `
-  riempiCorrezioneDomande()
-  riempiScritteGrafico()
-}
+      `;
+  riempiCorrezioneDomande();
+  riempiScritteGrafico();
+};
 
 // SVUOTA LA SEZIONE PER INSERIRE LE DOMANDE CORRETTE
 const riempiCorrezioneDomande = () => {
-  const section = document.getElementById("box-domande-correzione")
-  section.innerHTML = ""
+  const section = document.getElementById("box-domande-correzione");
+  section.innerHTML = "";
 
   // RIPETE 10 VOLTE LA CREAZIONE E IL POPOLAMENTO DEL DIV CON LE DOMANDE CORRETTE
   for (let x = 0; x < 10; x++) {
-    const div = document.createElement("div")
-    const p = document.createElement("p")
-    const divRisultati = document.createElement("div")
-    const pSpiegazione = document.createElement("p")
+    const div = document.createElement("div");
+    const p = document.createElement("p");
+    const divRisultati = document.createElement("div");
+    const pSpiegazione = document.createElement("p");
 
     // DOMANDA SCRITTA IN MODO SBAGLIATO
-    let domandaConTag = domandePescate[x].domanda
+    let domandaConTag = domandePescate[x].domanda;
 
     // PULIZIA DELLA DOMANDA
-    let testoSistemato = domandaConTag.replace("<span", " <span")
+    let testoSistemato = domandaConTag.replace("<span", " <span");
 
-    let pulitore = document.createElement("div")
-    pulitore.innerHTML = testoSistemato
-    let testoVeramentePulito = pulitore.innerText
+    let pulitore = document.createElement("div");
+    pulitore.innerHTML = testoSistemato;
+    let testoVeramentePulito = pulitore.innerText;
 
-    p.innerText = `Domanda ${x + 1}: ${testoVeramentePulito}`
+    p.innerText = `Domanda ${x + 1}: ${testoVeramentePulito}`;
 
     // CREA ELEMENTI HTML E LI AGGIUNGE ALLA SEZIONE
-    section.appendChild(div)
-    div.appendChild(p)
-    div.appendChild(divRisultati)
-    div.appendChild(pSpiegazione)
+    section.appendChild(div);
+    div.appendChild(p);
+    div.appendChild(divRisultati);
+    div.appendChild(pSpiegazione);
 
-    let contenutoRisposte = ""
+    let contenutoRisposte = "";
     // CONTROLLA IL TIPO DI DOMANDA. SE È A RISPOSTA MULTIPLA , CREA UNA LISTA CON 4 OPZIONI
-    if (domandePescate[x].tipo === "risposta multipla") {
-      const ordine = domandePescate[x].risposteMischiate
-      const scelta = domandePescate[x].rispostaScelta
 
-      contenutoRisposte = `
+    const ordine = domandePescate[x].risposteMischiate;
+    const scelta = domandePescate[x].rispostaScelta;
+
+    contenutoRisposte = `
     <ol>
       ${ordine
         .map((r) => {
-          const isGiusta = r === domandePescate[x].rispostaGiusta
-          const isScelta = r === scelta && !isGiusta
+          const isGiusta = r === domandePescate[x].rispostaGiusta;
+          const isScelta = r === scelta && !isGiusta;
           return `<li>
           ${r}
           ${isGiusta ? '<i class="fas fa-check" style="color:green"></i>' : ""}
           ${isScelta ? '<i class="fas fa-times" style="color:red"></i>' : ""}
-        </li>`
+        </li>`;
         })
         .join("")}
-    </ol>`
-    } else {
-      const scelta = domandePescate[x].rispostaScelta
-      const giusta = domandePescate[x].rispostaGiusta
-      const sbagliata = domandePescate[x].risposteSbagliate
+    </ol>`;
 
-      contenutoRisposte = `
-    <ol>
-      <li>${giusta} <i class="fas fa-check" style="color:green"></i></li>
-      <li>${sbagliata} ${scelta === sbagliata ? '<i class="fas fa-times" style="color:red"></i>' : ""}</li>
-    </ol>`
-    }
     // MOSTRA LE RISPOSTE NEL DIV
-    divRisultati.innerHTML = contenutoRisposte
+    divRisultati.innerHTML = contenutoRisposte;
     if (domandePescate[x].rispostaScelta !== domandePescate[x].rispostaGiusta) {
-      const pSpiegazione = document.createElement("p")
-      pSpiegazione.classList.add("spiegazione")
-      pSpiegazione.innerHTML = `<i class="far fa-lightbulb icona-lampadina"></i>${domandePescate[x].spiegazione}`
-      div.appendChild(pSpiegazione)
+      const pSpiegazione = document.createElement("p");
+      pSpiegazione.classList.add("spiegazione");
+      pSpiegazione.innerHTML = `<i class="far fa-lightbulb icona-lampadina"></i>${domandePescate[x].spiegazione}`;
+      div.appendChild(pSpiegazione);
     }
   }
 
-  const xValues = ["Wrong", "Correct"] // ETICHETTE DELLE SEZIONI DEL GRAFICO
-  const yValues = [10 - punteggio, punteggio] // RISPOSTE SBAGLIATE O CORRETTE
-  const barColors = ["#d20094", "#00ffff"] // COLORIN DELLE SEZIONI DEL GRAFICO
+  const xValues = ["Wrong", "Correct"]; // ETICHETTE DELLE SEZIONI DEL GRAFICO
+  const yValues = [10 - punteggio, punteggio]; // RISPOSTE SBAGLIATE O CORRETTE
+  const barColors = ["#d20094", "#00ffff"]; // COLORIN DELLE SEZIONI DEL GRAFICO
 
-  const ctx = document.getElementById("grafico-a-torta")
+  const ctx = document.getElementById("grafico-a-torta");
 
   // CREA GRAFICO A CIAMBELLA
   new Chart(ctx, {
@@ -1257,32 +1253,32 @@ const riempiCorrezioneDomande = () => {
         legend: { display: false },
       },
     },
-  })
-}
+  });
+};
 // RIEMPIMENTO GRAFICO
 const riempiScritteGrafico = () => {
-  const h3 = document.querySelector(".chart-inner h3")
-  const primoP = document.querySelector(".highlight")
-  const secondoP = document.getElementById("secondo-par")
-  const terzoP = document.getElementById("terzo-par")
+  const h3 = document.querySelector(".chart-inner h3");
+  const primoP = document.querySelector(".highlight");
+  const secondoP = document.getElementById("secondo-par");
+  const terzoP = document.getElementById("terzo-par");
 
   // CONTROLLA SE HAI SUPERATO L'ESAME
   if (punteggio >= 6) {
     // SE L'HAI SUPERATO , APPARIRÀ QUESTO:
-    h3.innerText = "Congratulations!"
-    primoP.innerText = "You passed the exam."
-    secondoP.innerText = "We'll send you the certificate in few minutes."
-    terzoP.innerText = "Check your email (including promotions / spam folder)"
-    lanciaConfetti()
+    h3.innerText = "Congratulations!";
+    primoP.innerText = "You passed the exam.";
+    secondoP.innerText = "We'll send you the certificate in few minutes.";
+    terzoP.innerText = "Check your email (including promotions / spam folder)";
+    lanciaConfetti();
     // SE NON L HAI SUPERATO , APPARIRÀ QUESTO:
   } else {
-    h3.innerText = "Exam not passed"
-    primoP.classList.replace("highlight", "highlight-bocciato")
-    primoP.innerText = "Unfortunately, you did not reach the required score."
-    secondoP.innerText = "We recommend reviewing the topics."
-    terzoP.innerText = "You can retake the exam anytime."
+    h3.innerText = "Exam not passed";
+    primoP.classList.replace("highlight", "highlight-bocciato");
+    primoP.innerText = "Unfortunately, you did not reach the required score.";
+    secondoP.innerText = "We recommend reviewing the topics.";
+    terzoP.innerText = "You can retake the exam anytime.";
   }
-}
+};
 
 // CORIANDOLI
 
@@ -1293,17 +1289,17 @@ const colori = [
   "#ff4747",
   "#4dff91",
   "#a855f7",
-]
-let coriandoli = []
-let animazione = null
+];
+let coriandoli = [];
+let animazione = null;
 
 function lanciaConfetti() {
-  const canvas = document.getElementById("confetti-canvas")
-  const ctx = canvas.getContext("2d")
-  canvas.width = window.innerWidth
-  canvas.height = window.innerHeight
+  const canvas = document.getElementById("confetti-canvas");
+  const ctx = canvas.getContext("2d");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 
-  coriandoli = []
+  coriandoli = [];
   for (let i = 0; i < 150; i++) {
     coriandoli.push({
       x: Math.random() * canvas.width,
@@ -1316,31 +1312,31 @@ function lanciaConfetti() {
       rotazione: Math.random() * Math.PI * 2,
       velocitàRotazione: (Math.random() - 0.5) * 0.2,
       fase: Math.random() * Math.PI * 2,
-    })
+    });
   }
 
-  if (animazione) cancelAnimationFrame(animazione)
+  if (animazione) cancelAnimationFrame(animazione);
 
   function anima() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     coriandoli.forEach((c) => {
-      c.y += c.velocitàY
-      c.x += c.velocitàX + Math.sin(c.fase) * 0.8
-      c.rotazione += c.velocitàRotazione
-      c.fase += 0.05
-      ctx.save()
-      ctx.translate(c.x, c.y)
-      ctx.rotate(c.rotazione)
-      ctx.fillStyle = c.colore
-      ctx.fillRect(-c.w / 2, -c.h / 2, c.w, c.h)
-      ctx.restore()
-    })
-    coriandoli = coriandoli.filter((c) => c.y < canvas.height + 20)
+      c.y += c.velocitàY;
+      c.x += c.velocitàX + Math.sin(c.fase) * 0.8;
+      c.rotazione += c.velocitàRotazione;
+      c.fase += 0.05;
+      ctx.save();
+      ctx.translate(c.x, c.y);
+      ctx.rotate(c.rotazione);
+      ctx.fillStyle = c.colore;
+      ctx.fillRect(-c.w / 2, -c.h / 2, c.w, c.h);
+      ctx.restore();
+    });
+    coriandoli = coriandoli.filter((c) => c.y < canvas.height + 20);
     if (coriandoli.length > 0) {
-      animazione = requestAnimationFrame(anima)
+      animazione = requestAnimationFrame(anima);
     } else {
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
   }
-  anima()
+  anima();
 }
